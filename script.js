@@ -244,83 +244,95 @@ const portfolioData = {
     // ---- ACADEMIC ----
     "SDN 226 Palembang": {
         icon: "fa-child",
-        subtitle: "SD • 2013 - 2019 • Palembang",
-        badges: ["Akademik", "Pendidikan Dasar"],
-        desc: "Masa awal menempuh pendidikan dasar. Di sini saya mulai mengeksplorasi minat dalam belajar, membangun kedisiplinan, dan bersosialisasi dengan lingkungan sekitar.",
-        achievements: ["Aktif dalam kegiatan sekolah", "Lulus dengan nilai memuaskan"],
+        subtitle: "Elementary School • 2013 - 2019 • Palembang",
+        badges: ["Academic", "Primary Education"],
+        desc: "My early educational years where I developed fundamental learning habits, discipline, and a natural curiosity for problem-solving. This period laid the groundwork for my academic persistence.",
+        achievements: ["Active participant in school activities", "Graduated with excellent academic records"],
         image: "" // Isi path gambar di sini misal: "assets/images/sd-cert.jpg"
     },
     "MTsN 1 Palembang": {
         icon: "fa-mosque",
-        subtitle: "SMP / MTs • 2019 - 2022 • Palembang",
-        badges: ["Akademik", "Menengah Pertama"],
-        desc: "Fase menengah di mana saya mempelajari ilmu agama dan pendidikan umum secara seimbang, serta mulai mengenal dasar-dasar kepemimpinan.",
-        achievements: ["Peserta aktif ekstrakurikuler", "Juara kelas"],
+        subtitle: "Junior High School • 2019 - 2022 • Palembang",
+        badges: ["Academic", "Secondary Education"],
+        desc: "A balanced educational phase combining general studies with religious education. During this time, I began developing leadership basics and a stronger interest in technology and organization.",
+        achievements: ["Active in extracurricular activities", "Consistently ranked among the top students in class"],
         image: ""
     },
     "SMKN 8 Palembang": {
         icon: "fa-laptop-code",
-        subtitle: "SMA / SMK • 2022 - 2025 • Palembang",
-        badges: ["Vokasi", "Teknologi"],
-        desc: "Fokus pada keahlian praktis di bidang teknologi. Di sinilah saya menemukan bakat alami saya dalam menganalisis dan memperbaiki kerusakan pada hardware maupun software komputer dan laptop.",
-        achievements: ["Merakit dan troubleshooting PC/Laptop", "Lulus uji kompetensi keahlian teknologi"],
+        subtitle: "Vocational High School • 2022 - 2025 • Palembang",
+        badges: ["Vocational", "Technology"],
+        desc: "Focused heavily on practical technology skills. It was here that I discovered and honed my natural talent for analyzing, troubleshooting, and repairing computer and laptop hardware.",
+        achievements: ["Mastered PC and Laptop assembly and hardware troubleshooting", "Passed the technology vocational competency test with high marks"],
         image: ""
     },
-    "Institut Teknologi Sumatera (ITERA)": {
+    "Institut Teknologi Sumatera": {
         icon: "fa-university",
-        subtitle: "S1 Informatics Engineering • 2025 - Sekarang",
-        badges: ["PTN", "Informatics"],
-        desc: "Memasuki dunia programming murni. Walau awalnya tidak langsung suka coding, saya masuk dengan tekad bulat untuk belajar. Saat ini aktif mengasah skill di C++, Python, HTML/CSS/JS, dan kustomisasi Linux Ubuntu.",
-        achievements: ["Mengeksplorasi proyek biomimicry in engineering (biological concrete/honeycomb)", "Aktif menulis & men-debug kode pemrograman", "Menyusun laporan akademik menggunakan LaTeX"],
+        subtitle: "Informatics Engineering • 2025 - Present",
+        badges: ["State University", "Informatics"],
+        desc: "Diving into pure programming. While I didn't initially start with a natural love for coding, I deliberately chose this major with a strong determination to learn and master it from scratch. I actively focus on C++, Python, Web Development, and Linux (Ubuntu) customization.",
+        achievements: [
+            "Explored biomimicry in engineering projects (focusing on honeycomb structures and biological concrete)",
+            "Actively compiling academic reports and formatting complex documents using LaTeX",
+            "Initiated an ongoing academic research project starting in May 2026"
+        ],
         image: ""
     },
     "BINUS University": {
         icon: "fa-building",
-        subtitle: "S1 Business • 2026 - Sekarang",
-        badges: ["PTS", "Double Degree"],
-        desc: "Menjalankan program double degree untuk menguasai aspek bisnis dan manajemen. Tujuannya adalah mengkombinasikan skill teknologi dari ITERA dengan mindset bisnis yang strategis.",
-        achievements: ["Mempelajari strategi bisnis operasional", "Membangun networking profesional"],
+        subtitle: "Business / IT • 2026 - Present",
+        badges: ["Private University", "Higher Education"],
+        desc: "I transitioned to BINUS University in early 2026 to better accommodate my work responsibilities while continuing my higher education. This path allows me to integrate strategic business mindsets with my technical engineering background.",
+        achievements: [
+            "Successfully managing academic responsibilities alongside professional work commitments",
+            "Building a strong professional network and learning operational business strategies"
+        ],
         image: ""
     },
+    
     // ---- EXPERIENCE ----
-    "Festival Seni Islam": {
-        icon: "fa-users",
-        subtitle: "Kepanitiaan • 2023",
-        badges: ["Organisasi", "Leadership"],
-        desc: "Mengelola acara berskala sekolah dan memastikan seluruh rangkaian event berjalan lancar dari persiapan hingga eksekusi.",
-        achievements: ["Bertugas sebagai Penanggung Jawab Proyek utama", "Sukses menyelenggarakan acara dengan partisipasi siswa yang tinggi"],
-        image: ""
-    },
     "CV. RKU Komputer": {
         icon: "fa-tools",
-        subtitle: "Praktik Kerja Lapangan • Jul 2023 - Des 2023",
-        badges: ["Internship", "Teknisi Hardware"],
-        desc: "Terjun langsung ke dunia kerja untuk menangani masalah komputer dan laptop klien secara nyata. Memanfaatkan bakat reparasi saya untuk memberikan solusi IT kepada pelanggan.",
-        achievements: ["Troubleshooting hardware & software", "Melakukan perbaikan dan perawatan laptop klien"],
+        subtitle: "Internship • Jul 2023 - Dec 2023",
+        badges: ["Internship", "Hardware Technician"],
+        desc: "Stepped directly into the professional workforce to handle real-world computer and laptop issues. I utilized my practical hardware repair talents to provide efficient IT solutions and maintenance for clients.",
+        achievements: [
+            "Performed extensive hardware & software troubleshooting for various devices",
+            "Executed successful component replacements and laptop maintenance for clients"
+        ],
         image: ""
     },
     "Bawaslu Provinsi Sumsel": {
         icon: "fa-briefcase",
         subtitle: "Staff / Intern • Jul 2024 - Mar 2025",
-        badges: ["Work", "Pemerintahan"],
-        desc: "Membantu operasional dan administrasi di lembaga pengawas pemilu tingkat provinsi. Melatih kedisiplinan dan profesionalitas di lingkungan kerja pemerintahan.",
-        achievements: ["Mengelola dokumen dan arsip penting", "Mendukung persiapan dan pengawasan administrasi Pemilu"],
+        badges: ["Work", "Government"],
+        desc: "Assisted in the operational and administrative tasks at the provincial election supervisory body. This role significantly sharpened my discipline, administrative accuracy, and professionalism within a formal work environment.",
+        achievements: [
+            "Managed crucial documents and maintained highly organized administrative archives",
+            "Supported the preparation and supervision of election administration processes"
+        ],
         image: ""
     },
     "Google Student Ambassador": {
         icon: "fa-google",
         subtitle: "Candidate • 2026",
-        badges: ["Program", "Global"],
-        desc: "Mengajukan diri sebagai kandidat duta Google untuk kampus. Berfokus pada pengembangan komunitas teknologi mahasiswa dan representasi ekosistem Google.",
-        achievements: ["Lolos seleksi sebagai Candidate GSA 2026", "Mempersiapkan video aplikasi dan naskah kampanye program"],
+        badges: ["Program", "Global Tech"],
+        desc: "Applied as a candidate for the Google Student Ambassador 2026 program. My goal is to foster a strong technology community on campus and represent the Google ecosystem among university students.",
+        achievements: [
+            "Prepared comprehensive application videos, campaign scripts, and promotional captions",
+            "Passed the initial selection phase to become a highly anticipated GSA 2026 Candidate"
+        ],
         image: ""
     },
     "Novo Club": {
         icon: "fa-lightbulb",
         subtitle: "Batch 4 Participant • 2026",
         badges: ["Community", "Youth Leadership"],
-        desc: "Bergabung dengan program pengembangan kepemimpinan pemuda untuk mengasah skill kepemimpinan yang inovatif dan memperluas jaringan.",
-        achievements: ["Menyelesaikan Youth Leadership Bootcamp (Mei 2026)", "Pembuatan essay dan konten campaign inovatif"],
+        desc: "Joined this youth leadership development program to sharpen my innovative leadership skills, broaden my network, and engage in impactful community projects alongside driven peers.",
+        achievements: [
+            "Actively participated in the Batch 4 orientation and application phases",
+            "Created compelling essays and social media content for innovative leadership campaigns"
+        ],
         image: ""
     }
 };
@@ -397,3 +409,230 @@ modalOverlay.addEventListener('click', (e) => {
         modalOverlay.classList.remove('active');
     }
 });
+
+// =======================================================
+// MODAL POPUP SKILLS & TOOLS LOGIC
+// =======================================================
+
+// 1. Database Deskripsi & Core Expertise (ENGLISH VERSION)
+const skillsData = {
+    // ================= EXPERTISE =================
+    "UI/UX Design": {
+        subtitle: "SPECIALTY DETAILS",
+        desc: "The process of designing aesthetic interfaces and ensuring a logical, seamless, and intuitive user experience (UX).",
+        expertise: ["User Research & Wireframing", "Interactive Prototyping", "Design Systems", "Usability & Layouting"]
+    },
+    "Graphic Design": {
+        subtitle: "SPECIALTY DETAILS",
+        desc: "Creating engaging visual compositions for digital and print media, combining typography, colors, and illustrations.",
+        expertise: ["Branding & Identity Design", "Social Media Asset Creation", "Vector Illustration", "Photo Retouching & Editing"]
+    },
+    "Hardware Repair": {
+        subtitle: "PRACTICAL SKILL",
+        desc: "My natural technical talent in diagnosing physical hardware issues and performing component repairs or replacements.",
+        expertise: ["PC & Laptop Teardown", "Component Replacement", "Motherboard Diagnostics", "Thermal Paste Application & Maintenance"]
+    },
+    "Software Repair": {
+        subtitle: "PRACTICAL SKILL",
+        desc: "Expertise in analyzing and troubleshooting operating systems or software issues, both on Windows and Linux.",
+        expertise: ["OS Troubleshooting & Installation", "Virus Removal & System Restore", "Driver & Software Optimization", "Data Recovery Basics"]
+    },
+    "Web Developer": {
+        subtitle: "CORE EXPERTISE",
+        desc: "Building and maintaining website structures, from front-end user interfaces to basic logic management.",
+        expertise: ["Responsive Web Design", "DOM Manipulation", "Modern Layouting (Flexbox/Grid)", "UI Animation Implementation"]
+    },
+
+    // ================= LANGUAGES & FRAMEWORKS =================
+    "HTML": {
+        subtitle: "CORE LANGUAGE",
+        desc: "The standard markup language for creating the basic structure of a website. I use it as the fundamental stepping stone in my web development journey.",
+        expertise: ["Semantic HTML5", "SEO Friendly Structuring", "Web Accessibility", "Form & Input Management"]
+    },
+    "CSS": {
+        subtitle: "CORE STYLING",
+        desc: "The language used to style web interfaces. Essential for crafting layouts, colors, and complex animations (like glassmorphism effects).",
+        expertise: ["Flexbox & CSS Grid", "Responsive Design (Media Queries)", "CSS Animations & Transitions", "Custom Variables"]
+    },
+    "JavaScript": {
+        subtitle: "INTERACTIVE LOGIC",
+        desc: "The programming language that brings websites to life, enabling interactive features like modal popups, dynamic filters, and element manipulation.",
+        expertise: ["DOM Manipulation", "Event Handling", "Logic & Conditionals", "Asynchronous Basics"]
+    },
+    "PHP": {
+        subtitle: "BACKEND SCRIPTING",
+        desc: "A server-side scripting language I am exploring to connect static websites with database systems in the future.",
+        expertise: ["Server-side Logic Fundamentals", "Form Data Handling", "Basic Database Connection", "Session Management"]
+    },
+    "SQL": {
+        subtitle: "DATABASE MANAGEMENT",
+        desc: "The language for managing and manipulating data in relational database systems, essential for dynamic web development.",
+        expertise: ["Data Querying", "Database Structuring", "CRUD Operations", "Table Relational Basics"]
+    },
+    "Python": {
+        subtitle: "PROGRAMMING LANGUAGE",
+        desc: "A versatile language with clean syntax that I am currently learning for automation, data analysis, and computational logic.",
+        expertise: ["Scripting & Automation", "Logic Implementation", "Data Structure Basics", "Problem Solving"]
+    },
+    "C++": {
+        subtitle: "PROGRAMMING LANGUAGE",
+        desc: "A high-performance programming language. Highly ideal for practicing computational logic and managing complex memory structures.",
+        expertise: ["Object-Oriented Programming (OOP)", "Memory Management", "Algorithm & Data Structures", "Logic Troubleshooting"]
+    },
+    "LaTeX": {
+        subtitle: "DOCUMENT PREPARATION",
+        desc: "A typesetting system I frequently use for creating highly precise academic reports, journals, and technical documents.",
+        expertise: ["Academic Report Structuring", "Complex Formula Formatting", "Bibliography & Citations", "Template Customization"]
+    },
+
+    // ================= TOOLS & ENVIRONMENT =================
+    // Design & Video
+    "Figma": {
+        subtitle: "DESIGN TOOL",
+        desc: "The primary collaborative UI/UX design tool for crafting modern website and application interfaces.",
+        expertise: ["UI/UX Interface Design", "Interactive Prototyping", "Design Systems", "Auto Layout & Components"]
+    },
+    "Canva": {
+        subtitle: "DESIGN TOOL",
+        desc: "An online graphic design platform for creating presentations, posters, and social media content quickly and efficiently.",
+        expertise: ["Social Media Templates", "Quick Asset Creation", "Presentation Design", "Brand Kit Management"]
+    },
+    "Photoshop": {
+        subtitle: "DESIGN TOOL",
+        desc: "The industry-standard software for digital photo manipulation, retouching, and creating bitmap graphic assets.",
+        expertise: ["Photo Retouching", "Layer Masking", "Digital Imaging", "Color Correction"]
+    },
+    "Illustrator": {
+        subtitle: "DESIGN TOOL",
+        desc: "The go-to software for creating scalable vector graphics such as logos, icons, and illustrations.",
+        expertise: ["Vector Tracing", "Logo Design", "Typography Layouting", "Flat Illustration"]
+    },
+    "Lightroom": {
+        subtitle: "PHOTOGRAPHY TOOL",
+        desc: "Focused on color grading and lighting adjustments to professionally enhance photos in bulk.",
+        expertise: ["Color Grading", "Exposure Correction", "Preset Management", "Batch Editing"]
+    },
+    "CorelDraw": {
+        subtitle: "DESIGN TOOL",
+        desc: "A robust vector software alternative, often used for print design needs and graphic layouting.",
+        expertise: ["Print Design", "Vector Illustration", "Layouting", "Typography Formatting"]
+    },
+    "Pixellab": {
+        subtitle: "MOBILE DESIGN TOOL",
+        desc: "A lightweight and practical design app for creating typography or basic image manipulation directly from a mobile device.",
+        expertise: ["Mobile Editing", "Typography Customization", "Quick Asset Creation", "3D Text Effects"]
+    },
+    "CapCut": {
+        subtitle: "VIDEO EDITING",
+        desc: "A trendy and highly practical video editing tool with ready-to-use transitions, ideal for vertical social media content.",
+        expertise: ["Short-form Video Editing", "Trendy Transitions", "Audio Syncing", "Auto-Captions"]
+    },
+    "Filmora": {
+        subtitle: "VIDEO EDITING",
+        desc: "A user-friendly desktop video editing software for cutting, assembling, and applying effects to video projects.",
+        expertise: ["Video Splicing & Timeline", "Effect Application", "Basic Color Correction", "Audio Mixing"]
+    },
+    "Clipchamp": {
+        subtitle: "VIDEO EDITING",
+        desc: "A fast, integrated web-based video editor for instant video trimming and lightweight content creation.",
+        expertise: ["Quick Web Editing", "Timeline Management", "Export Optimization", "Template Usage"]
+    },
+    
+    // Dev & System
+    "Git": {
+        subtitle: "VERSION CONTROL",
+        desc: "A version control system to track and record every change in the programming code I am working on.",
+        expertise: ["Code Tracking", "Branch Management", "Version Reverting", "Commit History"]
+    },
+    "GitHub": {
+        subtitle: "CODE REPOSITORY",
+        desc: "A cloud platform where I store, manage, and showcase my code portfolio and programming project repositories.",
+        expertise: ["Repository Management", "Open Source Contribution", "Project Hosting", "README Structuring"]
+    },
+    "Docker": {
+        subtitle: "CONTAINERIZATION",
+        desc: "A platform for packaging applications and all their dependencies into containers, ensuring software runs consistently in any environment.",
+        expertise: ["Container Management", "Environment Isolation", "Image Building", "Deployment Basics"]
+    },
+    "VS Code": {
+        subtitle: "CODE EDITOR",
+        desc: "My primary text editor for writing code, debugging, and programming HTML/CSS/JS. Highly powerful thanks to its extension support.",
+        expertise: ["Code Formatting", "Extension Management", "Integrated Terminal", "Live Server Integration"]
+    },
+
+    // Office
+    "Excel": {
+        subtitle: "OFFICE TOOL",
+        desc: "A powerful spreadsheet tool for analyzing data, creating reports, and building calculation formulas.",
+        expertise: ["Data Entry & Formatting", "Formula & Functions", "Data Visualization (Charts)", "Pivot Tables"]
+    },
+    "Word": {
+        subtitle: "OFFICE TOOL",
+        desc: "A word processing software for drafting reports, proposals, articles, and various other administrative documents.",
+        expertise: ["Document Formatting", "Layout Structuring", "Report Generation", "Mail Merge"]
+    }
+};
+
+// 2. Logika Pemanggilan Modal
+const skillModalOverlay = document.getElementById('skill-modal');
+const skillCloseBtn = document.getElementById('skill-close-btn');
+const allSkillButtons = document.querySelectorAll('.expertise-card, .skill-pill');
+
+allSkillButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Ambil nama skill dari tag span di dalam tombol
+        const titleSpan = btn.querySelector('span');
+        if (!titleSpan) return;
+        
+        const title = titleSpan.innerText.trim();
+        
+        // Cek apakah data skill-nya ada di database kita
+        const data = skillsData[title];
+        
+        if (data) {
+            // Ambil Icon otomatis dari tombol yang diklik (baik itu tag <i> atau <img>)
+            const iconElement = btn.querySelector('i, img');
+            if (iconElement) {
+                document.getElementById('skill-modal-icon').innerHTML = iconElement.outerHTML;
+            } else {
+                document.getElementById('skill-modal-icon').innerHTML = '<i class="fas fa-star"></i>'; // fallback icon
+            }
+
+            // Isi Text dan Judul
+            document.getElementById('skill-modal-title').innerText = title;
+            document.getElementById('skill-modal-subtitle').innerText = data.subtitle;
+            document.getElementById('skill-modal-desc').innerText = data.desc;
+
+            // Kosongkan dan Isi List Expertise
+            const listContainer = document.getElementById('skill-modal-list');
+            listContainer.innerHTML = '';
+            
+            data.expertise.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item;
+                listContainer.appendChild(li);
+            });
+
+            // Tampilkan Modal
+            skillModalOverlay.classList.add('active');
+        } else {
+            console.log(`Data untuk skill "${title}" belum ditambahkan di JavaScript.`);
+        }
+    });
+});
+
+// 3. Logika Penutupan Modal
+if(skillCloseBtn) {
+    skillCloseBtn.addEventListener('click', () => {
+        skillModalOverlay.classList.remove('active');
+    });
+}
+
+if(skillModalOverlay) {
+    skillModalOverlay.addEventListener('click', (e) => {
+        // Hanya tutup jika yang diklik area background gelapnya
+        if (e.target === skillModalOverlay) {
+            skillModalOverlay.classList.remove('active');
+        }
+    });
+}

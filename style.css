@@ -1545,7 +1545,7 @@ body.light-mode .modal-achievements ul li::before { color: #008CA1; }
     font-size: 4.5rem; 
     color: var(--teks-putih); 
     margin-top: 0; 
-    margin-bottom: 30px; 
+    margin-bottom: 20px; 
     text-transform: capitalize; 
     text-align: center; 
 }
@@ -1560,7 +1560,7 @@ body.light-mode .modal-achievements ul li::before { color: #008CA1; }
     justify-content: center; 
     flex-wrap: wrap; 
     gap: 5px; 
-    margin-bottom: 20px; 
+    margin-bottom: 10px; 
     background: rgba(0, 0, 0, 0.2); 
     border: 1px solid rgba(0, 229, 255, 0.15); 
     padding: 8px; 
@@ -1613,7 +1613,7 @@ body.light-mode .modal-achievements ul li::before { color: #008CA1; }
     letter-spacing: 3px; 
     text-transform: uppercase; 
     text-align: center; 
-    margin-bottom: 10px; 
+    margin-bottom: 5px; 
 }
 
 .marquee-container { 
@@ -1763,6 +1763,89 @@ body.light-mode .modal-achievements ul li::before { color: #008CA1; }
 .invert-on-dark { 
     filter: invert(1); 
 }
+
+/* =======================================================
+   MODAL POPUP SKILLS & TOOLS (Sesuai Referensi Figma)
+   ======================================================= */
+/* Kursor pointer untuk semua kotak skill */
+.expertise-card, .skill-pill { cursor: pointer; }
+
+/* Desain Box Modal Utama - DARK TOSCA / TEAL GLASSMORPHISM */
+.skill-modal-content {
+    background: rgba(0, 29, 34, 0.75); /* NAH INI DIA! Biru toska kehijauan gelap */
+    backdrop-filter: blur(16px); 
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 229, 255, 0.15); /* Garis pinggir dikasih hint cyan dikit */
+    border-radius: 16px;
+    width: 90%; max-width: 480px; padding: 25px;
+    position: relative; 
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    transform: translateY(30px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-overlay.active .skill-modal-content { transform: translateY(0); }
+
+/* Header Modal (Ikon, Judul, Tombol X) */
+.skill-modal-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; position: relative; }
+.skill-modal-icon {
+    width: 55px; height: 55px; border-radius: 12px;
+    background: rgba(4, 25, 28, 0.6); /* Toska super gelap buat background ikon */
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem; color: #fff;
+}
+.skill-modal-icon img { width: 32px; height: 32px; object-fit: contain; filter: none; }
+
+.skill-modal-header-text { display: flex; flex-direction: column; gap: 3px; }
+.skill-modal-header-text h3 { margin: 0; color: #FFFFFF; font-size: 1.35rem; font-weight: 600; }
+.skill-modal-header-text p { margin: 0; color: rgba(255, 255, 255, 0.5); font-size: 0.75rem; letter-spacing: 1px; font-weight: 600; text-transform: uppercase; }
+
+/* Tombol X Lingkaran di Kanan Atas */
+.skill-modal-close {
+    position: absolute; top: 0; right: 0;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: rgba(4, 25, 28, 0.6); 
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8); font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; transition: 0.3s;
+}
+.skill-modal-close:hover { background: rgba(0, 229, 255, 0.2); color: #fff; border-color: rgba(0, 229, 255, 0.5); }
+
+/* Deskripsi & Judul Section */
+.skill-modal-desc { font-size: 0.9rem; color: rgba(255, 255, 255, 0.8); line-height: 1.6; margin-bottom: 25px; text-align: left; }
+.skill-modal-section-title { font-size: 0.8rem; color: rgba(0, 229, 255, 0.6); letter-spacing: 1px; margin-bottom: 12px; }
+
+/* List Kotak-Kotak (Core Expertise) */
+.skill-expertise-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.skill-expertise-list li {
+    background: rgba(4, 25, 28, 0.7); /* Toska yang lebih pekat biar teksnya kebaca jelas */
+    border: 1px solid rgba(0, 229, 255, 0.05);
+    border-radius: 12px; padding: 15px 20px;
+    display: flex; align-items: center; gap: 12px;
+    font-size: 0.9rem; color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+.skill-expertise-list li:hover { 
+    background: rgba(13, 60, 65, 0.8); /* Pas di-hover warnanya jadi toska terang dikit */
+    transform: translateX(5px); 
+    border-color: rgba(0, 229, 255, 0.3); 
+}
+
+/* Titik Bullet Point - Tetap Cyan Glow */
+.skill-expertise-list li::before {
+    content: ''; display: block; width: 6px; height: 6px;
+    background: #00E5FF; 
+    border-radius: 50%; box-shadow: 0 0 8px rgba(0, 229, 255, 0.7);
+}
+
+/* Dukungan Light Mode (Opsional kalau dipakai) */
+body.light-mode .skill-modal-content { background: rgba(255, 255, 255, 0.7); border-color: rgba(0,0,0,0.1); }
+body.light-mode .skill-modal-header-text h3 { color: #111; }
+body.light-mode .skill-modal-header-text p { color: rgba(0, 0, 0, 0.6); }
+body.light-mode .skill-modal-close { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); color: #111; }
+body.light-mode .skill-modal-desc { color: rgba(0, 0, 0, 0.8); }
+body.light-mode .skill-modal-section-title { color: rgba(0, 0, 0, 0.5); }
+body.light-mode .skill-expertise-list li { background: rgba(0, 0, 0, 0.03); border: 1px solid rgba(0,0,0,0.05); color: #222; }
+body.light-mode .skill-modal-icon { background: rgba(0,0,0,0.03); border: 1px solid rgba(0,0,0,0.05); color: #111; }
 
 
 /* =======================================================
@@ -2167,4 +2250,54 @@ body.light-mode .btn-read-less-icon {
 body.light-mode .btn-read-less-icon:hover {
     background: #008CA1;
     color: #F4F8F9;
+}
+
+/* =======================================================
+   10. PROJECT SECTION & WAVE TRANSITION
+   ======================================================= */
+.wave-transition {
+    position: relative;
+    width: 100%;
+    line-height: 0;
+    z-index: 5;
+    margin-top: -150px; /* Ditarik sedikit biar nyatu sama kotak skills */
+    pointer-events: none;
+}
+
+.wave-transition svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    filter: var(--bayangan-gelombang);
+}
+
+/* Warnanya otomatis ngikutin variabel biar support Light/Dark mode */
+.wave-transition svg path {
+    fill: var(--bg-utama);
+    transition: fill 0.4s ease;
+}
+
+.project-section {
+    position: relative;
+    padding: 20px 10% 120px 10%;
+    background-color: var(--bg-utama);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.project-section .section-title {
+    font-family: 'Changa One', sans-serif;
+    font-size: 4.5rem;
+    color: var(--teks-putih);
+    margin-top: 0;
+    margin-bottom: 50px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.project-section .section-title span {
+    color: var(--aksen-tosca);
+    text-shadow: var(--bayangan-teks);
 }

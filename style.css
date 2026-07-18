@@ -970,7 +970,9 @@ input:checked + .slider:before {
 .mini-tab-content { display: none; animation: fadeIn 0.4s ease; }
 .mini-tab-content.active { display: block; }
 
-/* Timeline Garis Lurus */
+/* =======================================================
+   1. MODE TIMELINE LURUS (Experience, Achievement, dll)
+   ======================================================= */
 .timeline-straight { position: relative; padding-left: 25px; padding-top: 5px; }
 .timeline-straight::before { content: ''; position: absolute; left: 5.5px; top: 15px; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--aksen-tosca) 80%, transparent); opacity: 0.4; }
 
@@ -978,11 +980,43 @@ input:checked + .slider:before {
 .timeline-item:last-child { margin-bottom: 0; }
 .dot { position: absolute; left: -25.5px; top: 20px; width: 12px; height: 12px; background: var(--bg-utama); border: 2.5px solid var(--aksen-tosca); border-radius: 50%; z-index: 2; box-shadow: 0 0 10px rgba(0, 229, 255, 0.6); }
 
-/* Pecah Cabang (Double Degree ITERA & BINUS) */
-.branch-origin-dot { top: 15px !important; }
-.split-cards { display: flex; gap: 15px; margin-top: -10px; flex-wrap: wrap; }
-.split-cards .branch-card { flex: 1; min-width: 180px; }
+/* =======================================================
+   2. MODE TIMELINE ZIGZAG & CABANG (Khusus Academic) - RAPI & RAPET
+   ======================================================= */
+.timeline-mini-zigzag { position: relative; width: 100%; padding-top: 5px; }
 
+/* Garis Tengah Vertikal */
+.timeline-mini-zigzag::before { content: ''; position: absolute; left: 50%; top: 0; bottom: 15px; width: 2px; background: linear-gradient(to bottom, var(--aksen-tosca) 80%, transparent); transform: translateX(-50%); opacity: 0.4; z-index: 0; }
+
+/* Jarak vertikal antar kotak di-press biar rapet */
+.timeline-zigzag-item { position: relative; width: 50%; margin-bottom: 12px; z-index: 2; }
+
+/* Sisi Kiri (Padding ditarik mendekat ke garis tengah) */
+.timeline-zigzag-item.left-side { left: 0; padding-right: 15px; box-sizing: border-box; }
+.timeline-zigzag-item.left-side .dot-zigzag { position: absolute; right: -7px; top: 18px; width: 14px; height: 14px; background: var(--bg-utama); border: 2.5px solid var(--aksen-tosca); border-radius: 50%; box-shadow: 0 0 10px rgba(0, 229, 255, 0.6); }
+
+/* Sisi Kanan (Padding ditarik mendekat ke garis tengah) */
+.timeline-zigzag-item.right-side { left: 50%; padding-left: 15px; box-sizing: border-box; }
+.timeline-zigzag-item.right-side .dot-zigzag { position: absolute; left: -7px; top: 18px; width: 14px; height: 14px; background: var(--bg-utama); border: 2.5px solid var(--aksen-tosca); border-radius: 50%; box-shadow: 0 0 10px rgba(0, 229, 255, 0.6); }
+
+/* Bikin kotak (card) sedikit lebih ramping di mode zigzag */
+.timeline-zigzag-item .timeline-card { width: 100%; box-sizing: border-box; padding: 12px 15px; }
+.timeline-zigzag-item .timeline-card h4 { font-size: 0.95rem; }
+.timeline-zigzag-item .timeline-card p { font-size: 0.75rem; margin-bottom: 8px; }
+
+/* Cabang Bawah (ITERA & BINUS) */
+.timeline-zigzag-item.full-width { width: 100%; left: 0; padding: 0; margin-top: 2px; display: flex; flex-direction: column; align-items: center; }
+
+/* Garis Cabang T (Diukur presisi jatuh tepat di tengah kedua kotak bawah) */
+.branch-fork-center { width: calc(50% + 15px); height: 12px; border-top: 2px solid rgba(0, 229, 255, 0.4); border-left: 2px solid rgba(0, 229, 255, 0.4); border-right: 2px solid rgba(0, 229, 255, 0.4); border-radius: 6px 6px 0 0; margin: 0 auto 10px auto; z-index: 1; }
+
+/* Kotak Universitas dibikin rapet */
+.split-cards-zigzag { display: flex; gap: 15px; width: 100%; }
+.split-cards-zigzag .branch-card { flex: 1; min-width: 0; padding: 15px; }
+
+/* =======================================================
+   DESAIN CARD & TIPOGRAFI (YANG SEMPAT HILANG)
+   ======================================================= */
 /* Card Glassmorphism */
 .timeline-card { background: rgba(11, 25, 30, 0.6); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: 1px solid rgba(0, 229, 255, 0.15); padding: 18px 20px; border-radius: 12px; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 .timeline-card:hover { border-color: rgba(0, 229, 255, 0.5); box-shadow: 0 5px 20px rgba(0, 229, 255, 0.2); transform: translateY(-3px); }
@@ -993,8 +1027,14 @@ input:checked + .slider:before {
 .timeline-card p { margin: 0 0 10px 0; font-family: 'Poppins', sans-serif; font-size: 0.8rem; color: rgba(237, 246, 249, 0.6); line-height: 1.5; }
 .timeline-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: rgba(0, 229, 255, 0.05); color: var(--aksen-tosca); border-radius: 20px; font-size: 0.7rem; font-weight: 600; border: 1px solid rgba(0, 229, 255, 0.2); }
 .empty-text { color: rgba(237, 246, 249, 0.4) !important; font-style: italic; margin: 0 !important; font-size: 0.9rem !important; }
+.split-cards-zigzag { flex-wrap: wrap; }
+.split-cards-zigzag .branch-card { min-width: 150px; }
 
 /* --- TAMBAHKAN INI DI BAGIAN 09. LIGHT MODE --- */
+body.light-mode .timeline-mini-zigzag::before { background: linear-gradient(to bottom, #008CA1 80%, transparent); opacity: 0.3; }
+body.light-mode .timeline-zigzag-item.left-side .dot-zigzag, 
+body.light-mode .timeline-zigzag-item.right-side .dot-zigzag { background: #F4F8F9; border-color: #008CA1; box-shadow: none; }
+body.light-mode .branch-fork-center { border-color: rgba(0, 140, 161, 0.3); }
 body.light-mode .mini-tabs { border-color: rgba(0,0,0,0.1); }
 body.light-mode .mini-tab-btn { color: rgba(7, 37, 41, 0.5); }
 body.light-mode .mini-tab-btn:hover { color: #072529; }
@@ -1014,6 +1054,15 @@ body.light-mode .empty-text { color: rgba(7, 37, 41, 0.5) !important; }
     .info-grid-split { grid-template-columns: 1fr; gap: 40px; }
     .split-cards { flex-direction: column; gap: 15px; }
     .mini-tabs { justify-content: center; }
+    /* Fix Zigzag biar lurus pas di HP */
+    .timeline-mini-zigzag::before { left: 15px; transform: none; }
+    .timeline-zigzag-item { width: 100%; }
+    .timeline-zigzag-item.left-side { padding-right: 0; padding-left: 40px; }
+    .timeline-zigzag-item.right-side { left: 0; padding-left: 40px; }
+    .timeline-zigzag-item.left-side .dot-zigzag, 
+    .timeline-zigzag-item.right-side .dot-zigzag { left: 9px; right: auto; }
+    .branch-fork-center { display: none; }
+    .split-cards-zigzag { flex-direction: column; gap: 15px; }
 }
 
 /* FOTO KANAN & DEKORASI 3D */

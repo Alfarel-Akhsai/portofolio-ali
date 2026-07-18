@@ -178,32 +178,26 @@ const skillsContainer = document.querySelector('.skills-wrapper');
 skillsContainer.addEventListener('contextmenu', e => e.preventDefault());
 skillsContainer.addEventListener('dragstart', e => e.preventDefault());
 
-const readMoreBtn = document.querySelector('.btn-read-more');
+// =======================================================
+// READ MORE & CLOSE EXTRA INFO LOGIC
+// =======================================================
+const btnReadMore = document.querySelector('.btn-read-more');
 const extraInfo = document.getElementById('extra-info');
+const btnCloseExtra = document.getElementById('btn-close-extra');
 
-readMoreBtn.addEventListener('click', function(e) {
-    e.preventDefault();
-    extraInfo.classList.toggle('active');
-    
-    // Ganti teks tombol dan animasi auto-scroll ke bawah
-    if (extraInfo.classList.contains('active')) {
-        readMoreBtn.innerHTML = 'Read Less <i class="fas fa-arrow-up"></i>';
-        
-        // Jeda sebentar buat biarin kotaknya melar, lalu scroll layarnya ke bawah!
-        setTimeout(() => {
-            const offset = 80; // Jarak aman dari navbar atas
-            const elementPosition = extraInfo.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - offset;
-            
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
-            });
-        }, 350); 
-    } else {
-        readMoreBtn.innerHTML = 'Read More <i class="fas fa-arrow-down"></i>';
-    }
-});
+if (btnReadMore && extraInfo) {
+    btnReadMore.addEventListener('click', function(e) {
+        e.preventDefault();
+        extraInfo.classList.add('active'); // Buka kotak (tombol aslinya bakal hilang pakai CSS)
+    });
+}
+
+if (btnCloseExtra && extraInfo) {
+    btnCloseExtra.addEventListener('click', function(e) {
+        e.preventDefault();
+        extraInfo.classList.remove('active'); // Tutup kotak
+    });
+}
 
 // =======================================================
 // SPLIT TABS LOGIC (KIRI & KANAN INDEPENDENT)

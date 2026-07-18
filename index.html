@@ -202,90 +202,134 @@
                     </div>
                 </div>
 
-                <!-- 2. BARIS BAWAH (Kotak Timeline & Tabs) -->
-<div class="about-extra-info" id="extra-info">
-    
-    <!-- Header Timeline -->
-    <div class="timeline-header">
-        <h3>Education</h3>
-        <p>JOURNEY, EXPERIENCE, & ACHIEVEMENT</p>
-        <div class="header-line"></div>
-    </div>
+                <!-- 2. BARIS BAWAH (Grid 2 Kolom dengan Independent Tabs) -->
+<div class="about-extra-info active" id="extra-info">
+    <div class="info-grid-split">
+        
+        <!-- ================= KOLOM KIRI ================= -->
+        <div class="split-col">
+            <!-- Tab Navigasi Kiri -->
+            <div class="mini-tabs">
+                <button class="mini-tab-btn left-btn active" data-target="academic-content">
+                    <i class="fas fa-graduation-cap"></i> Academic
+                </button>
+                <button class="mini-tab-btn left-btn" data-target="achievement-content">
+                    <i class="fas fa-trophy"></i> Achievement
+                </button>
+            </div>
 
-    <!-- Tombol Tabs -->
-    <div class="timeline-tabs">
-        <button class="tab-btn active" data-target="academic"><i class="fas fa-graduation-cap"></i> Academic</button>
-        <button class="tab-btn" data-target="experience"><i class="fas fa-users"></i> Experience</button>
-        <button class="tab-btn" data-target="achievement"><i class="fas fa-trophy"></i> Achievement</button>
-        <button class="tab-btn" data-target="certificate"><i class="fas fa-certificate"></i> Certificate</button>
-    </div>
-
-    <!-- Konten Tab: ACADEMIC -->
-    <div class="timeline-content active" id="academic">
-        <div class="timeline-tree">
-            <!-- Item Kiri -->
-            <div class="timeline-item left">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <span class="timeline-date">2025</span>
-                    <h4>Institut Teknologi Sumatera (ITERA)</h4>
-                    <p>Informatics Engineering</p>
-                    <span class="timeline-badge">PTN</span>
+            <!-- Konten: ACADEMIC -->
+            <div class="mini-tab-content left-content active" id="academic-content">
+                <div class="timeline-straight">
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2013 – 2019</span>
+                            <h4>SDN 226 Palembang</h4>
+                            <span class="timeline-badge">SD</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2019 – 2022</span>
+                            <h4>MTsN 1 Palembang</h4>
+                            <span class="timeline-badge">SMP / MTs</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2022 – 2025</span>
+                            <h4>SMKN 8 Palembang</h4>
+                            <span class="timeline-badge">SMA / SMK</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Cabang Universitas (Dua Jalur) -->
+                    <div class="timeline-item">
+                        <div class="dot branch-origin-dot"></div>
+                        <div class="split-cards">
+                            <div class="timeline-card branch-card">
+                                <span class="timeline-date">2025 – Sekarang</span>
+                                <h4>Institut Teknologi Sumatera (ITERA)</h4>
+                                <p>Informatics Engineering</p>
+                                <span class="timeline-badge">PTN</span>
+                            </div>
+                            <div class="timeline-card branch-card">
+                                <span class="timeline-date">2026 – Sekarang</span>
+                                <h4>BINUS University</h4>
+                                <p>Business</p>
+                                <span class="timeline-badge">PTS</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Item Kanan -->
-            <div class="timeline-item right">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <span class="timeline-date">2026 – Sekarang</span>
-                    <h4>BINUS University</h4>
-                    <p>Business</p>
-                    <span class="timeline-badge">PTS</span>
+
+            <!-- Konten: ACHIEVEMENT -->
+            <div class="mini-tab-content left-content" id="achievement-content">
+                <div class="timeline-straight">
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <p class="empty-text">No achievements added yet.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Konten Tab: EXPERIENCE -->
-    <div class="timeline-content" id="experience">
-        <div class="timeline-tree">
-            <!-- Item Kiri -->
-            <div class="timeline-item left">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <span class="timeline-date">2026</span>
-                    <h4>Google Student Ambassador</h4>
-                    <p>Candidate</p>
-                    <span class="timeline-badge">Program</span>
+        <!-- ================= KOLOM KANAN ================= -->
+        <div class="split-col">
+            <!-- Tab Navigasi Kanan -->
+            <div class="mini-tabs">
+                <button class="mini-tab-btn right-btn active" data-target="experience-content">
+                    <i class="fas fa-users"></i> Experience
+                </button>
+                <button class="mini-tab-btn right-btn" data-target="certificate-content">
+                    <i class="fas fa-certificate"></i> Certificate
+                </button>
+            </div>
+
+            <!-- Konten: EXPERIENCE -->
+            <div class="mini-tab-content right-content active" id="experience-content">
+                <div class="timeline-straight">
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2026</span>
+                            <h4>Google Student Ambassador</h4>
+                            <p>Candidate 2026</p>
+                            <span class="timeline-badge">Program</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <span class="timeline-date">2026</span>
+                            <h4>Novo Club</h4>
+                            <p>Batch 4 Participant</p>
+                            <span class="timeline-badge">Community</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!-- Item Kanan -->
-            <div class="timeline-item right">
-                <div class="timeline-dot"></div>
-                <div class="timeline-card">
-                    <span class="timeline-date">2026</span>
-                    <h4>Novo Club</h4>
-                    <p>Batch 4 Participant</p>
-                    <span class="timeline-badge">Community</span>
+
+            <!-- Konten: CERTIFICATE -->
+            <div class="mini-tab-content right-content" id="certificate-content">
+                <div class="timeline-straight">
+                    <div class="timeline-item">
+                        <div class="dot"></div>
+                        <div class="timeline-card">
+                            <p class="empty-text">No certificates added yet.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Konten Tab: ACHIEVEMENT -->
-    <div class="timeline-content" id="achievement">
-        <div class="timeline-tree">
-            <p style="text-align: center; color: var(--aksen-tosca); width: 100%;">No achievements added yet.</p>
-        </div>
     </div>
-
-    <!-- Konten Tab: CERTIFICATE -->
-    <div class="timeline-content" id="certificate">
-        <div class="timeline-tree">
-            <p style="text-align: center; color: var(--aksen-tosca); width: 100%;">No certificates added yet.</p>
-        </div>
-    </div>
-
 </div>
 
             </div>

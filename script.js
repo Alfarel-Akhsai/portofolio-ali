@@ -206,22 +206,37 @@ readMoreBtn.addEventListener('click', function(e) {
 });
 
 // =======================================================
-// TIMELINE TABS (Academic, Experience, dll)
+// SPLIT TABS LOGIC (KIRI & KANAN INDEPENDENT)
 // =======================================================
-const timelineTabs = document.querySelectorAll('.tab-btn');
-const timelineContents = document.querySelectorAll('.timeline-content');
 
-timelineTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Hapus status active dari semua tombol dan konten
-        timelineTabs.forEach(t => t.classList.remove('active'));
-        timelineContents.forEach(c => c.classList.remove('active'));
+// 1. Logika untuk Tab Bagian Kiri (Academic / Achievement)
+const leftBtns = document.querySelectorAll('.left-btn');
+const leftContents = document.querySelectorAll('.left-content');
+
+leftBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Reset state di kolom kiri aja
+        leftBtns.forEach(b => b.classList.remove('active'));
+        leftContents.forEach(c => c.classList.remove('active'));
         
-        // Kasih status active ke tombol yang diklik
-        tab.classList.add('active');
+        // Aktifin yang diklik
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+    });
+});
+
+// 2. Logika untuk Tab Bagian Kanan (Experience / Certificate)
+const rightBtns = document.querySelectorAll('.right-btn');
+const rightContents = document.querySelectorAll('.right-content');
+
+rightBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Reset state di kolom kanan aja
+        rightBtns.forEach(b => b.classList.remove('active'));
+        rightContents.forEach(c => c.classList.remove('active'));
         
-        // Munculin konten yang sesuai sama ID targetnya
-        const targetId = tab.getAttribute('data-target');
-        document.getElementById(targetId).classList.add('active');
+        // Aktifin yang diklik
+        btn.classList.add('active');
+        document.getElementById(btn.getAttribute('data-target')).classList.add('active');
     });
 });

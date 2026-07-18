@@ -488,6 +488,41 @@
         </div>
     </section>
 
+    <!-- =======================================================
+         MODAL POPUP (Muncul saat kotak diklik)
+         ======================================================= -->
+    <div id="card-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" title="Tutup">&times;</button>
+            
+            <div class="modal-header-icon">
+                <i class="fas fa-school"></i>
+            </div>
+            
+            <h3 id="modal-title">Nama Instansi</h3>
+            <p id="modal-subtitle">Tahun - Lokasi</p>
+            
+            <div class="modal-badges" id="modal-badges">
+                <!-- Badge akan diisi otomatis dari JS -->
+            </div>
+            
+            <p id="modal-desc" class="modal-desc">Deskripsi singkat akan muncul di sini...</p>
+            
+            <div class="modal-achievements">
+                <h4>Achievements</h4>
+                <ul id="modal-achievements-list">
+                    <!-- List prestasi akan diisi otomatis dari JS -->
+                </ul>
+            </div>
+
+            <!-- Kotak untuk menaruh Foto / Sertifikat -->
+            <div class="modal-image-box">
+                <i class="fas fa-image"></i>
+                <span>Foto / Sertifikat</span>
+                <img id="modal-image" src="" alt="Sertifikat" style="display:none;">
+            </div>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1296,6 +1296,71 @@ body.light-mode .empty-text { color: rgba(7, 37, 41, 0.5) !important; }
     color: var(--teks-putih); 
 }
 
+/* =======================================================
+   MODAL POPUP STYLES (Klik Kotak Experience & Academic)
+   ======================================================= */
+/* Ubah kursor kotak jadi jari telunjuk biar kelihatan bisa diklik */
+.timeline-card { cursor: pointer; } 
+
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+    background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    z-index: 9999; display: flex; justify-content: center; align-items: center;
+    opacity: 0; visibility: hidden; transition: all 0.3s ease;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal-content {
+    background: #0B191E; border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 15px; width: 90%; max-width: 450px; padding: 30px;
+    position: relative; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+    transform: translateY(30px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 90vh; overflow-y: auto;
+}
+.modal-overlay.active .modal-content { transform: translateY(0); }
+
+/* Tombol Silang (X) */
+.modal-close {
+    position: absolute; top: 15px; right: 20px; background: transparent;
+    border: none; color: rgba(237, 246, 249, 0.5); font-size: 1.8rem;
+    cursor: pointer; transition: 0.3s; line-height: 1;
+}
+.modal-close:hover { color: #ff4757; transform: scale(1.1); }
+
+/* Konten Modal */
+.modal-header-icon { text-align: center; font-size: 2.5rem; color: var(--aksen-tosca); margin-bottom: 15px; }
+.modal-content h3 { color: var(--teks-putih); margin: 0 0 5px 0; font-size: 1.3rem; text-align: center; }
+.modal-content #modal-subtitle { color: rgba(237, 246, 249, 0.6); font-size: 0.8rem; margin: 0 0 20px 0; text-align: center; }
+.modal-badges { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 20px; }
+.modal-badges span { background: rgba(0, 229, 255, 0.1); color: var(--aksen-tosca); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; border: 1px solid rgba(0, 229, 255, 0.2); }
+.modal-desc { font-size: 0.9rem; color: rgba(237, 246, 249, 0.85); line-height: 1.6; margin-bottom: 25px; text-align: justify; }
+.modal-achievements h4 { color: var(--aksen-tosca); font-size: 1rem; margin: 0 0 10px 0; }
+.modal-achievements ul { list-style: none; padding: 0; margin: 0 0 20px 0; }
+.modal-achievements ul li { font-size: 0.85rem; color: rgba(237, 246, 249, 0.85); margin-bottom: 8px; display: flex; align-items: flex-start; gap: 10px; }
+.modal-achievements ul li::before { content: '\f14a'; font-family: 'Font Awesome 5 Free'; font-weight: 900; color: var(--aksen-tosca); font-size: 0.9rem; margin-top: 2px; }
+
+/* Kotak Gambar Putus-Putus */
+.modal-image-box {
+    border: 2px dashed rgba(0, 229, 255, 0.3); border-radius: 12px;
+    padding: 20px; text-align: center; color: rgba(237, 246, 249, 0.5);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 10px; min-height: 120px; cursor: pointer; transition: 0.3s;
+    position: relative; overflow: hidden; background: rgba(0, 0, 0, 0.2);
+}
+.modal-image-box:hover { border-color: var(--aksen-tosca); color: var(--aksen-tosca); background: rgba(0, 229, 255, 0.05); }
+.modal-image-box img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; border-radius: 10px; }
+
+/* Custom Scrollbar dalam Modal */
+.modal-content::-webkit-scrollbar { width: 5px; }
+.modal-content::-webkit-scrollbar-thumb { background: var(--aksen-tosca); border-radius: 10px; }
+
+/* Support Light Mode */
+body.light-mode .modal-content { background: #F4F8F9; border-color: rgba(0, 140, 161, 0.3); }
+body.light-mode .modal-content h3 { color: #092c31; }
+body.light-mode .modal-content #modal-subtitle, body.light-mode .modal-desc, body.light-mode .modal-achievements ul li { color: rgba(9, 44, 49, 0.8); }
+body.light-mode .modal-image-box { border-color: rgba(0, 140, 161, 0.4); color: rgba(9, 44, 49, 0.6); background: rgba(0,0,0,0.03); }
+body.light-mode .modal-badges span { background: rgba(0, 140, 161, 0.1); color: #008CA1; border-color: rgba(0, 140, 161, 0.2); }
+body.light-mode .modal-achievements ul li::before { color: #008CA1; }
 
 /* =======================================================
    06. CYBER DIVIDER

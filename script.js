@@ -234,3 +234,166 @@ rightBtns.forEach(btn => {
         document.getElementById(btn.getAttribute('data-target')).classList.add('active');
     });
 });
+
+// =======================================================
+// MODAL POPUP LOGIC & DATABASE PRESTASI
+// =======================================================
+
+// 1. Database Cerita & Prestasi (Key harus sama persis dengan judul <h4> di HTML)
+const portfolioData = {
+    // ---- ACADEMIC ----
+    "SDN 226 Palembang": {
+        icon: "fa-child",
+        subtitle: "SD • 2013 - 2019 • Palembang",
+        badges: ["Akademik", "Pendidikan Dasar"],
+        desc: "Masa awal menempuh pendidikan dasar. Di sini saya mulai mengeksplorasi minat dalam belajar, membangun kedisiplinan, dan bersosialisasi dengan lingkungan sekitar.",
+        achievements: ["Aktif dalam kegiatan sekolah", "Lulus dengan nilai memuaskan"],
+        image: "" // Isi path gambar di sini misal: "assets/images/sd-cert.jpg"
+    },
+    "MTsN 1 Palembang": {
+        icon: "fa-mosque",
+        subtitle: "SMP / MTs • 2019 - 2022 • Palembang",
+        badges: ["Akademik", "Menengah Pertama"],
+        desc: "Fase menengah di mana saya mempelajari ilmu agama dan pendidikan umum secara seimbang, serta mulai mengenal dasar-dasar kepemimpinan.",
+        achievements: ["Peserta aktif ekstrakurikuler", "Juara kelas"],
+        image: ""
+    },
+    "SMKN 8 Palembang": {
+        icon: "fa-laptop-code",
+        subtitle: "SMA / SMK • 2022 - 2025 • Palembang",
+        badges: ["Vokasi", "Teknologi"],
+        desc: "Fokus pada keahlian praktis di bidang teknologi. Di sinilah saya menemukan bakat alami saya dalam menganalisis dan memperbaiki kerusakan pada hardware maupun software komputer dan laptop.",
+        achievements: ["Merakit dan troubleshooting PC/Laptop", "Lulus uji kompetensi keahlian teknologi"],
+        image: ""
+    },
+    "Institut Teknologi Sumatera (ITERA)": {
+        icon: "fa-university",
+        subtitle: "S1 Informatics Engineering • 2025 - Sekarang",
+        badges: ["PTN", "Informatics"],
+        desc: "Memasuki dunia programming murni. Walau awalnya tidak langsung suka coding, saya masuk dengan tekad bulat untuk belajar. Saat ini aktif mengasah skill di C++, Python, HTML/CSS/JS, dan kustomisasi Linux Ubuntu.",
+        achievements: ["Mengeksplorasi proyek biomimicry in engineering (biological concrete/honeycomb)", "Aktif menulis & men-debug kode pemrograman", "Menyusun laporan akademik menggunakan LaTeX"],
+        image: ""
+    },
+    "BINUS University": {
+        icon: "fa-building",
+        subtitle: "S1 Business • 2026 - Sekarang",
+        badges: ["PTS", "Double Degree"],
+        desc: "Menjalankan program double degree untuk menguasai aspek bisnis dan manajemen. Tujuannya adalah mengkombinasikan skill teknologi dari ITERA dengan mindset bisnis yang strategis.",
+        achievements: ["Mempelajari strategi bisnis operasional", "Membangun networking profesional"],
+        image: ""
+    },
+    // ---- EXPERIENCE ----
+    "Festival Seni Islam": {
+        icon: "fa-users",
+        subtitle: "Kepanitiaan • 2023",
+        badges: ["Organisasi", "Leadership"],
+        desc: "Mengelola acara berskala sekolah dan memastikan seluruh rangkaian event berjalan lancar dari persiapan hingga eksekusi.",
+        achievements: ["Bertugas sebagai Penanggung Jawab Proyek utama", "Sukses menyelenggarakan acara dengan partisipasi siswa yang tinggi"],
+        image: ""
+    },
+    "CV. RKU Komputer": {
+        icon: "fa-tools",
+        subtitle: "Praktik Kerja Lapangan • Jul 2023 - Des 2023",
+        badges: ["Internship", "Teknisi Hardware"],
+        desc: "Terjun langsung ke dunia kerja untuk menangani masalah komputer dan laptop klien secara nyata. Memanfaatkan bakat reparasi saya untuk memberikan solusi IT kepada pelanggan.",
+        achievements: ["Troubleshooting hardware & software", "Melakukan perbaikan dan perawatan laptop klien"],
+        image: ""
+    },
+    "Bawaslu Provinsi Sumsel": {
+        icon: "fa-briefcase",
+        subtitle: "Staff / Intern • Jul 2024 - Mar 2025",
+        badges: ["Work", "Pemerintahan"],
+        desc: "Membantu operasional dan administrasi di lembaga pengawas pemilu tingkat provinsi. Melatih kedisiplinan dan profesionalitas di lingkungan kerja pemerintahan.",
+        achievements: ["Mengelola dokumen dan arsip penting", "Mendukung persiapan dan pengawasan administrasi Pemilu"],
+        image: ""
+    },
+    "Google Student Ambassador": {
+        icon: "fa-google",
+        subtitle: "Candidate • 2026",
+        badges: ["Program", "Global"],
+        desc: "Mengajukan diri sebagai kandidat duta Google untuk kampus. Berfokus pada pengembangan komunitas teknologi mahasiswa dan representasi ekosistem Google.",
+        achievements: ["Lolos seleksi sebagai Candidate GSA 2026", "Mempersiapkan video aplikasi dan naskah kampanye program"],
+        image: ""
+    },
+    "Novo Club": {
+        icon: "fa-lightbulb",
+        subtitle: "Batch 4 Participant • 2026",
+        badges: ["Community", "Youth Leadership"],
+        desc: "Bergabung dengan program pengembangan kepemimpinan pemuda untuk mengasah skill kepemimpinan yang inovatif dan memperluas jaringan.",
+        achievements: ["Menyelesaikan Youth Leadership Bootcamp (Mei 2026)", "Pembuatan essay dan konten campaign inovatif"],
+        image: ""
+    }
+};
+
+// 2. Logika untuk Memunculkan Modal
+const modalOverlay = document.getElementById('card-modal');
+const modalCloseBtn = document.querySelector('.modal-close');
+const allCards = document.querySelectorAll('.timeline-card');
+
+allCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Ambil judul (h4) dari kartu yang diklik
+        const titleElement = card.querySelector('h4');
+        if (!titleElement) return; // Abaikan jika tidak ada judul
+        
+        const title = titleElement.innerText;
+        const data = portfolioData[title]; // Cocokkan dengan database di atas
+        
+        // Jika data ditemukan, isi modal dan tampilkan
+        if (data) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-subtitle').innerText = data.subtitle;
+            document.getElementById('modal-desc').innerText = data.desc;
+            
+            // Update Icon
+            document.querySelector('.modal-header-icon i').className = `fas ${data.icon}`;
+            
+            // Inject Badges
+            const badgesContainer = document.getElementById('modal-badges');
+            badgesContainer.innerHTML = '';
+            data.badges.forEach(b => {
+                const span = document.createElement('span');
+                span.innerText = b;
+                badgesContainer.appendChild(span);
+            });
+            
+            // Inject Achievements List
+            const achList = document.getElementById('modal-achievements-list');
+            achList.innerHTML = '';
+            data.achievements.forEach(ach => {
+                const li = document.createElement('li');
+                li.innerText = ach;
+                achList.appendChild(li);
+            });
+            
+            // Tampilkan atau Sembunyikan Foto
+            const imgEl = document.getElementById('modal-image');
+            const imgBox = document.querySelector('.modal-image-box');
+            if (data.image !== "") {
+                imgEl.src = data.image;
+                imgEl.style.display = 'block';
+                imgBox.querySelector('i').style.display = 'none';
+                imgBox.querySelector('span').style.display = 'none';
+            } else {
+                imgEl.src = "";
+                imgEl.style.display = 'none';
+                imgBox.querySelector('i').style.display = 'block';
+                imgBox.querySelector('span').style.display = 'block';
+            }
+
+            // Munculkan Modal!
+            modalOverlay.classList.add('active');
+        }
+    });
+});
+
+// 3. Logika Menutup Modal
+modalCloseBtn.addEventListener('click', () => {
+    modalOverlay.classList.remove('active');
+});
+
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+        modalOverlay.classList.remove('active');
+    }
+});

@@ -496,13 +496,24 @@
     </div>
 
     <!-- =======================================================
-         SECTION PROJECT (INFINITE CENTER CAROUSEL FIX)
+         SECTION PROJECT (TRUE INFINITE FLAT SLIDER)
          ======================================================= -->
     <section id="project" class="project-section">
+        
+        <!-- INJEKSI VECTOR BUAT KOTAK MIRING MELENGKUNG (Radius Diperbesar) -->
+        <svg width="0" height="0" style="position: absolute;">
+            <defs>
+                <clipPath id="card-slant" clipPathUnits="objectBoundingBox">
+                    <!-- Path ini udah diubah biar sudutnya lengkung banget -->
+                    <path d="M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z" />
+                </clipPath>
+            </defs>
+        </svg>
+
         <p class="section-subtitle reveal">MY PORTFOLIO</p>
         <h2 class="section-title reveal">Featured <span>Projects</span></h2>
         
-        <!-- Filter Kategori -->
+        <!-- Filter Kategori (Masuk ke dalam kotak kapsul) -->
         <div class="project-filter reveal">
             <button class="p-filter-btn active" data-filter="all">All</button>
             <button class="p-filter-btn" data-filter="design">UI/UX Design</button>
@@ -511,135 +522,133 @@
             <button class="p-filter-btn" data-filter="research">Research</button>
         </div>
 
-        <!-- Wadah Carousel -->
+        <!-- Wadah Carousel Utama -->
         <div class="project-carousel-wrapper reveal">
-            <!-- Tombol Panah (Aman di pojokan) -->
             <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
 
-            <!-- Jalur Track -->
-            <div class="project-track" id="project-track">
-                
-                <!-- PROJECT 1: UI/UX DESIGN -->
-                <div class="project-slide" data-category="design">
-                    <div class="p-card-glass">
-                        
-                        <!-- Header: Judul & Tombol Link -->
-                        <div class="p-card-header">
-                            <div class="p-card-title">
-                                <h3>Digital Campaign Assets</h3>
-                                <p>Perancangan UI/UX & visual campaign untuk GSA & Novo Club.</p>
-                            </div>
-                            <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        
-                        <!-- 3 Foto Sama Besar -->
-                        <div class="p-card-gallery">
-                            <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=300&auto=format&fit=crop" alt="UI 1">
-                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=300&auto=format&fit=crop" alt="UI 2">
-                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=300&auto=format&fit=crop" alt="UI 3">
-                        </div>
-
-                        <!-- Garis Panah & Tools Bawah -->
-                        <div class="p-card-footer">
-                            <div class="tool-line">
-                                <div class="line"></div>
-                                <i class="fas fa-caret-right"></i>
-                            </div>
-                            <div class="tool-icons">
-                                <img src="assets/images/tools/figma.webp" alt="Figma">
-                                <img src="assets/images/tools/pshp.webp" alt="Photoshop">
-                                <img src="assets/images/tools/capcut.webp" alt="CapCut">
+            <div class="project-track-container">
+                <div class="project-track" id="project-track">
+                    
+                    <!-- PROJECT 1: UI/UX DESIGN -->
+                    <div class="project-slide" data-category="design">
+                        <div class="p-card-shadow"> 
+                            <div class="p-card-glass"> 
+                                <div class="p-card-header">
+                                    <div class="p-card-title">
+                                        <h3>Digital Campaign Assets</h3>
+                                        <p>Perancangan UI/UX & visual campaign untuk GSA & Novo Club.</p>
+                                    </div>
+                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                                <!-- JADI 4 FOTO -->
+                                <div class="p-card-gallery">
+                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" alt="UI 1">
+                                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400&auto=format&fit=crop" alt="UI 2">
+                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop" alt="UI 3">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop" alt="UI 4">
+                                </div>
+                                <div class="p-card-footer">
+                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-icons">
+                                        <img src="assets/images/tools/figma.webp" alt="Figma">
+                                        <img src="assets/images/tools/pshp.webp" alt="Photoshop">
+                                        <img src="assets/images/tools/capcut.webp" alt="CapCut">
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- PROJECT 2: WEB DEV -->
-                <div class="project-slide" data-category="webdev">
-                    <div class="p-card-glass">
-                        <div class="p-card-header">
-                            <div class="p-card-title">
-                                <h3>Interactive Portfolio Website</h3>
-                                <p>Membangun website portofolio dengan tema dark glassmorphism.</p>
-                            </div>
-                            <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <div class="p-card-gallery">
-                            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=300&auto=format&fit=crop" alt="Web 1">
-                            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=300&auto=format&fit=crop" alt="Web 2">
-                            <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=300&auto=format&fit=crop" alt="Web 3">
-                        </div>
-                        <div class="p-card-footer">
-                            <div class="tool-line">
-                                <div class="line"></div>
-                                <i class="fas fa-caret-right"></i>
-                            </div>
-                            <div class="tool-icons">
-                                <i class="fab fa-html5" style="color:#E34F26; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                <i class="fab fa-css3-alt" style="color:#1572B6; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                <i class="fab fa-js" style="color:#F7DF1E; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                    <!-- PROJECT 2: WEB DEV -->
+                    <div class="project-slide" data-category="webdev">
+                        <div class="p-card-shadow">
+                            <div class="p-card-glass">
+                                <div class="p-card-header">
+                                    <div class="p-card-title">
+                                        <h3>Interactive Portfolio Website</h3>
+                                        <p>Membangun website portofolio dengan tema dark glassmorphism.</p>
+                                    </div>
+                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                                <!-- JADI 4 FOTO -->
+                                <div class="p-card-gallery">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop" alt="Web 1">
+                                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop" alt="Web 2">
+                                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=400&auto=format&fit=crop" alt="Web 3">
+                                    <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=400&auto=format&fit=crop" alt="Web 4">
+                                </div>
+                                <div class="p-card-footer">
+                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-icons">
+                                        <i class="fab fa-html5" style="color:#E34F26; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-css3-alt" style="color:#1572B6; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-js" style="color:#F7DF1E; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- PROJECT 3: IT & HARDWARE -->
-                <div class="project-slide" data-category="hardware">
-                    <div class="p-card-glass">
-                        <div class="p-card-header">
-                            <div class="p-card-title">
-                                <h3>Hardware & OS Optimization</h3>
-                                <p>Perbaikan fisik dan kustomisasi mendalam pada OS Linux.</p>
-                            </div>
-                            <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <div class="p-card-gallery">
-                            <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=300&auto=format&fit=crop" alt="HW 1">
-                            <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=300&auto=format&fit=crop" alt="HW 2">
-                            <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=300&auto=format&fit=crop" alt="HW 3">
-                        </div>
-                        <div class="p-card-footer">
-                            <div class="tool-line">
-                                <div class="line"></div>
-                                <i class="fas fa-caret-right"></i>
-                            </div>
-                            <div class="tool-icons">
-                                <i class="fas fa-tools" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                <i class="fab fa-linux" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                    <!-- PROJECT 3: IT & HARDWARE -->
+                    <div class="project-slide" data-category="hardware">
+                        <div class="p-card-shadow">
+                            <div class="p-card-glass">
+                                <div class="p-card-header">
+                                    <div class="p-card-title">
+                                        <h3>Hardware & OS Optimization</h3>
+                                        <p>Perbaikan fisik dan kustomisasi mendalam pada OS Linux.</p>
+                                    </div>
+                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                                <!-- JADI 4 FOTO -->
+                                <div class="p-card-gallery">
+                                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=400&auto=format&fit=crop" alt="HW 1">
+                                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=400&auto=format&fit=crop" alt="HW 2">
+                                    <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=400&auto=format&fit=crop" alt="HW 3">
+                                    <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=400&auto=format&fit=crop" alt="HW 4">
+                                </div>
+                                <div class="p-card-footer">
+                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-icons">
+                                        <i class="fas fa-tools" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-linux" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- PROJECT 4: RESEARCH -->
-                <div class="project-slide" data-category="research">
-                    <div class="p-card-glass">
-                        <div class="p-card-header">
-                            <div class="p-card-title">
-                                <h3>Biomimicry in Engineering</h3>
-                                <p>Penelitian adaptasi struktur alam ke dalam inovasi teknik modern.</p>
-                            </div>
-                            <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                        <div class="p-card-gallery">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=300&auto=format&fit=crop" alt="RS 1">
-                            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=300&auto=format&fit=crop" alt="RS 2">
-                            <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=300&auto=format&fit=crop" alt="RS 3">
-                        </div>
-                        <div class="p-card-footer">
-                            <div class="tool-line">
-                                <div class="line"></div>
-                                <i class="fas fa-caret-right"></i>
-                            </div>
-                            <div class="tool-icons">
-                                <i class="fas fa-microscope" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                <i class="fas fa-file-code" style="color:#008080; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                    <!-- PROJECT 4: RESEARCH -->
+                    <div class="project-slide" data-category="research">
+                        <div class="p-card-shadow">
+                            <div class="p-card-glass">
+                                <div class="p-card-header">
+                                    <div class="p-card-title">
+                                        <h3>Biomimicry in Engineering</h3>
+                                        <p>Penelitian adaptasi struktur alam ke dalam inovasi teknik modern.</p>
+                                    </div>
+                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                                <!-- JADI 4 FOTO -->
+                                <div class="p-card-gallery">
+                                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop" alt="RS 1">
+                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop" alt="RS 2">
+                                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=400&auto=format&fit=crop" alt="RS 3">
+                                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400&auto=format&fit=crop" alt="RS 4">
+                                </div>
+                                <div class="p-card-footer">
+                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-icons">
+                                        <i class="fas fa-microscope" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fas fa-file-code" style="color:#008080; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
     </section>

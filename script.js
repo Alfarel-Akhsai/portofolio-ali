@@ -638,71 +638,162 @@ if(skillModalOverlay) {
 }
 
 // =======================================================
-// INFINITE CENTER CAROUSEL & FILTER PROJECT LOGIC
+// FLAT TRUE INFINITE CAROUSEL & FILTER LOGIC
 // =======================================================
 const projectFilterBtns = document.querySelectorAll('.p-filter-btn');
-const projectSlides = document.querySelectorAll('.project-slide');
+const projectTrack = document.getElementById('project-track');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
 
-let currentSlideIndex = 0;
-let visibleSlides = Array.from(projectSlides); // Data slide yang lagi ditampilin sesuai filter
+let allOriginalSlides = Array.from(document.querySelectorAll('.project-slide'));
+let visibleSlides = [...allOriginalSlides];
+let isMoving = false;
 let autoPlayTimer;
 
-function updateCarousel() {
-    // 1. Reset semua class dari semua slide (hilangin dari layar)
-    projectSlides.forEach(slide => {
-        slide.classList.remove('active', 'prev', 'next');
-    });
-
-    if (visibleSlides.length === 0) return;
-
-    // 2. Kalkulasi Index buat Tengah, Kiri, Kanan
-    const activeIndex = currentSlideIndex;
-    const prevIndex = (currentSlideIndex - 1 + visibleSlides.length) % visibleSlides.length;
-    const nextIndex = (currentSlideIndex + 1) % visibleSlides.length;
-
-    // 3. Terapin Class ke elemen yang sesuai
-    visibleSlides[activeIndex].classList.add('active');
+// Hitung koordinat biar kotak ada persis di tengah layar
+function getCenterOffset() {
+    if(visibleSlides.length === 0) return 0;
+    const wrapperWidth = document.querySelector('.project-carousel-wrapper').clientWidth;
+    const slideWidth = visibleSlides[0].offsetWidth;
     
+    let offset = (wrapperWidth / 2) - (slideWidth / 2);
+    // Kalau kotaknya lebih dari 1, kita selalu nentuin elemen index ke-1 sebagai yang aktif (di tengah)
     if (visibleSlides.length > 1) {
-        visibleSlides[nextIndex].classList.add('next');
+        offset -= slideWidth; 
     }
-    if (visibleSlides.length > 2) {
-        visibleSlides[prevIndex].classList.add('prev');
-    } else if (visibleSlides.length === 2) {
-        // Kalau cuma sisa 2 slide (karena difilter), yang satu jadi active, satunya jadi next aja
+    return offset;
+}
+
+// Bikin kotak tengah terang, pinggir meredup
+function updateActiveClasses() {
+    visibleSlides.forEach((slide) => {
+        slide.classList.remove('active');
+        slide.style.opacity = '0.35';
+        slide.style.transform = 'scale(0.85)';
+    });
+    
+    let activeIdx = visibleSlides.length > 1 ? 1 : 0;
+    if(visibleSlides[activeIdx]) {
+        visibleSlides[activeIdx].classList.add('active');
+        visibleSlides[activeIdx].style.opacity = '1';
+        visibleSlides[activeIdx].style.transform = 'scale(1)';
     }
 }
 
-function nextSlide() {
-    if (visibleSlides.length <= 1) return;
-    currentSlideIndex = (currentSlideIndex + 1) % visibleSlides.length;
-    updateCarousel();
+// Pasang posisi awal kereta
+function initCarousel() {
+    if (visibleSlides.length > 1) {
+        // Taruh 1 kotak dari belakang ke depan, biar ada tetangga di kiri
+        projectTrack.insertBefore(visibleSlides[visibleSlides.length - 1], visibleSlides[0]);
+        visibleSlides.unshift(visibleSlides.pop());
+    }
+    projectTrack.style.transition = 'none';
+    projectTrack.style.transform = `translateX(${getCenterOffset()}px)`;
+    updateActiveClasses();
 }
 
-function prevSlide() {
-    if (visibleSlides.length <= 1) return;
-    currentSlideIndex = (currentSlideIndex - 1 + visibleSlides.length) % visibleSlides.length;
-    updateCarousel();
+// Geser Nyambung ke Kanan
+function moveNext() {
+    if (isMoving || visibleSlides.length <= 1) return;
+    isMoving = true;
+
+    // Transisi Opacity langsung jalan duluan
+    visibleSlides[1].classList.remove('active');
+    visibleSlides[1].style.opacity = '0.35';
+    visibleSlides[1].style.transform = 'scale(0.85)';
+    
+    const nextActive = visibleSlides[2] ? 2 : 0;
+    visibleSlides[nextActive].classList.add('active');
+    visibleSlides[nextActive].style.opacity = '1';
+    visibleSlides[nextActive].style.transform = 'scale(1)';
+
+    const slideWidth = visibleSlides[0].offsetWidth;
+    const targetX = getCenterOffset() - slideWidth;
+
+    // Kereta jalan
+    projectTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    projectTrack.style.transform = `translateX(${targetX}px)`;
+
+    // Ganti posisi HTML secara ghaib pas kereta udah mentok
+    setTimeout(() => {
+        projectTrack.style.transition = 'none';
+        projectTrack.appendChild(visibleSlides[0]); // Pindah elemen pertama ke ujung kanan
+        visibleSlides.push(visibleSlides.shift()); // Update data array
+        
+        projectTrack.style.transform = `translateX(${getCenterOffset()}px)`;
+        isMoving = false;
+    }, 500);
+}
+
+// Geser Nyambung ke Kiri
+function movePrev() {
+    if (isMoving || visibleSlides.length <= 1) return;
+    isMoving = true;
+
+    // Transisi Opacity
+    visibleSlides[1].classList.remove('active');
+    visibleSlides[1].style.opacity = '0.35';
+    visibleSlides[1].style.transform = 'scale(0.85)';
+    
+    visibleSlides[0].classList.add('active');
+    visibleSlides[0].style.opacity = '1';
+    visibleSlides[0].style.transform = 'scale(1)';
+
+    const slideWidth = visibleSlides[0].offsetWidth;
+    const targetX = getCenterOffset() + slideWidth;
+
+    projectTrack.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
+    projectTrack.style.transform = `translateX(${targetX}px)`;
+
+    setTimeout(() => {
+        projectTrack.style.transition = 'none';
+        projectTrack.insertBefore(visibleSlides[visibleSlides.length - 1], visibleSlides[0]);
+        visibleSlides.unshift(visibleSlides.pop());
+        
+        projectTrack.style.transform = `translateX(${getCenterOffset()}px)`;
+        isMoving = false;
+    }, 500);
 }
 
 // Event Listener Tombol Panah
 if (nextBtn && prevBtn) {
-    nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
-    prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+    nextBtn.addEventListener('click', () => { moveNext(); resetAutoPlay(); });
+    prevBtn.addEventListener('click', () => { movePrev(); resetAutoPlay(); });
 }
 
 // Auto Play
-function startAutoPlay() { autoPlayTimer = setInterval(nextSlide, 3500); }
-function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
+function startAutoPlay() { 
+    if(!autoPlayTimer) autoPlayTimer = setInterval(moveNext, 3500); 
+}
+function stopAutoPlay() { 
+    clearInterval(autoPlayTimer); 
+    autoPlayTimer = null; 
+}
+function resetAutoPlay() { stopAutoPlay(); startAutoPlay(); }
 
-// Berhenti geser otomatis kalau kursor lagi di atas kotak (biar user gampang klik gambar)
 const carouselWrapper = document.querySelector('.project-carousel-wrapper');
 if (carouselWrapper) {
-    carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    carouselWrapper.addEventListener('mouseenter', stopAutoPlay);
     carouselWrapper.addEventListener('mouseleave', startAutoPlay);
 }
+
+// =======================================================
+// FIX BUG: PINDAH TAB (PAGE VISIBILITY API)
+// =======================================================
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+        // Kalau user pindah tab, STOP total semua mesin animasi
+        stopAutoPlay();
+        isMoving = false; // Lepas kunci pergerakan
+    } else {
+        // Kalau user balik ke tab ini, refresh layout dan jalanin ulang
+        setTimeout(() => {
+            projectTrack.style.transition = 'none';
+            projectTrack.style.transform = `translateX(${getCenterOffset()}px)`;
+            startAutoPlay();
+        }, 50); // Jeda 50ms biar browser ngitung ulang lebar layar dengan bener
+    }
+});
 
 // Logika Filter Kategori
 projectFilterBtns.forEach(btn => {
@@ -711,23 +802,29 @@ projectFilterBtns.forEach(btn => {
         btn.classList.add('active');
 
         const filterValue = btn.getAttribute('data-filter');
+        
+        // Kembalikan semua kotak ke posisi HTML semula biar aman
+        allOriginalSlides.forEach(slide => projectTrack.appendChild(slide));
         visibleSlides = [];
-        currentSlideIndex = 0; // Reset ke slide pertama tiap ganti kategori
-
-        projectSlides.forEach(slide => {
-            slide.style.display = 'none'; // Paksa hilangin dulu
-
+        
+        allOriginalSlides.forEach(slide => {
             if (filterValue === 'all' || slide.getAttribute('data-category') === filterValue) {
-                slide.style.display = 'block'; // Masukin ke flow HTML
-                visibleSlides.push(slide);     // Masukin ke array sistem
+                slide.style.display = 'block';
+                visibleSlides.push(slide);
+            } else {
+                slide.style.display = 'none';
             }
         });
 
-        updateCarousel(); // Refresh posisi
+        initCarousel();
         resetAutoPlay();
     });
 });
 
-// Jalankan animasi pas pertama kali web dibuka
-updateCarousel();
+window.addEventListener('resize', () => {
+    projectTrack.style.transition = 'none';
+    projectTrack.style.transform = `translateX(${getCenterOffset()}px)`;
+});
+
+initCarousel();
 startAutoPlay();

@@ -2349,127 +2349,298 @@ body.light-mode .btn-read-less-icon:hover {
    PROJECT FILTER & INFINITE CAROUSEL
    ======================================================= */
 .project-filter {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;
-    margin-bottom: 50px; position: relative; z-index: 20;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: -70px auto -10px auto;
+    position: relative;
+    z-index: 30;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.3);
+    width: max-content;
 }
 
 .p-filter-btn {
-    background: rgba(11, 25, 30, 0.7); backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 229, 255, 0.2); color: rgba(237, 246, 249, 0.6);
-    padding: 8px 20px; border-radius: 30px; font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem; font-weight: 500; cursor: pointer; transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+    color: rgba(237, 246, 249, 0.7);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.p-filter-btn:hover { color: var(--teks-putih); border-color: rgba(0, 229, 255, 0.5); }
-.p-filter-btn.active { background: var(--aksen-tosca); color: var(--bg-utama); font-weight: 600; box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4); }
+.p-filter-btn:hover {
+    color: var(--teks-putih);
+    border-color: rgba(0, 229, 255, 0.5);
+}
 
-/* WADAH UTAMA - Fix posisi, ga pake 100vw lagi yang bikin error */
+.p-filter-btn.active {
+    background: var(--aksen-tosca);
+    color: var(--bg-utama);
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
+}
+
+/* WADAH UTAMA SLIDER */
 .project-carousel-wrapper {
-    position: relative; width: 100%; max-width: 1200px; height: 480px;
-    margin: 0 auto; z-index: 20; display: flex; align-items: center; justify-content: center;
+    position: relative; 
+    width: 100%; 
+    max-width: 1600px; 
+    margin: -50px auto 0 auto; 
+    overflow: hidden; /* Potong kotak yang kelebihan di kanan-kiri layar */
+    padding: 100px 0; 
+    z-index: 20;
 }
 
+.project-track-container {
+    width: 100%;
+    overflow: visible;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    
+    /* FIX MUTLAK: Tarik balik posisinya biar kotak project lo gak merosot turun */
+    margin-top: -100px;
+    margin-bottom: -100px;
+    
+    /* Efek kabut kiri & kanan tetep jalan mulus */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+/* JALUR KERETA (Track) */
 .project-track {
-    position: relative; width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* TOMBOL PANAH - Jauh di pinggir kiri dan kanan container */
+/* TOMBOL PANAH */
 .carousel-btn {
-    position: absolute; top: 50%; transform: translateY(-50%);
-    width: 55px; height: 55px; border-radius: 50%;
-    background: rgba(11, 25, 30, 0.8); backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 229, 255, 0.3); color: var(--aksen-tosca);
-    font-size: 1.4rem; cursor: pointer; z-index: 100;
-    display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: rgba(11, 25, 30, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: var(--aksen-tosca);
+    font-size: 1.4rem;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
-.carousel-btn:hover { background: var(--aksen-tosca); color: var(--bg-utama); box-shadow: 0 0 20px rgba(0, 229, 255, 0.5); }
-.prev-btn { left: 0; } 
-.next-btn { right: 0; } 
+
+.carousel-btn:hover {
+    background: var(--aksen-tosca);
+    color: var(--bg-utama);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.prev-btn { left: 0px; } 
+.next-btn { right: 0px; } 
 
 /* =======================================
-   ANIMASI INFINITE KOTAK (SUPER SMOOTH & PRESISI)
+   KOTAK PROJECT (SLIDE BIASA SEJAJAR)
    ======================================= */
 .project-slide {
-    position: absolute; top: 50%;
-    width: 55%; max-width: 700px; /* Lebar kotak di-set aman buat 3 foto */
-    opacity: 0; visibility: hidden;
-    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-    z-index: 1; pointer-events: none;
-    /* Titik mula di tengah persis */
-    left: 50%; transform: translate(-50%, -50%) scale(0.6); 
+    flex: 0 0 65%;
+    max-width: 800px; /* FIX: UKURAN KOTAK DIBALIKIN NORMAL! */
+    padding: 0 5px;
+    box-sizing: border-box;
+    opacity: 0.35;
+    transform: scale(0.85);
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* KOTAK TENGAH (Fokus Jelas) */
+/* Kotak yang pas di tengah */
 .project-slide.active {
-    opacity: 1; visibility: visible;
-    left: 50%; transform: translate(-50%, -50%) scale(1);
-    z-index: 10; pointer-events: auto;
+    opacity: 1;
+    transform: scale(1);
 }
 
-/* KOTAK KIRI (Keliatan Setengah, Meredup) */
-.project-slide.prev {
-    opacity: 0.35; visibility: visible;
-    left: 15%; /* Jarak absolut mutlak ke kiri */
-    transform: translate(-50%, -50%) scale(0.85);
-    z-index: 5;
-}
-
-/* KOTAK KANAN (Keliatan Setengah, Meredup) */
-.project-slide.next {
-    opacity: 0.35; visibility: visible;
-    left: 85%; /* Jarak absolut mutlak ke kanan */
-    transform: translate(-50%, -50%) scale(0.85);
-    z-index: 5;
+.p-card-shadow {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(0 25px 40px rgba(0,0,0,0.9)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.4));
 }
 
 /* =======================================
-   DESAIN CARD (GLASSMORPHISM & ASIMETRIS)
+   DESAIN KOTAK MIRING MELENGKUNG & GRADIASI
    ======================================= */
 .p-card-glass {
-    border-radius: 20px 50px 20px 50px;
-    background: linear-gradient(135deg, rgba(0, 140, 161, 0.15) 0%, rgba(4, 25, 28, 0.8) 100%);
-    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(0, 229, 255, 0.25);
-    padding: 30px; box-shadow: 0 20px 50px rgba(0,0,0,0.6), inset 0 0 20px rgba(0,229,255,0.05);
-    display: flex; flex-direction: column; gap: 15px;
+    height: 100%;
+    position: relative;
+    clip-path: url(#card-slant);
+    -webkit-clip-path: url(#card-slant);
+    
+    background: linear-gradient(135deg, rgba(0, 140, 161, 0.25) 0%, rgba(4, 25, 28, 0.9) 100%);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+    /* FIX: PADDING DIBALIKIN KE NORMAL BIAR KOTAK GAK BENGKAK! */
+    padding: 65px 35px 35px 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.p-card-header { display: flex; justify-content: space-between; align-items: flex-start; }
-.p-card-title h3 { margin: 0 0 5px 0; color: #fff; font-size: 1.3rem; font-family: 'Poppins', sans-serif; }
-.p-card-title p { margin: 0; color: rgba(237, 246, 249, 0.6); font-size: 0.85rem; padding-right: 20px; }
+/* Fake border bercahaya buat sisi miringnya (karena clip-path ngilangin border asli) */
+.p-card-glass::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 10; /* Taruh di atas kaca biar garisnya jelas */
+    pointer-events: none; /* Biar gak nutupin interaksi klik tombol/foto */
+    
+    /* Buang masking jadul, kita inject langsung vector path miringnya sebagai border! */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Cpath d='M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z' fill='none' stroke='%2300E5FF' stroke-width='4.5px' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
+    background-size: 100% 100%;
+    
+    /* Efek shadow buat neon glow-nya */
+    filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.6));
+}
+
+/* ISI DALAM KOTAK */
+.p-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.p-card-title h3 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 1.45rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.p-card-title p {
+    margin: 0;
+    color: rgba(237, 246, 249, 0.7);
+    font-size: 0.9rem;
+    padding-right: 20px;
+    line-height: 1.5;
+}
+
 .btn-external {
-    flex-shrink: 0; width: 45px; height: 45px; border-radius: 50%;
-    background: #fff; color: #000; font-size: 1.2rem;
-    display: flex; align-items: center; justify-content: center;
-    text-decoration: none; transition: 0.3s;
+    flex-shrink: 0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #fff;
+    color: #000;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: 0.3s;
+    margin: -25px -5px 0 0;
 }
-.btn-external:hover { transform: scale(1.1); background: var(--aksen-tosca); color: #fff; box-shadow: 0 0 15px var(--aksen-tosca); }
 
-.p-card-gallery { display: flex; justify-content: space-between; gap: 15px; height: 180px; margin-top: 10px; }
+.btn-external:hover {
+    transform: scale(1.1);
+    background: var(--aksen-tosca);
+    color: #fff;
+    box-shadow: 0 0 15px var(--aksen-tosca);
+}
+
+/* FOTO (4 BIJI MEMANJANG KE ATAS) */
+.p-card-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    height: 240px; /* FIX: TINGGI DIBALIKIN NORMAL BIAR KOTAK GAK IKUT MELAR! */
+    margin-top: 15px;
+}
+
 .p-card-gallery img {
-    width: 31%; height: 100%; object-fit: cover;
-    border-radius: 12px; border: 1px solid rgba(0, 229, 255, 0.2);
+    width: 23.5%; /* Proporsi pas buat 4 gambar di satu baris */
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 229, 255, 0.3);
     transition: 0.4s ease;
 }
-.p-card-gallery img:hover { transform: translateY(-8px); border-color: var(--aksen-tosca); box-shadow: 0 10px 20px rgba(0,229,255,0.2); }
 
-.p-card-footer { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 10px; }
-.tool-line { flex: 1; display: flex; align-items: center; }
-.tool-line .line { height: 2px; flex: 1; background: linear-gradient(to right, transparent, rgba(0, 229, 255, 0.8)); }
-.tool-line i { color: rgba(0, 229, 255, 0.8); margin-left: -3px; font-size: 1.2rem; }
-
-.tool-icons { display: flex; gap: 10px; }
-.tool-icons img, .tool-icons i {
-    width: 38px; height: 38px; border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2);
-    object-fit: contain; padding: 6px; box-sizing: border-box; transition: 0.3s;
+.p-card-gallery img:hover {
+    transform: translateY(-8px);
+    border-color: var(--aksen-tosca);
+    box-shadow: 0 10px 20px rgba(0, 229, 255, 0.2);
 }
-.tool-icons img:hover, .tool-icons i:hover { border-color: var(--aksen-tosca); box-shadow: 0 0 10px rgba(0,229,255,0.4); }
+
+.p-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.tool-line {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.tool-line .line {
+    height: 2px;
+    flex: 1;
+    background: linear-gradient(to right, transparent, rgba(0, 229, 255, 0.8));
+}
+
+.tool-line i {
+    color: rgba(0, 229, 255, 0.8);
+    margin-left: -3px;
+    font-size: 1.2rem;
+}
+
+.tool-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.tool-icons img,
+.tool-icons i {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    object-fit: contain;
+    padding: 6px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.tool-icons img:hover,
+.tool-icons i:hover {
+    border-color: var(--aksen-tosca);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
+}
 
 /* Light Mode Support */
-body.light-mode .p-card-glass { background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.8) 100%); border-color: rgba(0,0,0,0.1); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+body.light-mode .p-card-glass { background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(240,248,255,0.8) 100%); }
+body.light-mode .p-card-glass::before { 
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Cpath d='M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z' fill='none' stroke='%23008CA1' stroke-width='4.5px' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
+    filter: drop-shadow(0 0 4px rgba(0, 140, 161, 0.3)); 
+}
+body.light-mode .p-card-shadow { filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); }
 body.light-mode .p-card-title h3 { color: #072529; }
-body.light-mode .p-card-title p { color: rgba(7, 37, 41, 0.7); }
+body.light-mode .p-card-title p { color: rgba(7, 37, 41, 0.8); }
 body.light-mode .btn-external { background: #008CA1; color: #fff; }
 body.light-mode .tool-line .line { background: linear-gradient(to right, transparent, #008CA1); }
 body.light-mode .tool-line i { color: #008CA1; }

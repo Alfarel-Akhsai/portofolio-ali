@@ -636,3 +636,98 @@ if(skillModalOverlay) {
         }
     });
 }
+
+// =======================================================
+// INFINITE CENTER CAROUSEL & FILTER PROJECT LOGIC
+// =======================================================
+const projectFilterBtns = document.querySelectorAll('.p-filter-btn');
+const projectSlides = document.querySelectorAll('.project-slide');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
+
+let currentSlideIndex = 0;
+let visibleSlides = Array.from(projectSlides); // Data slide yang lagi ditampilin sesuai filter
+let autoPlayTimer;
+
+function updateCarousel() {
+    // 1. Reset semua class dari semua slide (hilangin dari layar)
+    projectSlides.forEach(slide => {
+        slide.classList.remove('active', 'prev', 'next');
+    });
+
+    if (visibleSlides.length === 0) return;
+
+    // 2. Kalkulasi Index buat Tengah, Kiri, Kanan
+    const activeIndex = currentSlideIndex;
+    const prevIndex = (currentSlideIndex - 1 + visibleSlides.length) % visibleSlides.length;
+    const nextIndex = (currentSlideIndex + 1) % visibleSlides.length;
+
+    // 3. Terapin Class ke elemen yang sesuai
+    visibleSlides[activeIndex].classList.add('active');
+    
+    if (visibleSlides.length > 1) {
+        visibleSlides[nextIndex].classList.add('next');
+    }
+    if (visibleSlides.length > 2) {
+        visibleSlides[prevIndex].classList.add('prev');
+    } else if (visibleSlides.length === 2) {
+        // Kalau cuma sisa 2 slide (karena difilter), yang satu jadi active, satunya jadi next aja
+    }
+}
+
+function nextSlide() {
+    if (visibleSlides.length <= 1) return;
+    currentSlideIndex = (currentSlideIndex + 1) % visibleSlides.length;
+    updateCarousel();
+}
+
+function prevSlide() {
+    if (visibleSlides.length <= 1) return;
+    currentSlideIndex = (currentSlideIndex - 1 + visibleSlides.length) % visibleSlides.length;
+    updateCarousel();
+}
+
+// Event Listener Tombol Panah
+if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => { nextSlide(); resetAutoPlay(); });
+    prevBtn.addEventListener('click', () => { prevSlide(); resetAutoPlay(); });
+}
+
+// Auto Play
+function startAutoPlay() { autoPlayTimer = setInterval(nextSlide, 3500); }
+function resetAutoPlay() { clearInterval(autoPlayTimer); startAutoPlay(); }
+
+// Berhenti geser otomatis kalau kursor lagi di atas kotak (biar user gampang klik gambar)
+const carouselWrapper = document.querySelector('.project-carousel-wrapper');
+if (carouselWrapper) {
+    carouselWrapper.addEventListener('mouseenter', () => clearInterval(autoPlayTimer));
+    carouselWrapper.addEventListener('mouseleave', startAutoPlay);
+}
+
+// Logika Filter Kategori
+projectFilterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        projectFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+        visibleSlides = [];
+        currentSlideIndex = 0; // Reset ke slide pertama tiap ganti kategori
+
+        projectSlides.forEach(slide => {
+            slide.style.display = 'none'; // Paksa hilangin dulu
+
+            if (filterValue === 'all' || slide.getAttribute('data-category') === filterValue) {
+                slide.style.display = 'block'; // Masukin ke flow HTML
+                visibleSlides.push(slide);     // Masukin ke array sistem
+            }
+        });
+
+        updateCarousel(); // Refresh posisi
+        resetAutoPlay();
+    });
+});
+
+// Jalankan animasi pas pertama kali web dibuka
+updateCarousel();
+startAutoPlay();

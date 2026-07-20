@@ -516,7 +516,7 @@
         <!-- Filter Kategori (Masuk ke dalam kotak kapsul) -->
         <div class="project-filter reveal">
             <button class="p-filter-btn active" data-filter="all">All</button>
-            <button class="p-filter-btn" data-filter="design">UI/UX Design</button>
+            <button class="p-filter-btn" data-filter="design">Design & Creative</button>
             <button class="p-filter-btn" data-filter="webdev">Web Dev</button>
             <button class="p-filter-btn" data-filter="hardware">IT & Hardware</button>
             <button class="p-filter-btn" data-filter="research">Research</button>
@@ -527,51 +527,111 @@
             <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
 
+            <div id="empty-project-msg" class="empty-project-msg">
+                <i class="fas fa-folder-open"></i>
+                <p>Oops! No projects in this category yet. Stay tuned!</p>
+            </div>
+
             <div class="project-track-container">
                 <div class="project-track" id="project-track">
                     
-                    <!-- PROJECT 1: UI/UX DESIGN -->
+                    <!-- PROJECT 1: DESIGN - SOCIAL MEDIA -->
                     <div class="project-slide" data-category="design">
                         <div class="p-card-shadow"> 
                             <div class="p-card-glass"> 
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Digital Campaign Assets</h3>
-                                        <p>Perancangan UI/UX & visual campaign untuk GSA & Novo Club.</p>
+                                        <h3>Social Media & Digital Campaign</h3>
+                                        <p>Kompilasi aset visual media sosial, kampanye digital, dan identitas acara (Novo Club, GSA, dll).</p>
                                     </div>
                                     <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
-                                <!-- JADI 4 FOTO -->
                                 <div class="p-card-gallery">
-                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" alt="UI 1">
-                                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400&auto=format&fit=crop" alt="UI 2">
-                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop" alt="UI 3">
-                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop" alt="UI 4">
+                                    <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=400&auto=format&fit=crop" alt="Socmed 1">
+                                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=400&auto=format&fit=crop" alt="Socmed 2">
+                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=400&auto=format&fit=crop" alt="Socmed 3">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=400&auto=format&fit=crop" alt="Socmed 4">
                                 </div>
                                 <div class="p-card-footer">
                                     <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
                                     <div class="tool-icons">
-                                        <img src="assets/images/tools/figma.webp" alt="Figma">
+                                        <img src="assets/images/tools/illustrator.webp" alt="Illustrator">
                                         <img src="assets/images/tools/pshp.webp" alt="Photoshop">
-                                        <img src="assets/images/tools/capcut.webp" alt="CapCut">
+                                        <img src="assets/images/tools/canva.webp" alt="Canva">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- PROJECT 2: WEB DEV -->
+                    <!-- PROJECT 2: DESIGN - BRAND IDENTITY & PRINT -->
+                    <div class="project-slide" data-category="design">
+                        <div class="p-card-shadow"> 
+                            <div class="p-card-glass"> 
+                                <div class="p-card-header">
+                                    <div class="p-card-title">
+                                        <h3>Brand Identity & Print Materials</h3>
+                                        <p>Perancangan identitas visual merek, logo, spanduk, brosur, hingga ID card untuk berbagai kebutuhan.</p>
+                                    </div>
+                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                                <div class="p-card-gallery">
+                                    <img src="assets/images/project/3.png" alt="Print 1">
+                                    <img src="assets/images/project/2.png" alt="Print 2">
+                                    <img src="assets/images/project/1.png" alt="Print 3">
+                                    <img src="assets/images/project/4.png" alt="Print 4">
+                                </div>
+                                <div class="p-card-footer">
+                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-icons">
+                                        <img src="assets/images/tools/coreldraw.png" alt="CorelDraw">
+                                        <img src="assets/images/tools/illustrator.webp" alt="Illustrator">
+                                        <img src="assets/images/tools/pshp.webp" alt="Photoshop">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 3: DESIGN - CORPORATE DECK -->
+                    <div class="project-slide" data-category="design">
+                        <div class="p-card-shadow"> 
+                            <div class="p-card-glass"> 
+                                <div class="p-card-header">
+                                    <div class="p-card-title">
+                                        <h3>Corporate Deck & Presentations</h3>
+                                        <p>Desain layout presentasi profesional dan memukau untuk kebutuhan korporat, instansi, hingga akademis.</p>
+                                    </div>
+                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                </div>
+                                <div class="p-card-gallery">
+                                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=400&auto=format&fit=crop" alt="Deck 1">
+                                    <img src="https://images.unsplash.com/photo-1512758684051-ce17f93821ce?q=80&w=400&auto=format&fit=crop" alt="Deck 2">
+                                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=400&auto=format&fit=crop" alt="Deck 3">
+                                    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=400&auto=format&fit=crop" alt="Deck 4">
+                                </div>
+                                <div class="p-card-footer">
+                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-icons">
+                                        <img src="assets/images/tools/canva.webp" alt="Canva">
+                                        <img src="assets/images/tools/figma.webp" alt="Figma">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROJECT 4: WEB DEV -->
                     <div class="project-slide" data-category="webdev">
                         <div class="p-card-shadow">
                             <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
                                         <h3>Interactive Portfolio Website</h3>
-                                        <p>Membangun website portofolio dengan tema dark glassmorphism.</p>
+                                        <p>Pengembangan website portofolio interaktif dengan animasi custom dan DOM murni dari nol.</p>
                                     </div>
                                     <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
-                                <!-- JADI 4 FOTO -->
                                 <div class="p-card-gallery">
                                     <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop" alt="Web 1">
                                     <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=400&auto=format&fit=crop" alt="Web 2">
@@ -590,18 +650,17 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 3: IT & HARDWARE -->
+                    <!-- PROJECT 5: IT & HARDWARE -->
                     <div class="project-slide" data-category="hardware">
                         <div class="p-card-shadow">
                             <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Hardware & OS Optimization</h3>
-                                        <p>Perbaikan fisik dan kustomisasi mendalam pada OS Linux.</p>
+                                        <h3>Hardware Repair & OS Customization</h3>
+                                        <p>Troubleshooting komponen fisik PC/Laptop dan kustomisasi mendalam pada ekosistem Linux (Ubuntu).</p>
                                     </div>
                                     <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
-                                <!-- JADI 4 FOTO -->
                                 <div class="p-card-gallery">
                                     <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=400&auto=format&fit=crop" alt="HW 1">
                                     <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?q=80&w=400&auto=format&fit=crop" alt="HW 2">
@@ -619,37 +678,14 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 4: RESEARCH -->
-                    <div class="project-slide" data-category="research">
-                        <div class="p-card-shadow">
-                            <div class="p-card-glass">
-                                <div class="p-card-header">
-                                    <div class="p-card-title">
-                                        <h3>Biomimicry in Engineering</h3>
-                                        <p>Penelitian adaptasi struktur alam ke dalam inovasi teknik modern.</p>
-                                    </div>
-                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
-                                </div>
-                                <!-- JADI 4 FOTO -->
-                                <div class="p-card-gallery">
-                                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=400&auto=format&fit=crop" alt="RS 1">
-                                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop" alt="RS 2">
-                                    <img src="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&w=400&auto=format&fit=crop" alt="RS 3">
-                                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=400&auto=format&fit=crop" alt="RS 4">
-                                </div>
-                                <div class="p-card-footer">
-                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
-                                    <div class="tool-icons">
-                                        <i class="fas fa-microscope" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                        <i class="fas fa-file-code" style="color:#008080; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- PROJECT 6: RESEARCH -->
+                    
 
                 </div>
             </div>
+        </div>
+        <div id="project-counter" class="project-counter reveal">
+            <span id="counter-category">All</span> &mdash; <span id="counter-number">5 projects</span>
         </div>
     </section>
 

@@ -2452,6 +2452,55 @@ body.light-mode .btn-read-less-icon:hover {
 .prev-btn { left: 0px; } 
 .next-btn { right: 0px; } 
 
+.empty-project-msg {
+    display: none; 
+    width: 100%;
+    padding: 120px 0; /* 👇 Kuncinya di sini: Ngasih tinggi fisik ke wadahnya biar nggak kempes */
+    text-align: center;
+    color: rgba(237, 246, 249, 0.5);
+    z-index: 50;
+}
+
+.empty-project-msg i {
+    font-size: 3rem;
+    color: rgba(0, 229, 255, 0.3);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.empty-project-msg p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-style: italic;
+    margin: 0;
+}
+
+/* =======================================
+   PROJECT COUNTER TEXT
+   ======================================= */
+.project-counter {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.85rem;
+    color: var(--teks-putih); /* Default putih di dark mode */
+    margin: -30px auto 50px auto; /* Margin auto biar posisinya fix di tengah */
+    letter-spacing: 1px;
+    transition: opacity 0.3s ease;
+    background: rgba(11, 25, 30, 0.6); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 229, 255, 0.2); 
+    padding: 8px 30px;
+    border-radius: 50px;
+    width: max-content; /* Biar ukuran kotaknya ngepas seukuran teksnya aja */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-counter span {
+    color: var(--aksen-tosca);
+    font-weight: 500;
+}
+
 /* =======================================
    KOTAK PROJECT (SLIDE BIASA SEJAJAR)
    ======================================= */
@@ -2645,3 +2694,14 @@ body.light-mode .btn-external { background: #008CA1; color: #fff; }
 body.light-mode .tool-line .line { background: linear-gradient(to right, transparent, #008CA1); }
 body.light-mode .tool-line i { color: #008CA1; }
 body.light-mode .tool-icons img, body.light-mode .tool-icons i { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
+body.light-mode .empty-project-msg { color: rgba(7, 37, 41, 0.6); }
+body.light-mode .empty-project-msg i { color: rgba(0, 140, 161, 0.3); }
+body.light-mode .project-counter { 
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(0, 140, 161, 0.3);
+    color: #072529; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+body.light-mode .project-counter span { 
+    color: #008CA1; 
+}

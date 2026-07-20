@@ -796,6 +796,8 @@ document.addEventListener("visibilitychange", () => {
 });
 
 // Logika Filter Kategori
+const emptyMsg = document.getElementById('empty-project-msg'); // Panggil elemen pesan kosong
+
 projectFilterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
         projectFilterBtns.forEach(b => b.classList.remove('active'));
@@ -816,8 +818,51 @@ projectFilterBtns.forEach(btn => {
             }
         });
 
-        initCarousel();
-        resetAutoPlay();
+        const categoryNames = {
+            'all': 'All',
+            'design': 'Design & Creative',
+            'webdev': 'Web Dev',
+            'hardware': 'IT & Hardware',
+            'research': 'Research'
+        };
+
+        const catName = categoryNames[filterValue];
+        const projCount = visibleSlides.length;
+        const counterEl = document.getElementById('project-counter');
+
+        if (projCount === 0) {
+            // KONDISI 0 KOTAK: Muncul pesan kosong, sembunyikan counter
+            emptyMsg.style.display = 'block'; 
+            prevBtn.style.display = 'none';   
+            nextBtn.style.display = 'none';
+            projectTrack.style.transform = `translateX(0px)`; 
+            stopAutoPlay(); 
+            counterEl.style.display = 'none'; 
+            
+        } else if (projCount === 1) {
+            // KONDISI 1 KOTAK: Sembunyikan panah, tengahkan kotak, tulisan 'project' (tanpa s)
+            emptyMsg.style.display = 'none';
+            prevBtn.style.display = 'none';   
+            nextBtn.style.display = 'none';
+            initCarousel(); 
+            stopAutoPlay(); 
+            
+            counterEl.style.display = 'block';
+            document.getElementById('counter-category').innerText = catName;
+            document.getElementById('counter-number').innerText = `${projCount} project`;
+            
+        } else {
+            // KONDISI > 1 KOTAK: Normal, jalanin carousel, tulisan 'projects' (pakai s)
+            emptyMsg.style.display = 'none';
+            prevBtn.style.display = 'flex';   
+            nextBtn.style.display = 'flex';
+            initCarousel();
+            resetAutoPlay(); 
+            
+            counterEl.style.display = 'block';
+            document.getElementById('counter-category').innerText = catName;
+            document.getElementById('counter-number').innerText = `${projCount} projects`;
+        }
     });
 });
 

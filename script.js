@@ -873,3 +873,51 @@ window.addEventListener('resize', () => {
 
 initCarousel();
 startAutoPlay();
+
+// =======================================================
+// EASTER EGG: LOGIN RAHASIA ALFAREL
+// =======================================================
+let penToolAktif = false;
+let klikLogoCount = 0;
+let resetTimer;
+
+const penTool = document.getElementById('rahasia-pen');
+const logo = document.getElementById('rahasia-logo');
+
+if (penTool && logo) {
+    // 1. Dengerin kalau Pen Tool di bagian About diklik
+    penTool.addEventListener('click', (e) => {
+        // Biar klik pen toolnya nggak malah scroll layar atau error
+        e.preventDefault(); 
+        
+        penToolAktif = true;
+        klikLogoCount = 0; // Reset hitungan klik logo
+        
+        console.log("🤫 Sistem Rahasia Aktif! Punya waktu 5 detik buat klik Logo 3x.");
+
+        // Kasih waktu 5 detik, kalau logo nggak diklik 3x, balik normal (anti-kepencet)
+        clearTimeout(resetTimer);
+        resetTimer = setTimeout(() => {
+            penToolAktif = false;
+            klikLogoCount = 0;
+            console.log("🔒 Waktu habis, pintu rahasia dikunci lagi.");
+        }, 5000); 
+    });
+
+    // 2. Dengerin kalau Logo Navbar di klik
+    logo.addEventListener('click', (e) => {
+        // Kalau pen tool udah diklik sebelumnya dan waktu belum habis
+        if (penToolAktif) {
+            e.preventDefault(); 
+            klikLogoCount++;
+            console.log(`Pintu diketuk: ${klikLogoCount}/3`);
+
+            // Kalau udah pas 3 kali klik
+            if (klikLogoCount === 3) {
+                console.log("🚀 Akses Diterima! Mengalihkan ke database...");
+                // Ganti 'login.php' dengan nama file login lu nanti (contoh: 'admin/index.php')
+                window.location.href = 'login.html'; 
+            }
+        }
+    });
+}

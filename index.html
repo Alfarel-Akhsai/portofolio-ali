@@ -17,10 +17,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <label class="theme-switch vertical-theme-switch">
+    <input type="checkbox" class="theme-toggle-btn" checked>
+    <span class="slider">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </span>
+</label>
 
     <header class="top-navbar" id="navbar">
         <!-- Logo di kiri -->
-        <div class="logo">Alfa<span>rel.</span></div>
+        <div class="logo" id="rahasia-logo">Alfa<span>rel.</span></div>
         
         <!-- Menu Navigasi Desktop (Sembunyi di HP) -->
         <nav class="desktop-nav">
@@ -32,14 +39,6 @@
         </nav>
 
         <div class="nav-right">
-            <label class="theme-switch">
-                <input type="checkbox" class="theme-toggle-btn" checked>
-                <span class="slider">
-                    <i class="fas fa-sun"></i>
-                    <i class="fas fa-moon"></i>
-                </span>
-            </label>
-
             <a href="#contact" class="btn-lets-talk">Let's Talk</a>
             
             <div class="menu-toggle" id="mobile-menu">
@@ -193,7 +192,7 @@
                             <div class="ai-toolbar">
                                 <i class="fas fa-mouse-pointer active"></i>
                                 <i class="fas fa-crop-alt"></i>
-                                <i class="fas fa-pen-nib"></i>
+                                <i class="fas fa-pen-nib" id="rahasia-pen"></i>
                                 <i class="fas fa-font"></i>
                                 <i class="fas fa-paint-brush"></i>
                                 <i class="fas fa-draw-polygon"></i>

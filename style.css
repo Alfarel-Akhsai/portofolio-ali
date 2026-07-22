@@ -207,73 +207,97 @@ body {
     box-shadow: 0 0 10px var(--aksen-tosca); 
 }
 
-/* Tema Switcher */
-.theme-switch { 
-    position: relative; 
-    display: inline-block; 
-    width: 60px; 
-    height: 28px; 
-    margin-right: 15px; 
+/* =======================================================
+   TEMA SWITCHER (FIX WARNA DIBALIK + NEMPEL + TENGAH)
+   ======================================================= */
+/* 1. Dudukan Trapesium (Warna Lebih Gelap/Solid) */
+.vertical-theme-switch {
+    position: fixed;
+    right: 0 !important; /* Paksa mentok ujung kanan */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55px;
+    height: 110px; 
+    
+    background: rgba(11, 25, 30, 0.95); 
+    clip-path: path('M 55 0 L 16 12 Q 8 16 8 26 L 8 84 Q 8 94 16 98 L 55 110 Z');
+    
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    /* FIX CELAH GHAIB: padding ditahan box-sizing biar wadah nggak melar! */
+    padding-right: 9px; 
+    box-sizing: border-box !important; 
+    margin: 0 !important; 
+    
+    z-index: 1002;
+    filter: drop-shadow(-2px 0px 5px rgba(0, 229, 255, 0.4)); 
 }
 
-.theme-switch input { 
-    opacity: 0; 
-    width: 0; 
-    height: 0; 
+.vertical-theme-switch input {
+    display: none;
 }
 
-.slider { 
-    position: absolute; 
-    cursor: pointer; 
-    top: 0; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    background-color: #0d4a5d; 
-    border-radius: 30px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    padding: 0 8px; 
-    transition: 0.4s; 
-    border: 1px solid rgba(0,0,0,0.1); 
+/* 2. Kapsul Switch (Warna Kaca Transparan) */
+.vertical-theme-switch .slider {
+    position: relative;
+    width: 28px;
+    height: 48px; 
+    
+    /* WARNA DIBALIK: Kapsul jadi kaca transparan (Glassmorphism) */
+    background: rgba(11, 25, 30, 0.5); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 229, 255, 0.3); /* Garis pinggir cyan */
+    
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 0;
+    cursor: pointer;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.slider .fa-sun { 
-    color: #f39c12; 
-    font-size: 14px; 
-    z-index: 1; 
+/* 3. Ikon Bulan & Matahari */
+.vertical-theme-switch .slider i {
+    font-size: 12px;
+    z-index: 2;
+    transition: 0.3s;
+}
+.vertical-theme-switch .slider .fa-moon {
+    color: #EDF6F9; /* Bulan di atas */
+}
+.vertical-theme-switch .slider .fa-sun {
+    color: #f39c12; /* Matahari di bawah */
 }
 
-.slider .fa-moon { 
-    color: #EDF6F9; 
-    font-size: 13px; 
-    z-index: 1; 
+/* 4. DEFAULT (UNCHECKED = LIGHT MODE): Bulatan turun ke Matahari (Bawah) */
+.vertical-theme-switch .slider::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: 1;
+
+    top: calc(100% - 25px); 
+    background-color: rgba(255, 243, 18, 0.15);
+    border: 1px solid rgba(243, 156, 18, 0.6);
+    box-shadow: 0 0 10px rgba(243, 156, 18, 0.4);
 }
 
-.slider:before { 
-    position: absolute; 
-    content: ""; 
-    height: 22px; 
-    width: 22px; 
-    left: 4px; 
-    bottom: 2px; 
-    background-color: #FFFFFF; 
-    border-radius: 50%; 
-    z-index: 2; 
-    transition: 0.4s; 
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); 
-}
-
-input:checked + .slider { 
-    background-color: #061217; 
-    border: 1px solid rgba(0, 229, 255, 0.3); 
-}
-
-input:checked + .slider:before { 
-    transform: translateX(28px); 
-    background-color: #153e3f; 
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+/* 5. KALAU DIKLIK (CHECKED = DARK MODE): Bulatan naik ke Bulan (Atas) */
+.vertical-theme-switch input:checked + .slider::before {
+    top: 3px; 
+    background-color: rgba(0, 229, 255, 0.2);
+    border-color: rgba(0, 229, 255, 0.6);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.4);
 }
 
 /* Sidebar */
@@ -571,7 +595,7 @@ input:checked + .slider:before {
 
 .badge { 
     border: 1px solid var(--aksen-tosca); 
-    padding: 14px 40px; 
+    padding: 6px 200px; 
     border-radius: 50px; 
     font-size: 1.25rem; 
     letter-spacing: 3px; 
@@ -1092,6 +1116,21 @@ body.light-mode .timeline-card h4 { color: #072529; }
 body.light-mode .timeline-card p { color: rgba(7, 37, 41, 0.7); }
 body.light-mode .timeline-badge { background: rgba(0, 140, 161, 0.1); color: #008CA1; border-color: rgba(0, 140, 161, 0.2); }
 body.light-mode .empty-text { color: rgba(7, 37, 41, 0.5) !important; }
+
+/* MODE TERANG: Penyesuaian Trapesium */
+body.light-mode .vertical-theme-switch {
+    background: rgba(244, 248, 249, 0.95); /* Dudukan solid */
+    filter: drop-shadow(-2px 0px 5px rgba(0, 140, 161, 0.3));
+}
+body.light-mode .vertical-theme-switch .slider {
+    background: rgba(244, 248, 249, 0.4); /* Kapsul kaca */
+    border-color: rgba(0, 140, 161, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+body.light-mode .vertical-theme-switch .slider .fa-moon {
+    color: #072529; 
+}
 
 /* --- TAMBAHKAN INI DI BAGIAN 08. RESPONSIVE MOBILE (@media max-width: 900px) --- */
 @media screen and (max-width: 900px) {

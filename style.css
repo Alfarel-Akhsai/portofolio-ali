@@ -2315,6 +2315,7 @@ body.light-mode .btn-read-less-icon:hover {
     position: relative;
     margin-top: 0; /* Hapus tarikan dari seluruh section */
     padding: 0 10% 30px 10%;
+    padding-bottom: 0 !important;
     background-color: var(--bg-utama); /* Wajib dibalikin biar nutupin garis bawah SVG */
     display: flex;
     flex-direction: column;
@@ -2396,7 +2397,7 @@ body.light-mode .btn-read-less-icon:hover {
     max-width: 1600px; 
     margin: -50px auto 0 auto; 
     overflow: hidden; /* Potong kotak yang kelebihan di kanan-kiri layar */
-    padding: 100px 0; 
+    padding: 50px 0 50px 0 !important;
     z-index: 20;
 }
 
@@ -2482,23 +2483,30 @@ body.light-mode .btn-read-less-icon:hover {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 0.85rem;
-    color: var(--teks-putih); /* Default putih di dark mode */
-    margin: -30px auto 50px auto; /* Margin auto biar posisinya fix di tengah */
-    letter-spacing: 1px;
-    transition: opacity 0.3s ease;
-    background: rgba(11, 25, 30, 0.6); 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 229, 255, 0.2); 
-    padding: 8px 30px;
-    border-radius: 50px;
-    width: max-content; /* Biar ukuran kotaknya ngepas seukuran teksnya aja */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--teks-putih);
+    margin: -20px auto 30px auto !important; /* Tarik posisinya ke atas */
+    position: relative;
+    z-index: 30 !important;
+    
+    /* Desain garis aksen minimalis (Bukan tombol kapsul) */
+    background: transparent !important;
+    border: none !important;
+    border-top: 1px solid rgba(0, 229, 255, 0.3) !important;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.3) !important;
+    border-radius: 0 !important;
+    padding: 8px 30px !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
 }
 
+/* Warnain angka 5-nya biar nyala tapi elegan */
 .project-counter span {
-    color: var(--aksen-tosca);
-    font-weight: 500;
+    color: var(--teks-putih) !important;
+    font-weight: 600;
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.6);
 }
 
 /* =======================================
@@ -2696,14 +2704,14 @@ body.light-mode .tool-line i { color: #008CA1; }
 body.light-mode .tool-icons img, body.light-mode .tool-icons i { background: rgba(0,0,0,0.05); border-color: rgba(0,0,0,0.1); }
 body.light-mode .empty-project-msg { color: rgba(7, 37, 41, 0.6); }
 body.light-mode .empty-project-msg i { color: rgba(0, 140, 161, 0.3); }
-body.light-mode .project-counter { 
-    background: rgba(255, 255, 255, 0.8);
-    border-color: rgba(0, 140, 161, 0.3);
-    color: #072529; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+body.light-mode .project-counter {
+    background: transparent !important;
+    border-color: rgba(0, 140, 161, 0.3) !important;
+    box-shadow: none !important;
 }
-body.light-mode .project-counter span { 
-    color: #008CA1; 
+body.light-mode .project-counter span {
+    color: #072529 !important;
+    text-shadow: none;
 }
 
 /* =======================================================
@@ -2713,12 +2721,12 @@ body.light-mode .project-counter span {
     position: relative;
     width: 100%;
     line-height: 0;
-    z-index: 15;
-    margin-top: -2px; 
+    z-index: 15 !important;
+    margin-top: -18px !important;
     background-color: #061217;
     background-image: radial-gradient(circle, rgba(0, 229, 255, 0.07) 1.8px, transparent 1.8px);
     background-size: 45px 45px;
-    background-position: center bottom; /* KUNCI 2: Diposisikan di bawah biar jahitannya pas nyambung */
+    background-position: center bottom;
     pointer-events: none;
 }
 

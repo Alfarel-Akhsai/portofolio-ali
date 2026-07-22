@@ -2334,7 +2334,7 @@ body.light-mode .btn-read-less-icon:hover {
     font-size: 4.5rem;
     color: var(--teks-putih);
     margin-top: 0;
-    margin-bottom: 120px; /* Jarak ini buat dorong kartu project ke bawah biar aman di area gelap */
+    margin-bottom: 120px;
     text-transform: capitalize;
     text-align: center;
     position: relative;
@@ -2354,7 +2354,7 @@ body.light-mode .btn-read-less-icon:hover {
     justify-content: center;
     flex-wrap: wrap;
     gap: 5px;
-    margin: -70px auto -10px auto;
+    margin: -70px auto 10px auto;
     position: relative;
     z-index: 30;
     background: rgba(0, 0, 0, 0.2);
@@ -2396,20 +2396,20 @@ body.light-mode .btn-read-less-icon:hover {
     width: 100%; 
     max-width: 1600px; 
     margin: -50px auto 0 auto; 
-    overflow: hidden; /* Potong kotak yang kelebihan di kanan-kiri layar */
+    overflow: visible !important;
     padding: 50px 0 50px 0 !important;
-    z-index: 20;
+    z-index: 20 !important;
 }
 
 .project-track-container {
     width: 100%;
-    overflow: visible;
+    overflow: visible !important;
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 140px !important;
     
     /* FIX MUTLAK: Tarik balik posisinya biar kotak project lo gak merosot turun */
     margin-top: -100px;
-    margin-bottom: -100px;
+    margin-bottom: -100px !important;
     
     /* Efek kabut kiri & kanan tetep jalan mulus */
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -2502,6 +2502,16 @@ body.light-mode .btn-read-less-icon:hover {
     -webkit-backdrop-filter: none !important;
 }
 
+.project-counter.reveal {
+    transform: translateY(-11px) !important; /* Asalnya dari jarak 80px ke bawah, makanya kerasa lama banget naiknya. Kita pendekin! */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out !important; /* Waktu animasinya dicepetin biar pas sama scroll */
+}
+
+.project-counter.reveal.active {
+    transform: translateY(0) !important;
+    opacity: 1 !important;
+}
+
 /* Warnain angka 5-nya biar nyala tapi elegan */
 .project-counter span {
     color: var(--teks-putih) !important;
@@ -2531,7 +2541,7 @@ body.light-mode .btn-read-less-icon:hover {
 .p-card-shadow {
     height: 100%;
     width: 100%;
-    filter: drop-shadow(0 25px 40px rgba(0,0,0,0.9)) drop-shadow(0 0 20px rgba(0, 229, 255, 0.4));
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.8)) drop-shadow(0 0 40px rgba(0, 229, 255, 0.35)) !important;
 }
 
 /* =======================================
@@ -2695,7 +2705,9 @@ body.light-mode .p-card-glass::before {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1' preserveAspectRatio='none'%3E%3Cpath d='M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z' fill='none' stroke='%23008CA1' stroke-width='4.5px' vector-effect='non-scaling-stroke' /%3E%3C/svg%3E");
     filter: drop-shadow(0 0 4px rgba(0, 140, 161, 0.3)); 
 }
-body.light-mode .p-card-shadow { filter: drop-shadow(0 15px 30px rgba(0,0,0,0.15)); }
+body.light-mode .p-card-shadow {
+    filter: drop-shadow(0 15px 35px rgba(0,0,0,0.15)) !important;
+}
 body.light-mode .p-card-title h3 { color: #072529; }
 body.light-mode .p-card-title p { color: rgba(7, 37, 41, 0.8); }
 body.light-mode .btn-external { background: #008CA1; color: #fff; }
@@ -2722,7 +2734,7 @@ body.light-mode .project-counter span {
     width: 100%;
     line-height: 0;
     z-index: 15 !important;
-    margin-top: -18px !important;
+    margin-top: 2px !important;
     background-color: #061217;
     background-image: radial-gradient(circle, rgba(0, 229, 255, 0.07) 1.8px, transparent 1.8px);
     background-size: 45px 45px;
@@ -3085,4 +3097,28 @@ body.light-mode .contact-section::before {
     .glass-panel { padding: 30px 20px; }
     .social-contact .social-icons { justify-content: center; }
     .social-contact p { text-align: center; }
+}
+
+/* =========================================================
+   KUSTOMISASI SCROLLBAR BROWSER JADI TIPIS & ESTETIK
+   ========================================================= */
+/* Ngatur ketebalan scrollbar */
+::-webkit-scrollbar {
+    width: 8px; /* Asalnya default tebel, ini kita bikin langsing */
+}
+
+/* Warna jalur/track belakang scrollbar */
+::-webkit-scrollbar-track {
+    background: var(--bg-utama); 
+}
+
+/* Warna batang scroll yang bisa ditarik */
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 229, 255, 0.3);
+    border-radius: 10px; /* Biar ujungnya melengkung halus, nggak kotak kaku */
+}
+
+/* Efek saat batang scrollbar diarahin mouse (hover) */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--aksen-tosca); /* Nyala terang pas mau diklik */
 }

@@ -921,3 +921,16 @@ if (penTool && logo) {
         }
     });
 }
+
+// =======================================================
+// KEAMANAN ASET: MATIKAN KLIK KANAN & DRAG DI GAMBAR PROJECT
+// =======================================================
+const projectImages = document.querySelectorAll('.p-card-gallery img');
+
+projectImages.forEach(img => {
+    // Mematikan klik kanan (Context Menu)
+    img.addEventListener('contextmenu', e => e.preventDefault());
+    
+    // Keamanan ganda untuk mematikan fitur drag-and-drop
+    img.addEventListener('dragstart', e => e.preventDefault());
+});

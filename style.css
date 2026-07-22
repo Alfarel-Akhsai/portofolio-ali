@@ -2737,7 +2737,7 @@ body.light-mode .project-counter span {
 
 .contact-section {
     position: relative;
-    padding: 0px 10% 120px 10%;
+    padding: 0px 10% 120px 10%; 
     background-color: #061217;
     display: flex;
     flex-direction: column;
@@ -2783,7 +2783,7 @@ body.light-mode .project-counter span {
 }
 
 .contact-section .section-subtitle {
-    margin-top: -250px;
+    margin-top: -250px; 
     position: relative;
     z-index: 20;
 }
@@ -2805,11 +2805,14 @@ body.light-mode .project-counter span {
 }
 
 .contact-content {
-    display: flex;
-    align-items: stretch;
-    gap: 40px;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: flex-start;
     width: 100%;
-    margin-top: 0; 
+    max-width: 1150px; 
+    margin: 10px auto 0 auto; /* Biar posisinya rapi pas di tengah layar */
+    gap: 30px;
 }
 
 .glass-panel {
@@ -2833,15 +2836,48 @@ body.light-mode .project-counter span {
 
 /* Info Kiri */
 .contact-info {
-    flex: 1;
-    justify-content: space-between; /* Mendorong ikon sosial media ke paling bawah */
+    flex: 1; /* KUNCI: Biar lebarnya proporsional ngimbangin form di kanan */
+    background: transparent; 
+    padding: 0; 
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    display: flex;
+    flex-direction: column;
+    gap: 13.5px;
 }
 
-.contact-info h3 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.6rem;
-    color: var(--teks-putih);
-    margin: 0 0 15px 0;
+.contact-info .info-card {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* KUNCI 3: PAKSA KONTEN DI TENGAH ATAS-BAWAH */
+    align-items: flex-start !important; /* KUNCI 4: PAKSA KONTEN RATA KIRI */
+    padding: 22px 25px !important; /* Dikasih ruang sedikit biar estetik dan gak kegencet */
+}
+.contact-info .info-item,
+.contact-info .social-contact {
+    padding: 10px 20px;
+    margin-bottom: 0; /* Reset margin bawaan */
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* KUNCI 1: Isi di dalam kotak dipaksa presisi di tengah atas-bawah */
+    align-items: flex-start;
+    min-height: 60px;
+}
+
+.contact-info .info-card h3 {
+    margin: 0 0 8px 0 !important; /* Jarak rapi antara judul dan teks bawahnya */
+    font-size: 1.5rem !important; /* Ukuran dibesarin dikit biar lebih tegas & profesional */
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+}
+
+.contact-info .info-card p {
+    margin: 0 !important; /* Hapus sisa margin error */
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    color: rgba(237, 246, 249, 0.7) !important;
 }
 
 .contact-info > .info-top > p {
@@ -2852,47 +2888,49 @@ body.light-mode .project-counter span {
 }
 
 .info-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 30px;
+    display: flex !important;
+    flex-direction: row !important; /* Paksa balik nyamping */
+    justify-content: flex-start !important; /* KUNCI 2: Bikin grup ikon+teks rata tengah SECARA HORIZONTAL di dalam kotaknya */
+    align-items: center !important; /* KUNCI 3: Bikin ikon dan teks sejajar persis di tengah SECARA VERTIKAL */
+    gap: 15px !important;
 }
 
 .info-item .icon-box {
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
-    background: rgba(0, 229, 255, 0.05);
-    border: 1px solid rgba(0, 229, 255, 0.2);
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+}
+
+.info-item > div:not(.icon-box) {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
-    font-size: 1.2rem;
-    color: var(--aksen-tosca);
+}
+.info-item h4 { margin: 0 0 2px 0 !important; }
+.info-item p { margin: 0 !important; }
+
+.info-card p {
+    font-size: 0.85rem;
+    line-height: 1.4;
 }
 
-.info-item h4 {
-    margin: 0 0 5px 0;
-    font-size: 1rem;
-    color: var(--teks-putih);
-}
-
-.info-item p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: rgba(237, 246, 249, 0.6);
+.info-card h3 {
+    font-size: 1.4rem; 
+    line-height: 1.3;
 }
 
 .social-contact {
-    margin-top: 30px;
-    padding-top: 25px;
-    border-top: 1px solid rgba(0, 229, 255, 0.15);
+    border-top: none;
+    margin-top: 0; 
+    align-items: flex-start; 
 }
 
 .social-contact p {
     font-size: 0.9rem;
     color: var(--teks-putih);
-    margin-bottom: 15px;
+    margin-top: 0;
+    margin-bottom: 6px;
 }
 
 /* FIX: Ukuran tombol sosmed dibuat proporsional bulat sempurna */
@@ -2917,8 +2955,13 @@ body.light-mode .project-counter span {
     justify-content: center;
 }
 
+.contact-form.glass-panel {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
 .input-group {
-    margin-bottom: 22px;
+    margin-bottom: 12px;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -2929,7 +2972,7 @@ body.light-mode .project-counter span {
     font-size: 0.9rem;
     font-weight: 500;
     color: var(--teks-putih);
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     margin-left: 2px;
     letter-spacing: 0.5px;
 }
@@ -2937,7 +2980,7 @@ body.light-mode .project-counter span {
 .input-group input,
 .input-group textarea {
     width: 100%;
-    padding: 16px 20px;
+    padding: 10px 15px;
     background: rgba(0, 0, 0, 0.3); /* Digelapkan sedikit biar teks putih kontras */
     border: 1px solid rgba(0, 229, 255, 0.15);
     border-radius: 12px;
@@ -2964,7 +3007,7 @@ body.light-mode .project-counter span {
 
 .input-group textarea {
     resize: vertical;
-    min-height: 140px;
+    min-height: 85px;
 }
 
 .btn-submit {
@@ -2973,7 +3016,7 @@ body.light-mode .project-counter span {
     justify-content: center;
     gap: 10px;
     width: 100%;
-    padding: 16px;
+    padding: 10px;
     background: var(--aksen-tosca);
     color: #061217; /* Teks dibikin hitam pekat biar kontras sama biru neon */
     border: 2px solid transparent;
@@ -2983,7 +3026,7 @@ body.light-mode .project-counter span {
     font-weight: 700; /* Ditebalkan */
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 .btn-submit:hover {

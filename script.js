@@ -334,13 +334,54 @@ const portfolioData = {
             "Created compelling essays and social media content for innovative leadership campaigns"
         ],
         image: ""
+    },
+    // ---- ACHIEVEMENT & CERTIFICATE ----
+    "1st Place Adzan Competition": {
+        icon: "fa-microphone-alt",
+        subtitle: "Champion • STIE & AKUBANK Mulia Darma Pratama",
+        badges: ["1st Winner", "Religion", "City Level"],
+        desc: "Berhasil meraih Juara 1 pada ajang lomba Adzan tingkat SMA/SMK/MA se-Kota Palembang yang diselenggarakan oleh STIE & AKUBANK Mulia Darma Pratama. Kompetisi ini melatih kepercayaan diri, vokal, dan keberanian tampil di depan umum.",
+        achievements: ["Juara 1 Lomba Adzan se-Kota Palembang", "Menyisihkan puluhan peserta dari berbagai sekolah tingkat atas"],
+        image: "" // Nanti isi path foto sertifikatnya di sini
+    },
+    "2nd Place Asmaul Husna": {
+        icon: "fa-book-open",
+        subtitle: "Runner Up • SMAN 7 Palembang",
+        badges: ["2nd Winner", "Religion", "Provincial Level"],
+        desc: "Meraih Juara 2 pada lomba Asmaul Husna tingkat SMA/SMK/MA se-Provinsi Sumatera Selatan yang diselenggarakan di SMAN 7 Palembang. Kompetisi ini sangat menguji daya ingat, pelafalan tajwid, dan ketenangan mental peserta.",
+        achievements: ["Juara 2 Lomba Asmaul Husna tingkat Provinsi Sumatera Selatan", "Menunjukkan dedikasi tinggi dalam menghafal dan melafalkan Asmaul Husna"],
+        image: ""
+    },
+    "Top Class Academic Rank": {
+        icon: "fa-medal",
+        subtitle: "Academic Excellence • SMKN 8 Palembang",
+        badges: ["Top Rank", "Academic", "Consistent"],
+        desc: "Mendapatkan 4 sertifikat penghargaan sebagai bentuk pengakuan atas pencapaian akademik (peringkat kelas) selama menempuh pendidikan. Pencapaian ini membuktikan konsistensi, kedisiplinan, dan tanggung jawab terhadap pendidikan formil.",
+        achievements: ["Memperoleh total 4 sertifikat peringkat kelas", "Konsisten mempertahankan nilai akademik yang tinggi di sekolah"],
+        image: ""
+    },
+    "Bawaslu Internship Certificate": {
+        icon: "fa-file-signature",
+        subtitle: "Official Certificate • Bawaslu Prov. Sumsel",
+        badges: ["Internship", "Government", "Administration"],
+        desc: "Sertifikat resmi yang diberikan sebagai bukti telah menyelesaikan program magang di Badan Pengawas Pemilihan Umum (Bawaslu) Provinsi Sumatera Selatan dengan kedisiplinan tinggi dan kontribusi administratif yang nyata.",
+        achievements: ["Lulus program magang dengan evaluasi yang memuaskan", "Mendapatkan apresiasi atas ketelitian dalam manajemen arsip"],
+        image: ""
+    },
+    "RKU Komputer Internship Certificate": {
+        icon: "fa-tools",
+        subtitle: "Official Certificate • CV. RKU Komputer",
+        badges: ["Internship", "Hardware", "Technical Skill"],
+        desc: "Sertifikat kelulusan Praktik Kerja Lapangan (PKL) dari CV. RKU Komputer, sebagai validasi atas kemampuan teknis dalam melakukan troubleshooting dan perbaikan pada perangkat keras maupun lunak di lingkungan kerja nyata.",
+        achievements: ["Diakui kemampuannya dalam menangani masalah hardware klien", "Lulus praktik lapangan dengan nilai evaluasi kinerja yang sangat baik"],
+        image: ""
     }
 };
 
 // 2. Logika untuk Memunculkan Modal
 const modalOverlay = document.getElementById('card-modal');
 const modalCloseBtn = document.querySelector('.modal-close');
-const allCards = document.querySelectorAll('.timeline-card');
+const allCards = document.querySelectorAll('.timeline-card, .achieve-card');
 
 allCards.forEach(card => {
     card.addEventListener('click', () => {
@@ -394,6 +435,60 @@ allCards.forEach(card => {
             }
 
             // Munculkan Modal!
+            modalOverlay.classList.add('active');
+        }
+    });
+});
+// Logika Modal Khusus untuk Tombol 'About' di Grid Certificate
+const certAboutBtns = document.querySelectorAll('.btn-cert-about');
+
+certAboutBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Cari container cert-card terdekat dari tombol yang diklik
+        const card = e.target.closest('.cert-card');
+        if (!card) return;
+        
+        // Ambil data-title dan panggil data dari database
+        const title = card.getAttribute('data-title');
+        const data = portfolioData[title]; 
+        
+        if (data) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-subtitle').innerText = data.subtitle;
+            document.getElementById('modal-desc').innerText = data.desc;
+            
+            document.querySelector('.modal-header-icon i').className = `fas ${data.icon}`;
+            
+            const badgesContainer = document.getElementById('modal-badges');
+            badgesContainer.innerHTML = '';
+            data.badges.forEach(b => {
+                const span = document.createElement('span');
+                span.innerText = b;
+                badgesContainer.appendChild(span);
+            });
+            
+            const achList = document.getElementById('modal-achievements-list');
+            achList.innerHTML = '';
+            data.achievements.forEach(ach => {
+                const li = document.createElement('li');
+                li.innerText = ach;
+                achList.appendChild(li);
+            });
+            
+            const imgEl = document.getElementById('modal-image');
+            const imgBox = document.querySelector('.modal-image-box');
+            if (data.image !== "") {
+                imgEl.src = data.image;
+                imgEl.style.display = 'block';
+                imgBox.querySelector('i').style.display = 'none';
+                imgBox.querySelector('span').style.display = 'none';
+            } else {
+                imgEl.src = "";
+                imgEl.style.display = 'none';
+                imgBox.querySelector('i').style.display = 'block';
+                imgBox.querySelector('span').style.display = 'block';
+            }
+
             modalOverlay.classList.add('active');
         }
     });
@@ -934,3 +1029,105 @@ projectImages.forEach(img => {
     // Keamanan ganda untuk mematikan fitur drag-and-drop
     img.addEventListener('dragstart', e => e.preventDefault());
 });
+
+// =======================================================
+// LOGIKA "SHOW MORE" UNTUK TAB KONTEN (DINAMIS)
+// =======================================================
+function initShowMore() {
+    // 1. Konfigurasi setiap tab (id container, class item, limit jumlah yang tampil)
+    const tabConfigs = [
+        { id: 'academic-content', itemClass: '.timeline-zigzag-item', limit: 8 }, // Limit 4 kotak (SD, SMP, SMK, Kuliah)
+        { id: 'achievement-content', itemClass: '.achieve-card', limit: 8 }, // Limit 4 kotak
+        { id: 'certificate-content', itemClass: '.cert-card', limit: 8 } // Limit 4 kotak
+    ];
+
+    // Jalankan untuk tab standar (Grid & Zigzag)
+    tabConfigs.forEach(config => {
+        const container = document.getElementById(config.id);
+        if (!container) return;
+
+        const items = container.querySelectorAll(config.itemClass);
+        if (items.length > config.limit) {
+            sembunyikanItem(items, config.limit);
+            buatTombol(container, items);
+        }
+    });
+
+    // 2. Logika Khusus untuk Experience (Karena ada 2 kolom terpisah: Kiri & Kanan)
+    const expContainer = document.getElementById('experience-content');
+    if (expContainer) {
+        const leftItems = expContainer.querySelectorAll('.timeline-straight .timeline-item');
+        const rightItems = expContainer.querySelectorAll('.timeline-straight-right .timeline-item');
+        const expLimit = 4; // Artinya 2 kotak di kiri, 2 kotak di kanan (Total 4)
+
+        let isOverflow = false;
+        
+        if (leftItems.length > expLimit) {
+            sembunyikanItem(leftItems, expLimit);
+            isOverflow = true;
+        }
+        if (rightItems.length > expLimit) {
+            sembunyikanItem(rightItems, expLimit);
+            isOverflow = true;
+        }
+
+        if (isOverflow) {
+            // Gabung jadi satu array biar tombolnya bisa buka kolom kiri & kanan sekaligus
+            const allExpItems = [...leftItems, ...rightItems]; 
+            buatTombol(expContainer, allExpItems); 
+        }
+    }
+
+    // --- Fungsi Bantuan ---
+    // Fungsi nyembunyiin elemen yang kelebihan
+    function sembunyikanItem(items, limit) {
+        for (let i = limit; i < items.length; i++) {
+            items[i].style.display = 'none';
+            items[i].classList.add('hidden-by-js'); // Kasih tanda kalau dia disembunyiin sama sistem
+        }
+    }
+
+    // Fungsi bikin tombol Show More secara otomatis
+    function buatTombol(container, items) {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'show-more-wrapper';
+
+        const btn = document.createElement('button');
+        btn.className = 'btn-show-more';
+        btn.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
+
+        let expanded = false;
+
+        btn.addEventListener('click', () => {
+            expanded = !expanded;
+
+            if (expanded) {
+                // TAMPILKAN SEMUA (Buka Gembok)
+                items.forEach(item => {
+                    if (item.classList.contains('hidden-by-js')) {
+                        item.style.display = ''; // Balikin ke CSS aslinya (flex/block)
+                        item.style.animation = 'fadeIn 0.5s ease forwards';
+                    }
+                });
+                btn.innerHTML = 'Show Less <i class="fas fa-chevron-up"></i>';
+            } else {
+                // SEMBUNYIKAN LAGI (Kunci)
+                items.forEach(item => {
+                    if (item.classList.contains('hidden-by-js')) {
+                        item.style.display = 'none';
+                    }
+                });
+                btn.innerHTML = 'Show More <i class="fas fa-chevron-down"></i>';
+                
+                // Animasi scroll halus balik ke atas dikit biar layar user gak nyasar
+                container.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+
+        wrapper.appendChild(btn);
+        container.appendChild(wrapper);
+    }
+}
+
+// Jalankan fungsi otomatis saat web lu baru dibuka
+document.addEventListener('DOMContentLoaded', initShowMore);

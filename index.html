@@ -9,27 +9,24 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Fredoka:wght@600;700&family=Pacifico&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Lobster&display=swap" rel="stylesheet">
-
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <label class="theme-switch vertical-theme-switch">
-    <input type="checkbox" class="theme-toggle-btn" checked>
-    <span class="slider">
-        <i class="fas fa-moon"></i>
-        <i class="fas fa-sun"></i>
-    </span>
-</label>
 
+    <!-- Theme Switcher -->
+    <label class="theme-switch vertical-theme-switch">
+        <input type="checkbox" class="theme-toggle-btn" checked>
+        <span class="slider">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </span>
+    </label>
+
+    <!-- Top Navbar -->
     <header class="top-navbar" id="navbar">
-        <!-- Logo di kiri -->
         <div class="logo" id="rahasia-logo">Alfa<span>rel.</span></div>
         
-        <!-- Menu Navigasi Desktop (Sembunyi di HP) -->
         <nav class="desktop-nav">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -40,7 +37,6 @@
 
         <div class="nav-right">
             <a href="#contact" class="btn-lets-talk">Let's Talk</a>
-            
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
@@ -49,18 +45,17 @@
         </div>
     </header>
 
+    <!-- Sidebar Overlay -->
     <div class="overlay" id="overlay"></div>
 
+    <!-- Mobile Sidebar -->
     <aside class="sidebar" id="sidebar">
-        <!-- Bagian atas sidebar (Logo & Tombol X) -->
         <div class="sidebar-header">
             <div class="logo">Alfa<span>rel.</span></div>
             <div class="close-btn" id="close-btn">&times;</div>
         </div>
         
-        <!-- Menu navigasi di dalam sidebar -->
         <nav class="sidebar-nav">
-            <!-- Class 'active' ini adalah penanda spotlight-nya -->
             <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="#about"><i class="fas fa-user"></i> About</a>
             <a href="#skills"><i class="fas fa-laptop-code"></i> Skills</a>
@@ -68,46 +63,46 @@
             <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
             <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
             
-        <div class="sidebar-promo">
-            <h4>Got an idea?<br>Let's bring it to life!</h4>
-            <p>See how I transform ideas into stunning, functional designs.</p>
-            <a href="#contact" class="btn-coffee-chat">
-                <i class="fas fa-coffee"></i> Book a Coffee Chat
+            <div class="sidebar-promo">
+                <h4>Got an idea?<br>Let's bring it to life!</h4>
+                <p>See how I transform ideas into stunning, functional designs.</p>
+                <a href="#contact" class="btn-coffee-chat">
+                    <i class="fas fa-coffee"></i> Book a Coffee Chat
+                </a>
+            </div>
+
+            <a href="assets/Alfarel_CV.pdf" download="Alfarel_CV.pdf" class="sidebar-cv">
+                <div class="cv-header">
+                    <span>Download CV</span>
+                    <i class="fas fa-download"></i>
+                </div>
+                <div class="cv-file">
+                    <i class="fas fa-file-pdf"></i>
+                    <span>Alfarel_CV.pdf</span>
+                </div>
             </a>
-        </div>
-        <a href="assets/Alfarel_CV.pdf" download="Alfarel_CV.pdf" class="sidebar-cv">
-            <div class="cv-header">
-                <span>Download CV</span>
-                <i class="fas fa-download"></i>
+
+            <div class="sidebar-footer">
+                <p>FOLLOW ME</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-line"></i></a>
+                </div>
             </div>
-            <div class="cv-file">
-                <i class="fas fa-file-pdf"></i>
-                <span>Alfarel_CV.pdf</span>
-            </div>
-        </a>
-        <div class="sidebar-footer">
-            <p>FOLLOW ME</p>
-            <div class="social-icons">
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-line"></i></a>
-            </div>
-        </div>
         </nav>
     </aside>
     
+    <!-- Hero Section -->
     <section class="hero-section" id="home">
-        
         <div class="grid-bg"></div>
         <div class="glow-circle"></div>
 
         <div class="hero-wrapper">
-            
             <div class="badge reveal">archive by alfarel</div>
 
             <div class="hero-container">
-                
                 <div class="hero-image-wrapper reveal">
                     <div class="image-glow"></div>
                     <img src="assets/images/alfkam.png" alt="Foto Kartun" class="hero-image">
@@ -119,26 +114,24 @@
                     <span class="subtitle-text">Graphic Designer & Web Developer</span>
                     <a href="#project" class="btn-about">My Work <span class="arrow">&rarr;</span></a>
                 </div>
-
             </div>
         </div>
-
     </section>
-    </section> <div class="section-transition reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,32L40,53.3C80,75,160,117,240,154.7C320,192,400,224,480,240C560,256,640,256,720,245.3C800,235,880,213,960,213.3C1040,213,1120,235,1200,202.7C1280,171,1360,85,1400,42.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+
+    <!-- Transition (Wave) -->
+    <div class="section-transition reveal">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,32L40,53.3C80,75,160,117,240,154.7C320,192,400,224,480,240C560,256,640,256,720,245.3C800,235,880,213,960,213.3C1040,213,1120,235,1200,202.7C1280,171,1360,85,1400,42.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+        </svg>
     </div>
 
-    <!-- =======================================================
-         SECTION ABOUT ME (Fluid Texture Theme)
-         ======================================================= -->
+    <!-- About Section -->
     <section id="about" class="about-section">
-        
         <div class="vector-splash-container">
             <svg class="vector-splash" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
                 <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
                 <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
-                
                 <circle cx="20" cy="75" r="1.5" />
                 <circle cx="80" cy="30" r="2" />
                 <circle cx="50" cy="15" r="1" />
@@ -153,10 +146,8 @@
             <h2 class="section-title reveal">About <span>Me</span></h2>
             
             <div class="about-content-wrapper">
-                
-                <!-- 1. BARIS ATAS (Teks Kiri, Foto Kanan) -->
+                <!-- Top Row: Text & Image -->
                 <div class="about-top-row">
-                    <!-- Kotak Teks Kiri -->
                     <div class="about-text-box reveal">
                         <p>
                             Hi, I'm <strong>M. Alfarel</strong>—but you can call me <strong>AL</strong>. Currently, I'm navigating a unique academic journey as a double degree student, studying Informatics Engineering at Institut Teknologi Sumatera (ITERA) and Business at BINUS University.
@@ -170,7 +161,6 @@
                         <a href="#" class="btn-read-more">Read More <i class="fas fa-arrow-down"></i></a>
                     </div>
                     
-                    <!-- Foto Kanan (Sekarang disejajarkan di dalam Baris Atas) -->
                     <div class="about-image-wrapper reveal">
                         <h3 class="about-subtitle-photo">Hello, I'm <br> <span>M. Alfarel</span></h3>
                         <div class="transform-box">
@@ -183,12 +173,14 @@
                             <span class="anchor top-right"></span>
                             <span class="anchor bottom-left"></span>
                             <span class="anchor bottom-right"></span>
+                            
                             <div class="popout-wrapper">
                                 <div class="oval-mask">
                                     <img src="assets/images/ALI1.png" alt="Background" class="bg-img">
                                 </div>
                                 <img src="assets/images/ALI2.png" alt="M. Alfarel" class="popout-img">
                             </div>
+                            
                             <div class="ai-toolbar">
                                 <i class="fas fa-mouse-pointer active"></i>
                                 <i class="fas fa-crop-alt"></i>
@@ -201,15 +193,14 @@
                     </div>
                 </div>
 
-                <!-- 2. BARIS BAWAH (Grid 2 Kolom dengan Independent Tabs) -->
+                <!-- Bottom Row: Timeline & Grid Tabs -->
                 <div class="about-extra-info" id="extra-info">
                     <button id="btn-close-extra" class="btn-read-less-icon" title="Tutup">
                         <i class="fas fa-chevron-up"></i>
                     </button>
                     
                     <div class="info-grid-split">
-                        
-                        <!-- ================= KOLOM KIRI ================= -->
+                        <!-- Left Column (Academic / Achievement) -->
                         <div class="split-col">
                             <div class="mini-tabs">
                                 <button class="mini-tab-btn left-btn active" data-target="academic-content">
@@ -220,7 +211,7 @@
                                 </button>
                             </div>
 
-                            <!-- Konten: ACADEMIC (Mode Zigzag & Cabang) -->
+                            <!-- Academic Tab -->
                             <div class="mini-tab-content left-content active" id="academic-content">
                                 <div class="timeline-mini-zigzag">
                                     <div class="timeline-zigzag-item left-side">
@@ -231,6 +222,7 @@
                                             <span class="timeline-badge">SD</span>
                                         </div>
                                     </div>
+                                    
                                     <div class="timeline-zigzag-item right-side">
                                         <div class="dot-zigzag"></div>
                                         <div class="timeline-card">
@@ -239,6 +231,7 @@
                                             <span class="timeline-badge">SMP / MTs</span>
                                         </div>
                                     </div>
+                                    
                                     <div class="timeline-zigzag-item left-side">
                                         <div class="dot-zigzag"></div>
                                         <div class="timeline-card">
@@ -268,36 +261,31 @@
                                 </div>
                             </div>
 
-                            <!-- Konten: ACHIEVEMENT (Mode Grid) -->
-            <div class="mini-tab-content left-content" id="achievement-content">
-                <div class="achieve-grid">
-                    
-                    <!-- Achievement 1 -->
-                    <div class="achieve-card" data-title="1st Place Adzan Competition">
-                        <span class="achieve-badge">Religion</span>
-                        <h4>1st Place Adzan Competition</h4>
-                        <p>Kota Palembang • 202X</p>
-                    </div>
+                            <!-- Achievement Tab -->
+                            <div class="mini-tab-content left-content" id="achievement-content">
+                                <div class="achieve-grid">
+                                    <div class="achieve-card" data-title="1st Place Adzan Competition">
+                                        <span class="achieve-badge">Religion</span>
+                                        <h4>1st Place Adzan Competition</h4>
+                                        <p>Kota Palembang • 202X</p>
+                                    </div>
 
-                    <!-- Achievement 2 -->
-                    <div class="achieve-card" data-title="2nd Place Asmaul Husna">
-                        <span class="achieve-badge">Religion</span>
-                        <h4>2nd Place Asmaul Husna</h4>
-                        <p>Provinsi Sumsel • 202X</p>
-                    </div>
+                                    <div class="achieve-card" data-title="2nd Place Asmaul Husna">
+                                        <span class="achieve-badge">Religion</span>
+                                        <h4>2nd Place Asmaul Husna</h4>
+                                        <p>Provinsi Sumsel • 202X</p>
+                                    </div>
 
-                    <!-- Achievement 3 -->
-                    <div class="achieve-card" data-title="Top Class Academic Rank">
-                        <span class="achieve-badge">Academic</span>
-                        <h4>Top Class Academic Rank</h4>
-                        <p>SMKN 8 Palembang • 2022 - 2025</p>
-                    </div>
-
-                </div>
-            </div>
+                                    <div class="achieve-card" data-title="Top Class Academic Rank">
+                                        <span class="achieve-badge">Academic</span>
+                                        <h4>Top Class Academic Rank</h4>
+                                        <p>SMKN 8 Palembang • 2022 - 2025</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <!-- ================= KOLOM KANAN ================= -->
+                        <!-- Right Column (Experience / Certificate) -->
                         <div class="split-col">
                             <div class="mini-tabs">
                                 <button class="mini-tab-btn right-btn active" data-target="experience-content">
@@ -308,108 +296,99 @@
                                 </button>
                             </div>
 
-                            <!-- Konten: EXPERIENCE (Mode Lurus 2 Kolom Sejajar) -->
-            <div class="mini-tab-content right-content active" id="experience-content">
-                <div class="experience-grid-2col">
-                    
-                    <!-- Kolom 1 (Kiri) -->
-                    <div class="timeline-straight">
-                        <div class="timeline-item">
-                            <div class="dot"></div>
-                            <div class="timeline-card">
-                                <span class="timeline-date">2023</span>
-                                <h4>CV. RKU Komputer</h4>
-                                <p>Praktik Kerja Lapangan (PKL)</p>
-                                <span class="timeline-badge">Internship</span>
+                            <!-- Experience Tab -->
+                            <div class="mini-tab-content right-content active" id="experience-content">
+                                <div class="experience-grid-2col">
+                                    <!-- Column 1 (Left) -->
+                                    <div class="timeline-straight">
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="timeline-card">
+                                                <span class="timeline-date">2023</span>
+                                                <h4>CV. RKU Komputer</h4>
+                                                <p>Praktik Kerja Lapangan (PKL)</p>
+                                                <span class="timeline-badge">Internship</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="timeline-card">
+                                                <span class="timeline-date">2026</span>
+                                                <h4>Google Student Ambassador</h4>
+                                                <p>Candidate 2026</p>
+                                                <span class="timeline-badge">Program</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Column 2 (Right) -->
+                                    <div class="timeline-straight-right">
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="timeline-card">
+                                                <span class="timeline-date">2024</span>
+                                                <h4>Bawaslu Provinsi Sumsel</h4>
+                                                <p>Staff / Intern</p>
+                                                <span class="timeline-badge">Work</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="timeline-item">
+                                            <div class="dot"></div>
+                                            <div class="timeline-card">
+                                                <span class="timeline-date">2026</span>
+                                                <h4>Novo Club</h4>
+                                                <p>Batch 4 Participant</p>
+                                                <span class="timeline-badge">Community</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certificate Tab -->
+                            <div class="mini-tab-content right-content" id="certificate-content">
+                                <div class="cert-grid">
+                                    <!-- Certificate 1 -->
+                                    <div class="cert-card" data-title="Bawaslu Internship Certificate">
+                                        <div class="cert-img-wrapper">
+                                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+Bawaslu" alt="Bawaslu Certificate">
+                                            <div class="cert-overlay">
+                                                <button class="btn-cert-about">About</button>
+                                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+Bawaslu" target="_blank" class="btn-cert-view">View</a>
+                                            </div>
+                                        </div>
+                                        <div class="cert-info">
+                                            <h4>Bawaslu Internship</h4>
+                                            <p>Badan Pengawas Pemilihan Umum</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Certificate 2 -->
+                                    <div class="cert-card" data-title="RKU Komputer Internship Certificate">
+                                        <div class="cert-img-wrapper">
+                                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+RKU" alt="RKU Certificate">
+                                            <div class="cert-overlay">
+                                                <button class="btn-cert-about">About</button>
+                                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+RKU" target="_blank" class="btn-cert-view">View</a>
+                                            </div>
+                                        </div>
+                                        <div class="cert-info">
+                                            <h4>RKU Komputer</h4>
+                                            <p>Praktik Kerja Lapangan</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="timeline-item">
-                            <div class="dot"></div>
-                            <div class="timeline-card">
-                                <span class="timeline-date">2026</span>
-                                <h4>Google Student Ambassador</h4>
-                                <p>Candidate 2026</p>
-                                <span class="timeline-badge">Program</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Kolom 2 (Kanan) -->
-                    <div class="timeline-straight-right">
-                        <div class="timeline-item">
-                            <div class="dot"></div>
-                            <div class="timeline-card">
-                                <span class="timeline-date">2024</span>
-                                <h4>Bawaslu Provinsi Sumsel</h4>
-                                <p>Staff / Intern</p>
-                                <span class="timeline-badge">Work</span>
-                            </div>
-                        </div>
-                        <div class="timeline-item">
-                            <div class="dot"></div>
-                            <div class="timeline-card">
-                                <span class="timeline-date">2026</span>
-                                <h4>Novo Club</h4>
-                                <p>Batch 4 Participant</p>
-                                <span class="timeline-badge">Community</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-
-                            <!-- Konten: CERTIFICATE (Mode Grid) -->
-            <div class="mini-tab-content right-content" id="certificate-content">
-                <div class="cert-grid">
-                    
-                    <!-- Sertifikat 1 -->
-                    <div class="cert-card" data-title="Bawaslu Internship Certificate">
-                        <div class="cert-img-wrapper">
-                            <!-- Ganti src ini dengan foto sertifikat asli lu nanti -->
-                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+Bawaslu" alt="Bawaslu Certificate">
-                            <div class="cert-overlay">
-                                <button class="btn-cert-about">About</button>
-                                <!-- Href di bawah ini untuk melihat gambar full/HD -->
-                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+Bawaslu" target="_blank" class="btn-cert-view">View</a>
-                            </div>
-                        </div>
-                        <div class="cert-info">
-                            <h4>Bawaslu Internship</h4>
-                            <p>Badan Pengawas Pemilihan Umum</p>
-                        </div>
-                    </div>
-
-                    <!-- Sertifikat 2 -->
-                    <div class="cert-card" data-title="RKU Komputer Internship Certificate">
-                        <div class="cert-img-wrapper">
-                            <!-- Ganti src ini dengan foto sertifikat asli lu nanti -->
-                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+RKU" alt="RKU Certificate">
-                            <div class="cert-overlay">
-                                <button class="btn-cert-about">About</button>
-                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+RKU" target="_blank" class="btn-cert-view">View</a>
-                            </div>
-                        </div>
-                        <div class="cert-info">
-                            <h4>RKU Komputer</h4>
-                            <p>Praktik Kerja Lapangan</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-                        </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- =======================================================
-         TRANSISI ABOUT -> SKILLS (Cyber Diamond Divider)
-         ======================================================= -->
+    <!-- Cyber Divider -->
     <div class="cyber-divider reveal">
         <div class="line left-line"></div>
         <div class="hex-icon">
@@ -418,14 +397,12 @@
         <div class="line right-line"></div>
     </div>
 
-    <!-- =======================================================
-         SECTION SKILLS & TOOLS
-         ======================================================= -->
+    <!-- Skills Section -->
     <section id="skills" class="skills-section">
         <p class="section-subtitle reveal">WHAT I BRING</p>
         <h2 class="section-title reveal">Skills & <span>Tools</span></h2>
         
-        <!-- 👇 TOMBOL FILTER KATEGORI 👇 -->
+        <!-- Filter Buttons -->
         <div class="skills-filter reveal">
             <button class="filter-btn active" data-filter="all">Core</button>
             <button class="filter-btn" data-filter="expertise">Expertise</button>
@@ -435,18 +412,19 @@
 
         <div class="skills-wrapper reveal">
             
-            <!-- KATEGORI 1: EXPERTISE -->
+            <!-- Category: Expertise -->
             <div class="skill-category" id="cat-expertise">
                 <h3 class="category-title">Expertise</h3>
                 <div class="marquee-container">
                     <div class="marquee-track track-left">
-                        <!-- Group 1 -->
+                        <!-- Items -->
                         <div class="expertise-card"><i class="fas fa-object-group"></i><span>UI/UX Design</span></div>
                         <div class="expertise-card"><i class="fas fa-pen-nib"></i><span>Graphic Design</span></div>
                         <div class="expertise-card"><i class="fas fa-tools"></i><span>Hardware Repair</span></div>
                         <div class="expertise-card"><i class="fas fa-cogs"></i><span>Software Repair</span></div>
                         <div class="expertise-card"><i class="fas fa-code"></i><span>Web Developer</span></div>
-                        <!-- Group 2 (Beri class "duplicate" agar hilang saat mode biasa) -->
+                        
+                        <!-- Marquee Duplicates -->
                         <div class="expertise-card duplicate"><i class="fas fa-object-group"></i><span>UI/UX Design</span></div>
                         <div class="expertise-card duplicate"><i class="fas fa-pen-nib"></i><span>Graphic Design</span></div>
                         <div class="expertise-card duplicate"><i class="fas fa-tools"></i><span>Hardware Repair</span></div>
@@ -456,12 +434,12 @@
                 </div>
             </div>
 
-           <!-- KATEGORI 2: LANGUAGES -->
+            <!-- Category: Languages -->
             <div class="skill-category" id="cat-languages">
                 <h3 class="category-title">Language & Framework</h3>
                 <div class="marquee-container">
                     <div class="marquee-track track-right">
-                        <!-- Group 1 -->
+                        <!-- Items -->
                         <div class="skill-pill" style="--brand-color: #E34F26;"><i class="fab fa-html5"></i> <span>HTML</span></div>
                         <div class="skill-pill" style="--brand-color: #1572B6;"><i class="fab fa-css3-alt"></i> <span>CSS</span></div>
                         <div class="skill-pill" style="--brand-color: #F7DF1E;"><i class="fab fa-js"></i> <span>JavaScript</span></div>
@@ -471,7 +449,7 @@
                         <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="real-icon" alt="C++"> <span>C++</span></div>
                         <div class="skill-pill" style="--brand-color: #008080;"><i class="fas fa-file-code"></i> <span>LaTeX</span></div>
                         
-                        <!-- Group 2 (Duplikat Wajib) -->
+                        <!-- Marquee Duplicates -->
                         <div class="skill-pill duplicate" style="--brand-color: #E34F26;"><i class="fab fa-html5"></i> <span>HTML</span></div>
                         <div class="skill-pill duplicate" style="--brand-color: #1572B6;"><i class="fab fa-css3-alt"></i> <span>CSS</span></div>
                         <div class="skill-pill duplicate" style="--brand-color: #F7DF1E;"><i class="fab fa-js"></i> <span>JavaScript</span></div>
@@ -484,13 +462,12 @@
                 </div>
             </div>
 
-            <!-- KATEGORI 3: TOOLS -->
+            <!-- Category: Tools -->
             <div class="skill-category" id="cat-tools">
                 <h3 class="category-title">Tools & Environment</h3>
                 <div class="marquee-container">
                     <div class="marquee-track track-left">
-                        <!-- Group 1 -->
-                        <!-- Design & Video Editing -->
+                        <!-- Items -->
                         <div class="skill-pill"><img src="assets/images/tools/figma.webp" class="real-icon" alt="Figma"> <span>Figma</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/canva.webp" class="real-icon" alt="Canva"> <span>Canva</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/pshp.webp" class="real-icon" alt="Photoshop"> <span>Photoshop</span></div>
@@ -501,19 +478,14 @@
                         <div class="skill-pill"><img src="assets/images/tools/capcut.webp" class="real-icon" alt="CapCut"> <span>CapCut</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/filmora.png" class="real-icon" alt="Filmora"> <span>Filmora</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/clipchamp.webp" class="real-icon" alt="Clipchamp"> <span>Clipchamp</span></div>
-                        
-                        <!-- Dev & System -->
                         <div class="skill-pill"><img src="assets/images/tools/git.png" class="real-icon" alt="Git"> <span>Git</span></div>
-                        <!-- GitHub dikasih invert-on-dark biar kelihatan di background gelap -->
                         <div class="skill-pill"><img src="assets/images/tools/github.png" class="real-icon invert-on-dark" alt="GitHub"> <span>GitHub</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/docker.png" class="real-icon" alt="Docker"> <span>Docker</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/vscode.webp" class="real-icon" alt="VS Code"> <span>VS Code</span></div>
-                        
-                        <!-- Office -->
                         <div class="skill-pill"><img src="assets/images/tools/excel.webp" class="real-icon" alt="Excel"> <span>Excel</span></div>
                         <div class="skill-pill"><img src="assets/images/tools/word.webp" class="real-icon" alt="Word"> <span>Word</span></div>
                         
-                        <!-- Group 2 (Duplikat Wajib untuk Marquee Berjalan) -->
+                        <!-- Marquee Duplicates -->
                         <div class="skill-pill duplicate"><img src="assets/images/tools/figma.webp" class="real-icon" alt="Figma"> <span>Figma</span></div>
                         <div class="skill-pill duplicate"><img src="assets/images/tools/canva.webp" class="real-icon" alt="Canva"> <span>Canva</span></div>
                         <div class="skill-pill duplicate"><img src="assets/images/tools/pshp.webp" class="real-icon" alt="Photoshop"> <span>Photoshop</span></div>
@@ -537,23 +509,19 @@
         </div>
     </section>
 
-    <!-- =======================================================
-         TRANSISI SKILLS -> PROJECT (SVG Wave)
-         ======================================================= -->
+    <!-- Transition (Wave) -->
     <div class="wave-transition reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill-opacity="1" d="M0,64L34.3,74.7C68.6,85,137,107,206,112C274.3,117,343,107,411,112C480,117,549,139,617,133.3C685.7,128,754,96,823,106.7C891.4,117,960,171,1029,160C1097.1,149,1166,75,1234,48C1302.9,21,1371,43,1406,53.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill-opacity="1" d="M0,64L34.3,74.7C68.6,85,137,107,206,112C274.3,117,343,107,411,112C480,117,549,139,617,133.3C685.7,128,754,96,823,106.7C891.4,117,960,171,1029,160C1097.1,149,1166,75,1234,48C1302.9,21,1371,43,1406,53.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+        </svg>
     </div>
 
-    <!-- =======================================================
-         SECTION PROJECT (TRUE INFINITE FLAT SLIDER)
-         ======================================================= -->
+    <!-- Project Section -->
     <section id="project" class="project-section">
         
-        <!-- INJEKSI VECTOR BUAT KOTAK MIRING MELENGKUNG (Radius Diperbesar) -->
         <svg width="0" height="0" style="position: absolute;">
             <defs>
                 <clipPath id="card-slant" clipPathUnits="objectBoundingBox">
-                    <!-- Path ini udah diubah biar sudutnya lengkung banget -->
                     <path d="M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z" />
                 </clipPath>
             </defs>
@@ -562,7 +530,7 @@
         <p class="section-subtitle reveal">MY PORTFOLIO</p>
         <h2 class="section-title reveal">Featured <span>Projects</span></h2>
         
-        <!-- Filter Kategori (Masuk ke dalam kotak kapsul) -->
+        <!-- Filter Buttons -->
         <div class="project-filter reveal">
             <button class="p-filter-btn active" data-filter="all">All</button>
             <button class="p-filter-btn" data-filter="design">Design & Creative</button>
@@ -571,7 +539,7 @@
             <button class="p-filter-btn" data-filter="research">Research</button>
         </div>
 
-        <!-- Wadah Carousel Utama -->
+        <!-- Carousel Container -->
         <div class="project-carousel-wrapper reveal">
             <button class="carousel-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-btn next-btn"><i class="fas fa-chevron-right"></i></button>
@@ -584,7 +552,7 @@
             <div class="project-track-container">
                 <div class="project-track" id="project-track">
                     
-                    <!-- PROJECT 1: DESIGN - SOCIAL MEDIA -->
+                    <!-- Project 1 -->
                     <div class="project-slide" data-category="design">
                         <div class="p-card-shadow"> 
                             <div class="p-card-glass"> 
@@ -613,7 +581,7 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 2: DESIGN - BRAND IDENTITY & PRINT -->
+                    <!-- Project 2 -->
                     <div class="project-slide" data-category="design">
                         <div class="p-card-shadow"> 
                             <div class="p-card-glass"> 
@@ -642,7 +610,7 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 3: DESIGN - CORPORATE DECK -->
+                    <!-- Project 3 -->
                     <div class="project-slide" data-category="design">
                         <div class="p-card-shadow"> 
                             <div class="p-card-glass"> 
@@ -670,7 +638,7 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 4: WEB DEV -->
+                    <!-- Project 4 -->
                     <div class="project-slide" data-category="webdev">
                         <div class="p-card-shadow">
                             <div class="p-card-glass">
@@ -699,7 +667,7 @@
                         </div>
                     </div>
 
-                    <!-- PROJECT 5: IT & HARDWARE -->
+                    <!-- Project 5 -->
                     <div class="project-slide" data-category="hardware">
                         <div class="p-card-shadow">
                             <div class="p-card-glass">
@@ -726,28 +694,26 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- PROJECT 6: RESEARCH -->
                     
-
+                    <!-- Project 6: Research -->
+                    
                 </div>
             </div>
         </div>
+
         <div id="project-counter" class="project-counter reveal">
             <span id="counter-category">All</span> &mdash; <span id="counter-number">5 projects</span>
         </div>
     </section>
 
-    <!-- =======================================================
-         TRANSISI PROJECT -> CONTACT (SVG Wave)
-         ======================================================= -->
+    <!-- Transition (Wave) -->
     <div class="wave-transition-contact reveal">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0099ff" fill-opacity="1" d="M0,288L34.3,256C68.6,224,137,160,206,128C274.3,96,343,96,411,96C480,96,549,96,617,80C685.7,64,754,32,823,37.3C891.4,43,960,85,1029,90.7C1097.1,96,1166,64,1234,90.7C1302.9,117,1371,203,1406,245.3L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#0099ff" fill-opacity="1" d="M0,288L34.3,256C68.6,224,137,160,206,128C274.3,96,343,96,411,96C480,96,549,96,617,80C685.7,64,754,32,823,37.3C891.4,43,960,85,1029,90.7C1097.1,96,1166,64,1234,90.7C1302.9,117,1371,203,1406,245.3L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+        </svg>
     </div>
 
-    <!-- =======================================================
-         SECTION CONTACT ME
-         ======================================================= -->
+    <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="glow-circle-contact"></div>
         
@@ -756,17 +722,13 @@
             <h2 class="section-title reveal">Contact <span>Me</span></h2>
             
             <div class="contact-content reveal">
-                
-                <!-- Info Kiri -->
+                <!-- Contact Info -->
                 <div class="contact-info">
-                    
-                    <!-- Kotak 1: Intro -->
                     <div class="info-card glass-panel">
                         <h3>Let's talk about your project</h3>
                         <p>Have a crazy idea, need help with coding, design, or just want to grab a coffee? Don't hesitate to reach out!</p>
                     </div>
                     
-                    <!-- Kotak 2: Email -->
                     <div class="info-item glass-panel">
                         <div class="icon-box"><i class="fas fa-envelope"></i></div>
                         <div class="item-text">
@@ -775,7 +737,6 @@
                         </div>
                     </div>
                     
-                    <!-- Kotak 3: Location -->
                     <div class="info-item glass-panel">
                         <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
                         <div class="item-text">
@@ -784,7 +745,6 @@
                         </div>
                     </div>
 
-                    <!-- Kotak 4: Social Media -->
                     <div class="social-contact glass-panel">
                         <p>Find me on:</p>
                         <div class="social-icons">
@@ -793,10 +753,9 @@
                             <a href="#"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
-                    
                 </div>                  
 
-                <!-- Form Kanan (Sudah disiapkan untuk PHP/Form Endpoint) -->
+                <!-- Contact Form -->
                 <div class="contact-form glass-panel">
                     <form action="#" method="POST">
                         <div class="input-group">
@@ -820,44 +779,35 @@
                         </button>
                     </form>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- Footer Simple -->
+    <!-- Footer -->
     <footer class="main-footer">
         <p>&copy; 2026 M. Alfarel. All rights reserved.</p>
     </footer>
 
-    <!-- =======================================================
-         MODAL POPUP (Muncul saat kotak diklik)
-         ======================================================= -->
+    <!-- Modals -->
+    <!-- Card Modal -->
     <div id="card-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" title="Tutup">&times;</button>
-            
             <div class="modal-header-icon">
                 <i class="fas fa-school"></i>
             </div>
-            
             <h3 id="modal-title">Nama Instansi</h3>
             <p id="modal-subtitle">Tahun - Lokasi</p>
             
-            <div class="modal-badges" id="modal-badges">
-                <!-- Badge akan diisi otomatis dari JS -->
-            </div>
+            <div class="modal-badges" id="modal-badges"></div>
             
             <p id="modal-desc" class="modal-desc">Deskripsi singkat akan muncul di sini...</p>
             
             <div class="modal-achievements">
                 <h4>Achievements</h4>
-                <ul id="modal-achievements-list">
-                    <!-- List prestasi akan diisi otomatis dari JS -->
-                </ul>
+                <ul id="modal-achievements-list"></ul>
             </div>
 
-            <!-- Kotak untuk menaruh Foto / Sertifikat -->
             <div class="modal-image-box">
                 <i class="fas fa-image"></i>
                 <span>Foto / Sertifikat</span>
@@ -865,16 +815,12 @@
             </div>
         </div>
     </div>
-    <!-- =======================================================
-         MODAL POPUP SKILLS (Desain Khusus Skills/Tools)
-         ======================================================= -->
+
+    <!-- Skill Modal -->
     <div id="skill-modal" class="modal-overlay">
         <div class="skill-modal-content">
-            <!-- Header Modal -->
             <div class="skill-modal-header">
-                <div class="skill-modal-icon" id="skill-modal-icon">
-                    <!-- Icon akan otomatis masuk ke sini -->
-                </div>
+                <div class="skill-modal-icon" id="skill-modal-icon"></div>
                 <div class="skill-modal-header-text">
                     <h3 id="skill-modal-title">Figma</h3>
                     <p id="skill-modal-subtitle">SPECIALTY DETAILS</p>
@@ -882,17 +828,14 @@
                 <button class="skill-modal-close" id="skill-close-btn" title="Tutup">&times;</button>
             </div>
             
-            <!-- Body Modal -->
             <div class="skill-modal-body">
                 <p id="skill-modal-desc" class="skill-modal-desc">Deskripsi alat atau skill akan muncul di sini.</p>
-                
                 <h4 class="skill-modal-section-title">CORE EXPERTISE:</h4>
-                <ul id="skill-modal-list" class="skill-expertise-list">
-                    <!-- List keahlian akan otomatis masuk sini -->
-                </ul>
+                <ul id="skill-modal-list" class="skill-expertise-list"></ul>
             </div>
         </div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>

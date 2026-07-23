@@ -1,8 +1,3 @@
-/* =======================================================
-   SCRIPT.JS - ALFAREL PORTFOLIO
-   Telah dirapikan dan dioptimasi (Vertical Formatting)
-   ======================================================= */
-
 /* --- 1. SIDEBAR & NAVIGATION --- */
 const mobileMenuBtn = document.getElementById('mobile-menu');
 const sidebar = document.getElementById('sidebar');

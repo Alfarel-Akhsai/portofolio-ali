@@ -1119,7 +1119,7 @@ body {
 .timeline-zigzag-item { 
     position: relative; 
     width: 50%; 
-    margin-bottom: 12px; 
+    margin-bottom: -42px; 
     z-index: 2; 
 }
 
@@ -1178,7 +1178,8 @@ body {
     width: 100%; 
     left: 0; 
     padding: 0; 
-    margin-top: 2px; 
+    margin-top: 60px; 
+    margin-bottom: 20px;
     display: flex; 
     flex-direction: column; 
     align-items: center; 
@@ -3243,7 +3244,8 @@ body.light-mode .main-footer { background: var(--bg-utama); border-color: rgba(0
     .split-cards { flex-direction: column; gap: 15px; }
     .mini-tabs { justify-content: center; }
     .timeline-mini-zigzag::before { left: 15px; transform: none; }
-    .timeline-zigzag-item { width: 100%; }
+    .timeline-zigzag-item { width: 100%; margin-bottom: 15px;}
+    .timeline-zigzag-item.full-width { margin-top: 10px; }
     .timeline-zigzag-item.left-side { padding-right: 0; padding-left: 40px; }
     .timeline-zigzag-item.right-side { left: 0; padding-left: 40px; }
     .timeline-zigzag-item.left-side .dot-zigzag, .timeline-zigzag-item.right-side .dot-zigzag { left: 9px; right: auto; }

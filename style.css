@@ -3182,7 +3182,7 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
     .desktop-nav {
         gap: clamp(15px, 2.5vw, 35px);
         top: 50%;
-        transform: translate(-50%, -50%); /* Perfect vertical centering */
+        transform: translate(-50%, -50%);
         display: flex;
         align-items: center;
     }
@@ -3191,7 +3191,6 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
     .hero-section {
         height: auto;
         min-height: 100vh;
-        padding-top: 100px;
         padding-top: 50px;
     }
     
@@ -3213,32 +3212,33 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         margin: 0 auto clamp(30px, 5vw, 50px) auto; 
     }
 
+    /* FIX 1: Hero image scaled down proportionally for tablet */
     .hero-image-wrapper { 
-        width: clamp(320px, 45vw, 460px); /* Increased by 10-15% */
+        width: clamp(200px, 28vw, 300px); 
         margin: 0 auto;
         position: relative;
         z-index: 2;
-        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45)); /* Soft depth shadow */
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45));
     }
     
     .hero-content { 
-        margin: -4.5rem 0 0 0; /* Overlaps the lower legs beautifully */
+        margin: -3rem 0 0 0; 
         align-items: center; 
         text-align: center; 
         width: 100%;
         padding-bottom: 4rem;
         position: relative;
-        z-index: 5; /* Sits above the character */
+        z-index: 5;
     }
     
     .my-text { 
-        font-size: clamp(4rem, 8vw, 6rem); 
-        margin: 0 0 -1.5rem 0; 
+        font-size: clamp(3rem, 6vw, 4.5rem); 
+        margin: 0 0 -1rem 0; 
         transform: rotate(-3deg);
     }
     
     .portofolio-text { 
-        font-size: clamp(6.5rem, 12vw, 10rem); 
+        font-size: clamp(4.5rem, 9vw, 7rem); 
         line-height: 1.1; 
     }
     
@@ -3254,14 +3254,9 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         align-self: center;
     }
 
-    /* Fix Transitions & Section Spacing */
-    .section-transition {
-        margin-top: -8vw !important;
-    }
-    
-    .about-section {
-        padding-top: clamp(6rem, 10vw, 10rem);
-    }
+    /* HERO -> ABOUT TRANSITION WAVE (TABLET) */
+    .hero-content { padding-bottom: 0 !important; }
+    .section-transition { margin-top: clamp(-140px, -10vw, -80px) !important; }
     
     .about-section .section-title,
     .project-section .section-subtitle,
@@ -3271,21 +3266,52 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         text-align: center;
     }
 
-    /* About Section */
-    .about-top-row { 
-        gap: clamp(30px, 5vw, 50px) !important; 
+    /* ABOUT SECTION - PREMIUM TWO-COLUMN (TABLET) */
+    .about-section { padding-top: clamp(80px, 12vw, 120px) !important; }
+    .about-top-row {
+        display: flex !important;
+        flex-direction: row-reverse !important;
         align-items: center !important;
+        justify-content: space-between !important;
+        gap: 4vw !important;
+        width: 100% !important;
+        position: relative !important;
+        padding-top: 100px !important; 
     }
-    
-    .about-text-box { 
-        padding: clamp(20px, 4vw, 35px); 
-        flex: 1; 
-    }
-    
     .about-image-wrapper {
-        margin-top: 0 !important;
-        transform: scale(0.9);
+        flex: 0 0 45% !important;
+        display: flex !important;
+        justify-content: center !important;
+        position: static !important; 
+        margin: 0 !important;
+        transform: none !important;
     }
+    .transform-box {
+        transform: scale(0.95) !important;
+        margin: 0 auto !important;
+    }
+    .about-subtitle-photo {
+        position: absolute !important;
+        top: 0 !important;
+        right: 0 !important;
+        width: 50% !important; 
+        text-align: left !important;
+        margin: 0 !important;
+        font-size: clamp(2.2rem, 4vw, 2.8rem) !important;
+        line-height: 1.2 !important;
+    }
+    .about-text-box {
+        flex: 0 0 50% !important;
+        padding: clamp(35px, 4vw, 50px) !important;
+        margin: 0 !important;
+        border-radius: 25px !important;
+    }
+    .about-text-box p {
+        font-size: clamp(0.95rem, 1.5vw, 1.05rem) !important;
+        line-height: 1.8 !important;
+        margin-bottom: 1.2rem !important;
+    }
+    .about-text-box p:last-of-type { margin-bottom: 0 !important; }
 
     /* Projects & Content */
     .project-slide { 
@@ -3305,17 +3331,18 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
 
 /* --- MOBILE DEVICES (Max 768px) --- */
 @media screen and (max-width: 768px) {
-    /* 1. Global & Utilities */
+    /* Global & Utilities */
     html, body { 
         overflow-x: hidden; 
         width: 100vw;
+        max-width: 100vw;
     }
     
     .desktop-nav, .btn-lets-talk { 
         display: none; 
     }
     
-    /* Navbar - Slimmer, Higher, Centered */
+    /* Navbar */
     .top-navbar { 
         padding: 6px 20px; 
         align-items: center;
@@ -3327,20 +3354,21 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
     }
     
     .menu-toggle {
-        margin-top: 2px; /* Optical vertical centering */
+        margin-top: 2px;
     }
     
+    /* 1. Theme Switcher (Digedein) */
     .vertical-theme-switch { 
-        transform: scale(0.7) translateY(-50%); 
-        right: -8px !important; 
+        transform: scale(0.85) translateY(-50%) !important; /* Scale naik dari 0.7 ke 0.85 */
+        right: -3px !important; /* Geser dikit ke kiri biar nggak kepotong */
         transform-origin: right center; 
     }
 
-    /* 2. Hero Section - Recreating Tablet Composition */
+    /* 2. Hero Section */
     .hero-section { 
         height: auto; 
         min-height: 100vh; 
-        padding: clamp(90px, 12vh, 120px) 5vw clamp(60px, 10vh, 100px) 5vw; 
+        padding: clamp(20px, 4vh, 40px) 5vw clamp(100px, 15vh, 150px) 5vw !important; 
         display: flex;
         flex-direction: column;
         align-items: center; 
@@ -3348,63 +3376,80 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         box-sizing: border-box;
     }
     
-    .hero-wrapper {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
     .badge { 
-        margin: 0 auto clamp(30px, 6vh, 50px) auto; 
+        margin: 0 auto 15px auto !important; 
         padding: 8px clamp(20px, 5vw, 30px); 
         font-size: clamp(0.75rem, 2vw, 0.9rem); 
         letter-spacing: clamp(2px, 1vw, 4px); 
         width: fit-content; 
     }
 
-    .hero-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0;
+    .hero-image {
+        /* Bikin 70% dari atas tetap solid (hitam), sisa 30% ke bawah perlahan transparan */
+        -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 98%);
+        mask-image: linear-gradient(to bottom, black 70%, transparent 98%);
     }
-    
-    /* Character Brought Back & Sized Up Properly */
+
+    /* 3. Foto Karakter (Digedein) */
     .hero-image-wrapper { 
         display: block !important; 
-        width: clamp(200px, 55vw, 320px); 
+        /* Lebar foto ditambah jadi 65vw (sebelumnya 55vw) */
+        width: clamp(250px, 65vw, 380px) !important; 
         margin: 0 auto;
         position: relative;
         z-index: 2;
-        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45)); /* Depth effect */
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45)); 
     }
     
+    /* 4. Teks (Ditarik biar numpuk pas di kaki) */
     .hero-content { 
-        margin: clamp(-70px, -15vw, -45px) 0 0 0; 
+        /* Margin negatif ditambah biar teks makin ketarik ke atas numpuk sama sepatu */
+        margin: clamp(-95px, -22vw, -70px) 0 0 0 !important; 
         align-items: center; 
         text-align: center; 
         width: 100%; 
         padding: 0; 
         position: relative;
-        z-index: 5; /* Layers above character */
+        z-index: 5; 
         display: flex;
         flex-direction: column;
+        padding-bottom: 0 !important;
     }
     
+    /* FIX 2: Fluid typography for "my" — no overflow, safe negative margin */
     .my-text { 
-        font-size: clamp(4rem, 15vw, 7rem); 
-        margin: 0 0 clamp(-12px, -3vw, -5px) 0; 
+        font-size: 10vw; 
+        align-self: flex-start;
+        margin: 0 0 -6vw 12vw !important; 
         transform: rotate(-4deg); 
-        text-align: center; 
+        text-align: left; 
+        max-width: 100%;
+        color: var(--teks-putih);
+        text-shadow: 
+            0 0 10px var(--aksen-tosca),
+            0 0 20px var(--aksen-tosca),
+            0 0 40px var(--aksen-tosca),
+            0 0 80px var(--aksen-tosca) !important;
+    }
+
+    body.light-mode .my-text,
+    body.light-mode .portofolio-text { 
+        text-shadow: 
+            0 0 8px #F4F7F7,
+            0 0 15px #F4F7F7,
+            0 0 30px #F4F7F7,
+            0 0 50px #F4F7F7,
+            0 0 80px #F4F7F7 !important;
     }
     
+    /* FIX 2: Fluid typography for "portofolio" — capped fluid unit prevents horizontal scroll */
     .portofolio-text { 
-        font-size: clamp(3.8rem, 15vw, 7.5rem); 
+        font-size: 13vw; 
         line-height: 1.1; 
-        margin-bottom: clamp(6px, 3vh, 20px); 
+        margin-bottom: 3vw; 
         text-align: center; 
+        max-width: 100%;
+        word-break: keep-all;
     }
     
     .subtitle-text { 
@@ -3414,6 +3459,7 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         line-height: 1.6; 
         text-align: center; 
         width: 100%; 
+        max-width: 100%;
     }
     
     .btn-about { 
@@ -3427,9 +3473,10 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         height: 50vh; 
     }
 
-    /* Fix Transitions */
-    .section-transition { 
-        margin-top: -12vw !important; 
+    .section-transition.reveal {
+        transform: translateY(0) !important;
+        opacity: 1 !important;
+        margin-top: clamp(-280px, -35vw, -150px) !important;
     }
     
     .cyber-divider {
@@ -3442,84 +3489,120 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         margin-top: -8vw !important;
     }
 
-    /* 3. About Section */
-    .about-section { 
-        padding: clamp(60px, 10vw, 100px) 5vw; 
+    /* ABOUT SECTION (MOBILE) */
+    .about-section { padding-top: clamp(60px, 10vw, 80px) !important; }
+    .about-section .section-title {
+        margin: 0 auto clamp(30px, 8vw, 50px) auto !important;
+        text-align: center !important;
+        align-self: center !important;
     }
-    
-    .about-section .section-title { 
-        font-size: clamp(2.5rem, 8vw, 3.5rem); 
-        margin: 0 auto clamp(30px, 6vw, 50px) auto !important; 
-        text-align: center; 
+    .about-top-row {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        gap: clamp(35px, 8vw, 50px) !important;
+        width: 100% !important;
+        padding-top: 0 !important;
     }
-    
-    .about-top-row { 
-        flex-direction: column !important; 
-        gap: clamp(20px, 5vw, 30px) !important; 
-        margin-top: 0 !important; 
-        width: 100%;
+    .about-image-wrapper {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+        align-items: center !important;
+        gap: clamp(15px, 5vw, 25px) !important;
+        width: 100% !important;
+        position: relative !important;
+        margin: 0 !important;
     }
-    
-    .about-image-wrapper { 
-        display: none !important; 
+    .transform-box {
+        transform: scale(0.95) !important;
+        margin: 0 !important;
     }
-    
-    .about-text-box { 
-        width: 100%; 
-        padding: clamp(20px, 6vw, 30px); 
-        border-radius: 20px; 
-        box-sizing: border-box; 
+    .about-subtitle-photo {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        text-align: center !important;
+        font-size: clamp(2.2rem, 8vw, 2.8rem) !important;
+        margin: 0 !important;
+        line-height: 1.3 !important;
     }
-    
-    .about-text-box p { 
-        font-size: clamp(0.9rem, 2.8vw, 1.05rem); 
-        line-height: 1.7; 
-        margin-bottom: 1rem; 
+    .about-text-box {
+        width: 90% !important; 
+        flex: none !important;
+        padding: clamp(30px, 7vw, 40px) clamp(25px, 6vw, 35px) !important;
+        margin: 0 auto !important;
+        border-radius: 20px !important;
     }
-    
-    .about-extra-info { 
-        padding: clamp(20px, 6vw, 30px) !important; 
-        border-radius: 20px !important; 
+    .about-text-box p {
+        display: block !important;
+        font-size: clamp(0.95rem, 3.5vw, 1.05rem) !important;
+        line-height: 1.85 !important;
+        margin-bottom: 1.25rem !important;
+        text-align: left !important;
     }
-    
-    .about-extra-info.active { 
-        clip-path: none !important; 
+    .about-text-box p:last-of-type {
+        margin-bottom: 2rem !important;
     }
-    
-    .about-content-wrapper:has(.about-extra-info.active) .about-text-box { 
-        clip-path: none !important; 
-        border-radius: 20px !important; 
-        margin-bottom: clamp(15px, 4vw, 25px) !important; 
-        border-bottom: 1px solid rgba(0, 229, 255, 0.15) !important; 
+    .about-extra-info {
+        padding: clamp(20px, 6vw, 30px) !important;
+        border-radius: 20px !important;
+    }
+    .about-extra-info.active { clip-path: none !important; }
+    .about-content-wrapper:has(.about-extra-info.active) .about-text-box {
+        clip-path: none !important;
+        border-radius: 20px !important;
+        margin-bottom: clamp(15px, 4vw, 25px) !important;
+        border-bottom: 1px solid rgba(0, 229, 255, 0.15) !important;
+    }
+    .btn-read-more {
+        margin: 0 auto !important;
+        display: flex !important;
+        width: max-content !important;
+        justify-content: center !important;
+        padding: clamp(10px, 3vw, 14px) clamp(25px, 6vw, 35px) !important;
     }
 
-    /* Horizontal Scrolling Mini Tabs */
     .info-grid-split { 
         grid-template-columns: 1fr; 
         gap: clamp(30px, 6vw, 40px); 
     }
     
-    .mini-tabs { 
+    /* FIX 3: Horizontal scrolling containers with hidden scrollbars */
+    .mini-tabs,
+    .skills-filter,
+    .project-filter { 
         display: flex; 
         flex-wrap: nowrap; 
+        white-space: nowrap; 
         overflow-x: auto; 
         -webkit-overflow-scrolling: touch; 
         justify-content: flex-start; 
-        padding-bottom: 10px; 
-        margin-bottom: 20px; 
         scrollbar-width: none; 
-        gap: 15px;
+        -ms-overflow-style: none; 
+        box-sizing: border-box;
     }
     
-    .mini-tabs::-webkit-scrollbar { display: none; }
+    .mini-tabs::-webkit-scrollbar,
+    .skills-filter::-webkit-scrollbar,
+    .project-filter::-webkit-scrollbar { 
+        display: none; 
+    }
+    
+    .mini-tabs {
+        padding-bottom: 10px; 
+        margin-bottom: 20px; 
+        gap: 15px;
+    }
     
     .mini-tab-btn { 
         font-size: clamp(0.9rem, 2.5vw, 1rem); 
         white-space: nowrap; 
         padding: 5px 15px; 
+        flex-shrink: 0;
     }
 
-    /* Timeline Structure Restored */
+    /* Timeline Structure */
     .timeline-mini-zigzag::before { left: 15px; transform: none; }
     .timeline-zigzag-item { width: 100%; margin-bottom: 20px; padding-left: 45px !important; padding-right: 0 !important; left: 0 !important; }
     .timeline-zigzag-item.full-width { margin-top: 0; padding-left: 45px !important; align-items: flex-start; }
@@ -3562,7 +3645,7 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         gap: 15px; 
     }
 
-    /* 4. Skills Section */
+    /* Skills Section */
     .skills-section { 
         padding: clamp(60px, 10vw, 100px) 5vw clamp(20px, 5vw, 40px) 5vw; 
     }
@@ -3573,37 +3656,26 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         margin-bottom: clamp(20px, 5vw, 40px); 
     }
     
-    /* Horizontal Scrolling Filters */
     .skills-filter, .project-filter { 
-        display: flex; 
-        flex-wrap: nowrap; 
-        overflow-x: auto; 
-        -webkit-overflow-scrolling: touch; 
-        justify-content: flex-start; 
         padding: clamp(8px, 2vw, 12px); 
         border-radius: 30px; 
         width: 100%; 
-        scrollbar-width: none; 
         margin-bottom: clamp(20px, 4vw, 30px);
-        box-sizing: border-box;
         gap: 10px;
-    }
-    
-    .skills-filter::-webkit-scrollbar, .project-filter::-webkit-scrollbar { 
-        display: none; 
     }
     
     .filter-btn, .p-filter-btn { 
         white-space: nowrap; 
         font-size: clamp(0.85rem, 2.5vw, 0.95rem); 
         padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 25px); 
+        flex-shrink: 0;
     }
     
     .expertise-card { 
         padding: clamp(12px, 3vw, 15px) clamp(15px, 4vw, 20px); 
     }
 
-    /* 5. Project Section */
+    /* Project Section */
     .project-section { 
         padding: clamp(40px, 8vw, 60px) 5vw 0 5vw; 
     }
@@ -3633,10 +3705,10 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         padding: 0 clamp(10px, 3vw, 20px); 
     }
     
-    /* Simplified Project Cards (No Clip Path) */
+    /* FIX 4: Simplified project cards — clip-path disabled, simple border-radius */
     .p-card-glass { 
         padding: clamp(20px, 5vw, 30px) clamp(15px, 4vw, 25px); 
-        border-radius: 24px !important; 
+        border-radius: 20px !important; 
         clip-path: none !important; 
         -webkit-clip-path: none !important; 
     }
@@ -3669,7 +3741,6 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         height: clamp(40px, 10vw, 50px); 
     }
     
-    /* Project Gallery - 2x2 Grid */
     .p-card-gallery { 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -3702,7 +3773,6 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         width: 100%; 
     }
     
-    /* Carousel Controls */
     .carousel-btn { 
         width: clamp(45px, 12vw, 55px); 
         height: clamp(45px, 12vw, 55px); 
@@ -3721,7 +3791,7 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         margin-top: 0 !important;
     }
 
-    /* 6. Contact & Footer Section */
+    /* Contact & Footer Section */
     .contact-section { 
         padding: clamp(40px, 8vw, 60px) 5vw clamp(60px, 10vw, 80px) 5vw; 
     }
@@ -3822,7 +3892,7 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         width: 100%; 
     }
 
-    /* 7. Modals */
+    /* Modals */
     .modal-content, .skill-modal-content { 
         width: 92%; 
         padding: clamp(20px, 5vw, 30px); 
@@ -3870,6 +3940,10 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
     .badge { 
         font-size: 0.75rem; 
         padding: 8px 15px; 
+    }
+    
+    .portofolio-text {
+        font-size: 14vw;
     }
     
     .about-section .section-title, 

@@ -3162,130 +3162,723 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
 
 
 /* =======================================================
-   13. RESPONSIVE DESIGN (MOBILE/TABLET)
+   13. RESPONSIVE DESIGN (MOBILE/TABLET) - NATIVE APP FEEL
    ======================================================= */
-@media screen and (max-width: 1200px) {
-    .hero-image-wrapper { width: 420px; }
-    .hero-content { margin-top: -150px; margin-left: -120px; }
-    .my-text { font-size: 6.5rem; margin-bottom: -70px; }
-    .portofolio-text { font-size: 12rem; }
-    .btn-about { margin-left: 50px; }
-    .subtitle-text { font-size: 1.2rem; letter-spacing: 14px; margin-left: 50px; }
-}
 
+/* --- TABLET & SMALL LAPTOP (Max 1024px) --- */
 @media screen and (max-width: 1024px) {
-    .hero-image-wrapper { width: 380px; }
-    .hero-content { margin-top: -120px; margin-left: -80px; }
-    .my-text { font-size: 5.5rem; margin-bottom: -50px; }
-    .portofolio-text { font-size: 9.5rem; }
-    .btn-about { margin-left: 30px; }
-    .subtitle-text { font-size: 1rem; letter-spacing: 10px; margin-left: 30px; }
-    .badge { padding: 10px 30px; font-size: 1rem; }
-}
-
-@media screen and (max-width: 900px) {
-    .desktop-nav, .btn-lets-talk { display: none; }
-    .top-navbar { padding: 5px 25px; }
-    .top-navbar.scrolled { padding: 3px 25px; }
-    .logo { font-size: 1.6rem; }
-    .hero-container { flex-direction: column; margin-top: 30px; }
-    .hero-image-wrapper { width: 420px; z-index: 1; margin-bottom: -220px; }
-    
-    .hero-image { 
+    /* Global & Typography */
+    html, body { 
+        overflow-x: hidden; 
         width: 100%; 
-        height: auto; 
-        z-index: 2; 
-        -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 95%); 
-        mask-image: linear-gradient(to bottom, black 65%, transparent 95%); 
+    }
+
+    /* Navbar - Polished & Centered */
+    .top-navbar {
+        padding: 15px clamp(20px, 4vw, 40px);
+        align-items: center;
     }
     
-    .hero-content { z-index: 3; margin-top: 0; margin-left: 0; align-items: center; }
-    .my-text { margin-left: -57%; font-size: 4.5rem; margin-bottom: -50px; }
-    .portofolio-text { font-size: 6rem; text-shadow: var(--bayangan-teks-glowing); }
+    .desktop-nav {
+        gap: clamp(15px, 2.5vw, 35px);
+        top: 50%;
+        transform: translate(-50%, -50%); /* Perfect vertical centering */
+        display: flex;
+        align-items: center;
+    }
+
+    /* Hero Section - Layered Composition */
+    .hero-section {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 100px;
+        padding-top: 50px;
+    }
+    
+    .hero-wrapper {
+        padding: 0 5%;
+    }
+    
+    .hero-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        margin-top: 0;
+    }
+    
+    .badge { 
+        padding: clamp(8px, 1.5vw, 12px) clamp(25px, 5vw, 50px); 
+        font-size: clamp(0.85rem, 1.5vw, 1.1rem); 
+        margin: 0 auto clamp(30px, 5vw, 50px) auto; 
+    }
+
+    .hero-image-wrapper { 
+        width: clamp(320px, 45vw, 460px); /* Increased by 10-15% */
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.45)); /* Soft depth shadow */
+    }
+    
+    .hero-content { 
+        margin: -4.5rem 0 0 0; /* Overlaps the lower legs beautifully */
+        align-items: center; 
+        text-align: center; 
+        width: 100%;
+        padding-bottom: 4rem;
+        position: relative;
+        z-index: 5; /* Sits above the character */
+    }
+    
+    .my-text { 
+        font-size: clamp(4rem, 8vw, 6rem); 
+        margin: 0 0 -1.5rem 0; 
+        transform: rotate(-3deg);
+    }
+    
+    .portofolio-text { 
+        font-size: clamp(6.5rem, 12vw, 10rem); 
+        line-height: 1.1; 
+    }
     
     .subtitle-text { 
-        margin-left: 0; 
-        margin-right: 0; 
-        font-size: 0.8rem; 
-        letter-spacing: 6px; 
-        margin-top: 15px; 
+        font-size: clamp(1rem, 1.8vw, 1.5rem); 
+        letter-spacing: clamp(4px, 1vw, 10px); 
+        margin: 1.5rem 0 2.5rem 0;
+        width: 100%; 
+    }
+    
+    .btn-about {
+        margin: 0 auto;
+        align-self: center;
+    }
+
+    /* Fix Transitions & Section Spacing */
+    .section-transition {
+        margin-top: -8vw !important;
+    }
+    
+    .about-section {
+        padding-top: clamp(6rem, 10vw, 10rem);
+    }
+    
+    .about-section .section-title,
+    .project-section .section-subtitle,
+    .contact-section .section-subtitle {
+        margin-top: 0 !important;
+        align-self: center;
+        text-align: center;
+    }
+
+    /* About Section */
+    .about-top-row { 
+        gap: clamp(30px, 5vw, 50px) !important; 
+        align-items: center !important;
+    }
+    
+    .about-text-box { 
+        padding: clamp(20px, 4vw, 35px); 
+        flex: 1; 
+    }
+    
+    .about-image-wrapper {
+        margin-top: 0 !important;
+        transform: scale(0.9);
+    }
+
+    /* Projects & Content */
+    .project-slide { 
+        flex: 0 0 85%; 
+    }
+    
+    .contact-bottom-row { 
+        grid-template-columns: repeat(2, 1fr); 
+    }
+    
+    .footer-top { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 3rem; 
+    }
+}
+
+
+/* --- MOBILE DEVICES (Max 768px) --- */
+@media screen and (max-width: 768px) {
+    /* 1. Global & Utilities */
+    html, body { 
+        overflow-x: hidden; 
+        width: 100vw;
+    }
+    
+    .desktop-nav, .btn-lets-talk { 
+        display: none; 
+    }
+    
+    /* Navbar - Slimmer, Higher, Centered */
+    .top-navbar { 
+        padding: 6px 20px; 
+        align-items: center;
+        height: auto;
+    }
+    
+    .logo { 
+        font-size: clamp(1.2rem, 4.5vw, 1.8rem); 
+    }
+    
+    .menu-toggle {
+        margin-top: 2px; /* Optical vertical centering */
+    }
+    
+    .vertical-theme-switch { 
+        transform: scale(0.7) translateY(-50%); 
+        right: -8px !important; 
+        transform-origin: right center; 
+    }
+
+    /* 2. Hero Section - Recreating Tablet Composition */
+    .hero-section { 
+        height: auto; 
+        min-height: 100vh; 
+        padding: clamp(90px, 12vh, 120px) 5vw clamp(60px, 10vh, 100px) 5vw; 
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        justify-content: center;
+        box-sizing: border-box;
+    }
+    
+    .hero-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .badge { 
+        margin: 0 auto clamp(30px, 6vh, 50px) auto; 
+        padding: 8px clamp(20px, 5vw, 30px); 
+        font-size: clamp(0.75rem, 2vw, 0.9rem); 
+        letter-spacing: clamp(2px, 1vw, 4px); 
+        width: fit-content; 
+    }
+
+    .hero-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    
+    /* Character Brought Back & Sized Up Properly */
+    .hero-image-wrapper { 
+        display: block !important; 
+        width: clamp(200px, 55vw, 320px); 
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45)); /* Depth effect */
+    }
+    
+    .hero-content { 
+        margin: clamp(-70px, -15vw, -45px) 0 0 0; 
+        align-items: center; 
+        text-align: center; 
+        width: 100%; 
+        padding: 0; 
+        position: relative;
+        z-index: 5; /* Layers above character */
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .my-text { 
+        font-size: clamp(4rem, 15vw, 7rem); 
+        margin: 0 0 clamp(-12px, -3vw, -5px) 0; 
+        transform: rotate(-4deg); 
         text-align: center; 
     }
     
-    .badge { margin-top: 50px; margin-bottom: 0; font-size: 0.9rem; }
-    .glow-circle { width: 100vw; height: 350px; filter: blur(90px); }
-    .btn-about { margin-left: 0; margin-top: 25px; font-size: 0.85rem; align-self: center; }
-    .section-transition { margin-top: -100px; }
-    .sidebar { width: 85%; }
+    .portofolio-text { 
+        font-size: clamp(3.8rem, 15vw, 7.5rem); 
+        line-height: 1.1; 
+        margin-bottom: clamp(6px, 3vh, 20px); 
+        text-align: center; 
+    }
+    
+    .subtitle-text { 
+        font-size: clamp(0.65rem, 3vw, 1rem); 
+        margin: 0 0 clamp(20px, 4vh, 30px) 0;
+        letter-spacing: clamp(2.7px, 1vw, 6px); 
+        line-height: 1.6; 
+        text-align: center; 
+        width: 100%; 
+    }
+    
+    .btn-about { 
+        margin: 0 auto; 
+        font-size: clamp(0.6rem, 2vw, 0.95rem);
+        padding: clamp(7px, 2.5vw, 12px) clamp(22px, 5vw, 35px);
+    }
+    
+    .glow-circle { 
+        width: 120vw; 
+        height: 50vh; 
+    }
 
-    /* About Mobile */
-    .about-section { padding: 80px 20px 40px 20px; }
+    /* Fix Transitions */
+    .section-transition { 
+        margin-top: -12vw !important; 
+    }
+    
+    .cyber-divider {
+        margin: 0 auto clamp(30px, 8vw, 50px) auto !important;
+        padding: 0 5vw;
+        box-sizing: border-box;
+    }
+    
+    .wave-transition {
+        margin-top: -8vw !important;
+    }
+
+    /* 3. About Section */
+    .about-section { 
+        padding: clamp(60px, 10vw, 100px) 5vw; 
+    }
     
     .about-section .section-title { 
-        font-size: 3rem; 
+        font-size: clamp(2.5rem, 8vw, 3.5rem); 
+        margin: 0 auto clamp(30px, 6vw, 50px) auto !important; 
         text-align: center; 
-        align-self: center; 
-        margin-top: -60px; 
-        margin-bottom: 30px; 
     }
     
-    .about-content-wrapper { flex-direction: column-reverse !important; text-align: center; gap: 120px !important; }
-    .about-text-box { flex: 1 1 auto !important; width: 100%; padding: 30px 20px; }
-    .about-top-row { flex-direction: column-reverse !important; align-items: center !important; gap: 80px !important; }
-    .about-image-wrapper { margin-top: 0 !important; }
-    .about-subtitle-photo { margin-bottom: 30px !important; top: -140px !important; }
-    .about-subtitle-photo span { top: 0 !important; margin-bottom: 40px !important; }
-
-    .transform-box { width: 240px; height: 290px; }
-    .oval-mask { width: 200px; height: 250px; }
-    .bg-img, .popout-img { width: 260px; transform: translate(-50%, -46%); }
-    .ring-bg-solid { width: 240px; height: 240px; }
-    .ring-line-solid { width: 230px; height: 290px; }
-    .ring-dashed-1 { width: 310px; height: 240px; }
-    .ring-dashed-2 { width: 260px; height: 320px; }
-    
-    .ai-toolbar { 
-        left: -15px; 
-        padding: 8px 6px; 
-        gap: 10px; 
+    .about-top-row { 
+        flex-direction: column !important; 
+        gap: clamp(20px, 5vw, 30px) !important; 
+        margin-top: 0 !important; 
+        width: 100%;
     }
     
-    .ai-toolbar i { font-size: 0.9rem; }
+    .about-image-wrapper { 
+        display: none !important; 
+    }
+    
+    .about-text-box { 
+        width: 100%; 
+        padding: clamp(20px, 6vw, 30px); 
+        border-radius: 20px; 
+        box-sizing: border-box; 
+    }
+    
+    .about-text-box p { 
+        font-size: clamp(0.9rem, 2.8vw, 1.05rem); 
+        line-height: 1.7; 
+        margin-bottom: 1rem; 
+    }
+    
+    .about-extra-info { 
+        padding: clamp(20px, 6vw, 30px) !important; 
+        border-radius: 20px !important; 
+    }
+    
+    .about-extra-info.active { 
+        clip-path: none !important; 
+    }
+    
+    .about-content-wrapper:has(.about-extra-info.active) .about-text-box { 
+        clip-path: none !important; 
+        border-radius: 20px !important; 
+        margin-bottom: clamp(15px, 4vw, 25px) !important; 
+        border-bottom: 1px solid rgba(0, 229, 255, 0.15) !important; 
+    }
 
-    /* Tabs Mobile */
-    .info-grid-split { grid-template-columns: 1fr; gap: 40px; }
-    .split-cards { flex-direction: column; gap: 15px; }
-    .mini-tabs { justify-content: center; }
+    /* Horizontal Scrolling Mini Tabs */
+    .info-grid-split { 
+        grid-template-columns: 1fr; 
+        gap: clamp(30px, 6vw, 40px); 
+    }
+    
+    .mini-tabs { 
+        display: flex; 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        justify-content: flex-start; 
+        padding-bottom: 10px; 
+        margin-bottom: 20px; 
+        scrollbar-width: none; 
+        gap: 15px;
+    }
+    
+    .mini-tabs::-webkit-scrollbar { display: none; }
+    
+    .mini-tab-btn { 
+        font-size: clamp(0.9rem, 2.5vw, 1rem); 
+        white-space: nowrap; 
+        padding: 5px 15px; 
+    }
+
+    /* Timeline Structure Restored */
     .timeline-mini-zigzag::before { left: 15px; transform: none; }
-    .timeline-zigzag-item { width: 100%; margin-bottom: 15px;}
-    .timeline-zigzag-item.full-width { margin-top: 10px; }
-    .timeline-zigzag-item.left-side { padding-right: 0; padding-left: 40px; }
-    .timeline-zigzag-item.right-side { left: 0; padding-left: 40px; }
-    .timeline-zigzag-item.left-side .dot-zigzag, .timeline-zigzag-item.right-side .dot-zigzag { left: 9px; right: auto; }
+    .timeline-zigzag-item { width: 100%; margin-bottom: 20px; padding-left: 45px !important; padding-right: 0 !important; left: 0 !important; }
+    .timeline-zigzag-item.full-width { margin-top: 0; padding-left: 45px !important; align-items: flex-start; }
+    .timeline-zigzag-item .dot-zigzag { left: 8px !important; right: auto !important; width: 14px; height: 14px; }
     .branch-fork-center { display: none; }
-    .split-cards-zigzag { flex-direction: column; gap: 15px; }
     
-    .cert-grid { grid-template-columns: 1fr; }
-    .cert-img-wrapper { height: 160px; }
+    .split-cards-zigzag { 
+        flex-direction: column; 
+        gap: 15px; 
+        width: 100%; 
+    }
     
-    .timeline-straight-right { 
+    .timeline-straight, .timeline-straight-right { 
+        padding-left: 40px; 
         padding-right: 0; 
-        padding-left: 25px; 
         text-align: left; 
     }
     
-    .timeline-straight-right::before { right: auto; left: 5.5px; }
-    .timeline-straight-right .dot { right: auto; left: -25.5px; }
+    .timeline-straight::before, .timeline-straight-right::before { 
+        left: 15px; 
+        right: auto; 
+    }
     
-    .achieve-grid { grid-template-columns: 1fr; }
-    .experience-grid-2col { grid-template-columns: 1fr; }
+    .timeline-straight .dot, .timeline-straight-right .dot { 
+        left: -25.5px; 
+        right: auto; 
+    }
+    
+    .timeline-card, .achieve-card, .cert-card { 
+        padding: clamp(15px, 4vw, 20px); 
+        border-radius: 16px; 
+    }
+    
+    .timeline-card h4, .achieve-card h4 { 
+        font-size: clamp(0.95rem, 3vw, 1.1rem); 
+    }
+    
+    .cert-grid, .achieve-grid, .experience-grid-2col { 
+        grid-template-columns: 1fr; 
+        gap: 15px; 
+    }
 
-    /* Contact & Footer Mobile Baru */
-    .contact-top-row { flex-direction: column; }
-    .form-row-2 { flex-direction: column; gap: 20px; }
-    .contact-bottom-row { grid-template-columns: 1fr; }
+    /* 4. Skills Section */
+    .skills-section { 
+        padding: clamp(60px, 10vw, 100px) 5vw clamp(20px, 5vw, 40px) 5vw; 
+    }
     
-    .footer-top { grid-template-columns: 1fr 1fr; gap: 30px; }
-    .brand-col { grid-column: span 2; text-align: center; }
-    .footer-middle { flex-direction: column; align-items: center; gap: 20px; text-align: center; }
+    .skills-section .section-title,
+    .project-section .section-title { 
+        font-size: clamp(2.5rem, 8vw, 3.5rem); 
+        margin-bottom: clamp(20px, 5vw, 40px); 
+    }
+    
+    /* Horizontal Scrolling Filters */
+    .skills-filter, .project-filter { 
+        display: flex; 
+        flex-wrap: nowrap; 
+        overflow-x: auto; 
+        -webkit-overflow-scrolling: touch; 
+        justify-content: flex-start; 
+        padding: clamp(8px, 2vw, 12px); 
+        border-radius: 30px; 
+        width: 100%; 
+        scrollbar-width: none; 
+        margin-bottom: clamp(20px, 4vw, 30px);
+        box-sizing: border-box;
+        gap: 10px;
+    }
+    
+    .skills-filter::-webkit-scrollbar, .project-filter::-webkit-scrollbar { 
+        display: none; 
+    }
+    
+    .filter-btn, .p-filter-btn { 
+        white-space: nowrap; 
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem); 
+        padding: clamp(10px, 2.5vw, 12px) clamp(20px, 5vw, 25px); 
+    }
+    
+    .expertise-card { 
+        padding: clamp(12px, 3vw, 15px) clamp(15px, 4vw, 20px); 
+    }
+
+    /* 5. Project Section */
+    .project-section { 
+        padding: clamp(40px, 8vw, 60px) 5vw 0 5vw; 
+    }
+    
+    .project-section .section-subtitle {
+        margin-top: 0 !important;
+    }
+    
+    .project-filter { 
+        margin-top: 0; 
+    }
+    
+    .project-carousel-wrapper { 
+        padding: clamp(20px, 5vw, 40px) 0 clamp(60px, 10vw, 80px) 0 !important; 
+        margin: 0 !important;
+    }
+    
+    .project-track-container { 
+        padding: 0 !important; 
+        margin: 0 !important; 
+        mask-image: none; 
+        -webkit-mask-image: none; 
+    }
+    
+    .project-slide { 
+        flex: 0 0 100%; 
+        padding: 0 clamp(10px, 3vw, 20px); 
+    }
+    
+    /* Simplified Project Cards (No Clip Path) */
+    .p-card-glass { 
+        padding: clamp(20px, 5vw, 30px) clamp(15px, 4vw, 25px); 
+        border-radius: 24px !important; 
+        clip-path: none !important; 
+        -webkit-clip-path: none !important; 
+    }
+    
+    .p-card-glass::before { 
+        display: none !important; 
+    }
+    
+    .p-card-header { 
+        align-items: flex-start; 
+        flex-direction: column; 
+        gap: clamp(10px, 3vw, 15px); 
+    }
+    
+    .p-card-title h3 { 
+        font-size: clamp(1.2rem, 4vw, 1.5rem); 
+        line-height: 1.3; 
+    }
+    
+    .p-card-title p { 
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem); 
+        padding-right: 0; 
+        margin-top: 8px; 
+    }
+    
+    .btn-external { 
+        align-self: flex-start; 
+        margin: 0; 
+        width: clamp(40px, 10vw, 50px); 
+        height: clamp(40px, 10vw, 50px); 
+    }
+    
+    /* Project Gallery - 2x2 Grid */
+    .p-card-gallery { 
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(10px, 2.5vw, 15px); 
+        height: auto; 
+        margin-top: clamp(20px, 5vw, 30px); 
+    }
+    
+    .p-card-gallery img { 
+        width: 100%; 
+        aspect-ratio: 4/5;
+        height: auto; 
+        border-radius: 12px; 
+        object-fit: cover;
+    }
+    
+    .p-card-footer { 
+        flex-wrap: wrap; 
+        gap: 15px; 
+        justify-content: center; 
+        margin-top: clamp(20px, 5vw, 30px); 
+    }
+    
+    .tool-line { 
+        display: none; 
+    }
+    
+    .tool-icons { 
+        justify-content: center; 
+        width: 100%; 
+    }
+    
+    /* Carousel Controls */
+    .carousel-btn { 
+        width: clamp(45px, 12vw, 55px); 
+        height: clamp(45px, 12vw, 55px); 
+        font-size: clamp(1rem, 3vw, 1.2rem); 
+        top: auto; 
+        bottom: -20px; 
+        transform: none; 
+        background: var(--aksen-tosca); 
+        color: var(--bg-utama); 
+    }
+    
+    .prev-btn { left: 15%; }
+    .next-btn { right: 15%; }
+    
+    .project-counter {
+        margin-top: 0 !important;
+    }
+
+    /* 6. Contact & Footer Section */
+    .contact-section { 
+        padding: clamp(40px, 8vw, 60px) 5vw clamp(60px, 10vw, 80px) 5vw; 
+    }
+    
+    .contact-section .section-title { 
+        font-size: clamp(2.5rem, 8vw, 3.5rem); 
+        margin-bottom: clamp(30px, 6vw, 40px); 
+    }
+    
+    .contact-top-row { 
+        flex-direction: column; 
+        gap: clamp(30px, 6vw, 40px); 
+    }
+    
+    .contact-form-new { 
+        overflow: visible; 
+    }
+    
+    .form-row-2 { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    
+    .form-row-2 input, 
+    .form-row-1 input, 
+    .form-row-1 textarea { 
+        width: 100%;
+        padding: clamp(15px, 4vw, 20px); 
+        font-size: clamp(0.9rem, 2.5vw, 1rem); 
+        border-radius: 20px; 
+    }
+    
+    .form-row-1 textarea { 
+        border-radius: 24px; 
+    }
+    
+    .btn-submit-new { 
+        width: 100%; 
+        text-align: center; 
+        border-radius: 40px; 
+        padding: clamp(15px, 4vw, 20px);
+    }
+    
+    .newsletter-card { 
+        padding: clamp(30px, 6vw, 40px) clamp(20px, 5vw, 30px); 
+        border-radius: 24px; 
+        text-align: center; 
+    }
+    
+    .newsletter-card h3 { 
+        font-size: clamp(1.4rem, 4vw, 1.8rem); 
+    }
+    
+    .contact-bottom-row { 
+        grid-template-columns: 1fr; 
+        gap: clamp(15px, 3vw, 20px); 
+    }
+    
+    .info-box-new { 
+        padding: clamp(20px, 5vw, 25px); 
+        border-radius: 20px; 
+    }
+    
+    .fat-footer { 
+        padding: clamp(50px, 10vw, 70px) 5vw clamp(25px, 5vw, 40px) 5vw; 
+    }
+    
+    .footer-top { 
+        grid-template-columns: 1fr; 
+        gap: clamp(40px, 8vw, 50px); 
+        text-align: center; 
+    }
+    
+    .brand-col { 
+        text-align: center; 
+    }
+    
+    .brand-col p { 
+        padding: 0; 
+    }
+    
+    .footer-middle { 
+        flex-direction: column; 
+        gap: 20px; 
+        text-align: center; 
+        padding: clamp(25px, 5vw, 35px) 0; 
+        align-items: center; 
+    }
+    
+    .f-contact-item { 
+        width: 100%; 
+        justify-content: center; 
+    }
+    
+    .f-socials { 
+        justify-content: center; 
+        margin-top: 10px; 
+        width: 100%; 
+    }
+
+    /* 7. Modals */
+    .modal-content, .skill-modal-content { 
+        width: 92%; 
+        padding: clamp(20px, 5vw, 30px); 
+        max-height: 85vh; 
+        border-radius: 24px; 
+    }
+    
+    .modal-header-icon { 
+        font-size: clamp(2rem, 6vw, 2.5rem); 
+        margin-bottom: 15px; 
+    }
+    
+    .modal-content h3, .skill-modal-header-text h3 { 
+        font-size: clamp(1.1rem, 3.5vw, 1.3rem); 
+    }
+    
+    .modal-content #modal-subtitle { 
+        font-size: clamp(0.75rem, 2.5vw, 0.85rem); 
+        margin-bottom: 20px; 
+    }
+    
+    .modal-desc, .skill-modal-desc { 
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem); 
+        margin-bottom: 20px; 
+        line-height: 1.6; 
+    }
+    
+    .modal-badges {
+        justify-content: center;
+    }
+    
+    .modal-badges span { 
+        font-size: clamp(0.7rem, 2vw, 0.8rem); 
+        padding: 6px 14px; 
+    }
+    
+    .skill-expertise-list li { 
+        padding: clamp(12px, 3vw, 18px); 
+        font-size: clamp(0.85rem, 2.5vw, 0.95rem); 
+    }
+}
+
+/* --- SMALL MOBILE (Max 400px) --- */
+@media screen and (max-width: 400px) {
+    .badge { 
+        font-size: 0.75rem; 
+        padding: 8px 15px; 
+    }
+    
+    .about-section .section-title, 
+    .skills-section .section-title, 
+    .project-section .section-title, 
+    .contact-section .section-title { 
+        font-size: clamp(2rem, 10vw, 2.5rem); 
+    }
+    
+    .prev-btn { left: 10%; }
+    .next-btn { right: 10%; }
 }

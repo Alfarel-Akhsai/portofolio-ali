@@ -60,7 +60,7 @@ function reveal() {
     for (let i = 0; i < reveals.length; i++) {
         const windowHeight = window.innerHeight; 
         const elementTop = reveals[i].getBoundingClientRect().top; 
-        const elementVisible = 100; 
+        const elementVisible = window.innerWidth <= 768 ? 40 : 100;
 
         if (elementTop < windowHeight - elementVisible) {
             reveals[i].classList.add('active');
@@ -856,6 +856,52 @@ const projectFilterBtns = document.querySelectorAll('.p-filter-btn');
 const projectTrack = document.getElementById('project-track');
 const prevBtn = document.querySelector('.prev-btn');
 const nextBtn = document.querySelector('.next-btn');
+// === TAMBAHAN DROPDOWN KHUSUS MOBILE UNTUK PROJECT ===
+const projectFilterContainer = document.querySelector('.project-filter');
+if (projectFilterContainer && window.innerWidth <= 768 && !document.getElementById('project-mobile-dropdown')) {
+    const projectDropdownHTML = `
+        <div class="custom-mobile-dropdown" id="project-mobile-dropdown" style="margin: 0 auto 20px auto !important; width: 65% !important; z-index: 50; display: block !important;">
+            <div class="dropdown-selected" style="border-radius: 20px; justify-content: center;">
+                <span id="project-dropdown-text">All Projects</span>
+                <i class="fas fa-chevron-down chevron" style="margin-left: 10px;"></i>
+            </div>
+            <div class="dropdown-items" style="border-radius: 15px; text-align: center;">
+                <div class="dropdown-item" data-filter="all">All Projects</div>
+                <div class="dropdown-item" data-filter="design">Design & Creative</div>
+                <div class="dropdown-item" data-filter="webdev">Web Dev</div>
+                <div class="dropdown-item" data-filter="hardware">IT & Hardware</div>
+                <div class="dropdown-item" data-filter="research">Research</div>
+            </div>
+        </div>
+    `;
+    projectFilterContainer.insertAdjacentHTML('afterend', projectDropdownHTML);
+
+    const pDropdownObj = document.getElementById('project-mobile-dropdown');
+    const pSelectedObj = pDropdownObj.querySelector('.dropdown-selected');
+    const pItemsObj = pDropdownObj.querySelector('.dropdown-items');
+    const pItemDivs = pDropdownObj.querySelectorAll('.dropdown-item');
+
+    pSelectedObj.addEventListener('click', function(e) {
+        e.stopPropagation();
+        pItemsObj.classList.toggle('show');
+        pSelectedObj.classList.toggle('active');
+    });
+
+    document.addEventListener('click', function() {
+        pItemsObj.classList.remove('show');
+        pSelectedObj.classList.remove('active');
+    });
+
+    pItemDivs.forEach(item => {
+        item.addEventListener('click', function() {
+            document.getElementById('project-dropdown-text').innerText = this.innerText;
+            const targetFilter = this.getAttribute('data-filter');
+            // Simulasi klik pada tombol filter asli yang disembunyikan
+            const targetBtn = document.querySelector(`.p-filter-btn[data-filter="${targetFilter}"]`);
+            if(targetBtn) targetBtn.click(); 
+        });
+    });
+}
 
 let allOriginalSlides = Array.from(document.querySelectorAll('.project-slide'));
 let visibleSlides = [...allOriginalSlides];

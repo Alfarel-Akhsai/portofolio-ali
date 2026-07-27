@@ -119,31 +119,110 @@ if (btnCloseExtra && extraInfo) {
     });
 }
 
-// Logika Split Tabs Kiri (Academic / Achievement)
+// AMBIL SEMUA TOMBOL DAN KONTEN
 const leftBtns = document.querySelectorAll('.left-btn');
 const leftContents = document.querySelectorAll('.left-content');
-
-leftBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        leftBtns.forEach(b => b.classList.remove('active'));
-        leftContents.forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.getAttribute('data-target')).classList.add('active');
-    });
-});
-
-// Logika Split Tabs Kanan (Experience / Certificate)
 const rightBtns = document.querySelectorAll('.right-btn');
 const rightContents = document.querySelectorAll('.right-content');
+const allBtns = [...leftBtns, ...rightBtns];
+const allContents = [...leftContents, ...rightContents];
 
-rightBtns.forEach(btn => {
+// BIKIN CUSTOM DROPDOWN KHUSUS MOBILE (BISA CUSTOM ICON & WARNA)
+const infoGrid = document.querySelector('.info-grid-split');
+if (infoGrid && !document.getElementById('custom-mobile-dropdown')) {
+    const customDropdownHTML = `
+        <div class="custom-mobile-dropdown" id="custom-mobile-dropdown">
+            <div class="dropdown-selected">
+                <span><i class="fas fa-graduation-cap"></i> Academic</span>
+                <i class="fas fa-chevron-down chevron"></i>
+            </div>
+            <div class="dropdown-items">
+                <div class="dropdown-item" data-target="academic-content">
+                    <i class="fas fa-graduation-cap"></i> Academic
+                </div>
+                <div class="dropdown-item" data-target="achievement-content">
+                    <i class="fas fa-trophy"></i> Achievement
+                </div>
+                <div class="dropdown-item" data-target="experience-content">
+                    <i class="fas fa-users"></i> Experience
+                </div>
+                <div class="dropdown-item" data-target="certificate-content">
+                    <i class="fas fa-certificate"></i> Certificate
+                </div>
+            </div>
+        </div>
+    `;
+    infoGrid.insertAdjacentHTML('afterbegin', customDropdownHTML);
+
+    const dropdownObj = document.getElementById('custom-mobile-dropdown');
+    const selectedObj = dropdownObj.querySelector('.dropdown-selected');
+    const itemsObj = dropdownObj.querySelector('.dropdown-items');
+    const itemDivs = dropdownObj.querySelectorAll('.dropdown-item');
+
+    // Buka/Tutup Dropdown
+    selectedObj.addEventListener('click', function(e) {
+        e.stopPropagation();
+        itemsObj.classList.toggle('show');
+        selectedObj.classList.toggle('active');
+    });
+
+    // Tutup saat klik di luar area
+    document.addEventListener('click', function() {
+        itemsObj.classList.remove('show');
+        selectedObj.classList.remove('active');
+    });
+
+    // Saat item dipilih
+    itemDivs.forEach(item => {
+        item.addEventListener('click', function() {
+            selectedObj.querySelector('span').innerHTML = this.innerHTML; // Update teks & icon
+            const targetId = this.getAttribute('data-target');
+            const targetBtn = document.querySelector(`.mini-tab-btn[data-target="${targetId}"]`);
+            if(targetBtn) targetBtn.click(); // Pencet tombol asli yang disembunyikan
+        });
+    });
+}
+
+allBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-        rightBtns.forEach(b => b.classList.remove('active'));
-        rightContents.forEach(c => c.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+        const isMobile = window.innerWidth <= 768;
+
+        if (isMobile) {
+            // LOGIKA HP: Matikan semua tab, nyalakan 1 saja
+            allBtns.forEach(b => b.classList.remove('active'));
+            allContents.forEach(c => c.classList.remove('active'));
+            
+            btn.classList.add('active');
+            document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+            
+            // Sinkronkan text Custom Dropdown dengan tab yang sedang aktif
+            const customItems = document.querySelectorAll('.dropdown-item');
+            customItems.forEach(item => {
+                if(item.getAttribute('data-target') === btn.getAttribute('data-target')) {
+                    const selectedSpan = document.querySelector('.dropdown-selected span');
+                    if(selectedSpan) selectedSpan.innerHTML = item.innerHTML;
+                }
+            });
+        } else {
+            // LOGIKA DESKTOP: Tetap sakral 2 Kolom (Kiri & Kanan terpisah)
+            if (btn.classList.contains('left-btn')) {
+                leftBtns.forEach(b => b.classList.remove('active'));
+                leftContents.forEach(c => c.classList.remove('active'));
+            } else {
+                rightBtns.forEach(b => b.classList.remove('active'));
+                rightContents.forEach(c => c.classList.remove('active'));
+            }
+            btn.classList.add('active');
+            document.getElementById(btn.getAttribute('data-target')).classList.add('active');
+        }
     });
 });
+
+// RESET SAAT DIBUKA DI HP: Matikan kolom kanan biar sisa Academic aja
+if (window.innerWidth <= 768) {
+    rightBtns.forEach(b => b.classList.remove('active'));
+    rightContents.forEach(c => c.classList.remove('active'));
+}
 
 /* --- 5. DATABASES --- */
 const portfolioData = {

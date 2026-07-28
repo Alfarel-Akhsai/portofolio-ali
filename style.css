@@ -2801,8 +2801,31 @@ body {
 .form-row-2 input:focus, .form-row-1 input:focus, .form-row-1 textarea:focus { border-color: var(--aksen-tosca); background: rgba(0, 229, 255, 0.05); }
 .form-row-2 input::placeholder, .form-row-1 input::placeholder, .form-row-1 textarea::placeholder { color: rgba(237, 246, 249, 0.5); font-style: normal; }
 
-.btn-submit-new { align-self: flex-start; padding: 15px 40px; border-radius: 40px; background: var(--aksen-tosca); color: #061217; font-weight: 600; font-family: 'Poppins', sans-serif; font-size: 1rem; border: none; cursor: pointer; transition: 0.3s; margin-top: 5px;}
-.btn-submit-new:hover { background: rgba(0, 229, 255, 0.2); color: var(--aksen-tosca); box-shadow: 0 0 15px rgba(0, 229, 255, 0.4); }
+.btn-submit-new { 
+    align-self: flex-start; 
+    padding: 15px 40px; 
+    border-radius: 40px; 
+    background: var(--aksen-tosca); 
+    color: #0B191E; 
+    font-weight: 600; 
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1rem; 
+    border: 2px solid var(--aksen-tosca);
+    cursor: pointer; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    margin-top: 5px;
+}
+.btn-submit-new:hover { 
+    background: transparent;
+    color: var(--aksen-tosca);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5), inset 0 0 12px rgba(0, 229, 255, 0.3);
+    transform: translateY(-5px);
+    letter-spacing: 1px;
+}
+.btn-submit-new:active {
+    transform: translateY(-2px) scale(0.98);
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4), inset 0 0 8px rgba(0, 229, 255, 0.2);
+}
 
 /* NEWSLETTER KANAN */
 .newsletter-card { flex: 1; background: rgba(11, 25, 30, 0.8); border: 1px solid rgba(0, 229, 255, 0.3); border-radius: 30px; padding: 40px 30px; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; box-sizing: border-box; }
@@ -3438,9 +3461,14 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         right: auto !important;
         width: 100% !important;
         text-align: center !important;
-        font-size: clamp(1.8rem, 8vw, 2rem) !important;
-        margin: -10vw 0 2px 0 !important;
-        line-height: 0.9 !important;
+        font-size: clamp(1.3rem, 6vw, 1.5rem) !important;
+        margin: -8vw 0 5px 0 !important;
+        line-height: 1 !important;
+    }
+    .about-subtitle-photo span {
+        font-size: clamp(2.2rem, 9vw, 2.5rem) !important;
+        margin-top: 2px !important;
+        display: inline-block !important;
     }
     .about-text-box {
         width: 90% !important;
@@ -4123,13 +4151,42 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
     .info-box-new p { font-size: 0.65rem !important; line-height: 1.4 !important; }
 
 
-    .fat-footer { padding: clamp(50px, 10vw, 70px) 5vw clamp(25px, 5vw, 40px) 5vw; }
-    .footer-top { grid-template-columns: 1fr; gap: clamp(40px, 8vw, 50px); text-align: center; }
-    .brand-col { text-align: center; }
-    .brand-col p { padding: 0; }
-    .footer-middle { flex-direction: column; gap: 20px; text-align: center; padding: clamp(25px, 5vw, 35px) 0; align-items: center; }
-    .f-contact-item { width: 100%; justify-content: center; }
-    .f-socials { justify-content: center; margin-top: 10px; width: 100%; }
+    /* ======================================================= */
+    /* FOOTER MOBILE OPTIMIZATION (JARAK LOGIS & RAPI)         */
+    /* ======================================================= */
+    .fat-footer { padding: 35px 5vw 15px 5vw !important; }
+    
+    /* Jarak perpindahan antar kategori (Navigation -> Quick Links -> Services) dijauhin */
+    .footer-top { grid-template-columns: 1fr !important; gap: 20px !important; text-align: center !important; }
+    
+    .brand-col { text-align: center !important; margin-bottom: 5px !important; }
+    .brand-col .logo { font-size: 1.8rem !important; margin: 0 0 5px 0 !important; }
+    .brand-col p { font-size: 0.7rem !important; margin: 0 !important; padding: 0 10px !important; line-height: 1.4 !important; }
+    
+    /* Judul menu ditarik nempel ke list bawahnya */
+    .link-col h4 { font-size: 0.9rem !important; margin: 0 0 6px 0 !important; }
+    
+    /* Jarak antar link (Home -> About) dibikin pas */
+    .link-col ul { display: flex !important; flex-direction: column !important; gap: 4px !important; margin: 0 !important; padding: 0 !important; }
+    .link-col ul li { margin: 0 !important; padding: 0 !important; }
+    .link-col ul li a { font-size: 0.75rem !important; padding: 0 !important; display: inline-block !important; line-height: 1.2 !important; }
+    
+    .footer-middle { 
+        flex-direction: column !important; 
+        gap: 9px !important; 
+        text-align: center !important; 
+        padding: 18px 0 12px 0 !important; 
+        margin-top: 10px !important;
+    }
+    .f-contact-item { width: 100% !important; justify-content: center !important; gap: 8px !important; margin: 0 !important; }
+    .f-contact-item i { font-size: 0.85rem !important; }
+    .f-contact-item span { font-size: 0.75rem !important; line-height: 1.2 !important; margin: 0 !important; }
+    
+    .f-socials { justify-content: center !important; margin-top: 5px !important; width: 100% !important; gap: 15px !important; }
+    .f-socials a { width: 28px !important; height: 28px !important; font-size: 0.85rem !important; }
+    
+    .footer-bottom { font-size: 0.65rem !important; padding-top: 12px !important; margin: 0 !important; }
+    .footer-bottom p { margin: 0 !important; line-height: 1.2 !important; }
 
     /* --- MODAL POPUPS PICO SIZE --- */
     .modal-content, .skill-modal-content { 

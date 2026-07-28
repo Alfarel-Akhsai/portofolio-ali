@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* --- LAYOUT UTAMA --- */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f3f4f6; /* Warna latar luar */
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+}
+
+.auth-container {
+  position: relative;
+  width: 900px;
+  max-width: 95vw;
+  height: 600px;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+/* --- BAGIAN FORM (PUTIH) --- */
+.form-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  z-index: 10;
+}
+
+.form-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+
+/* Tipografi & Ilustrasi */
+.title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0 0 5px 0;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+}
+
+.panda-icon {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 25px;
+}
+
+/* Elemen Input */
+.input-group {
+  width: 100%;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.input-group svg {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9ca3af;
+  width: 18px;
+  height: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 15px 14px 45px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #111827;
+}
+
+.input-group input:focus {
+  border-color: #6a11cb;
+  background: #ffffff;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(106, 17, 203, 0.1);
+}
+
+.input-group input::placeholder {
+  color: #9ca3af;
+}
+
+/* Opsi Tambahan */
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.75rem;
+  margin-bottom: 25px;
+  color: #4b5563;
+}
+
+.form-options label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.form-options a {
+  color: #6a11cb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.form-options a:hover {
+  text-decoration: underline;
+}
+
+/* Tombol Submit */
+.btn-submit {
+  background: #6a11cb;
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  padding: 14px 0;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(106, 17, 203, 0.25);
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+}
+
+/* Teks Switcher Bawah */
+.bottom-text {
+  margin-top: 25px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #6a11cb;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 6px;
+  transition: 0.3s;
+}
+
+.text-btn:hover {
+  text-decoration: underline;
+}
+
+/* --- BAGIAN OVERLAY (UNGU / BIRU) --- */
+.overlay-panel {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  /* Gradasi asli persis dari video */
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  z-index: 20;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 60px;
+  box-sizing: border-box;
+  text-align: center;
+  color: #ffffff;
+}
+
+.overlay-content h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+}
+
+.overlay-content p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin: 0;
+}

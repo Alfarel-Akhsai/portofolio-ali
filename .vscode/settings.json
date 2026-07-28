@@ -1,0 +1,12 @@
+{
+    "editor.fontSize": 14,
+    "window.zoomLevel": 0.4,
+    "code-runner.runInTerminal": true,
+    "code-runner.executorMap": {
+        "python": "python3 -u",
+        "cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt && ./$fileNameWithoutExt"
+    },
+    "terminal.integrated.fontSize": 14,
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "vscode-icons"
+}

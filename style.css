@@ -3903,102 +3903,226 @@ body.light-mode .f-socials a:hover { color: #D0E2E6 !important; }
         filter: drop-shadow(0px -8px 10px rgba(0, 229, 255, 0.15)) !important; 
     }
 
-    .project-section { padding: 10px 5vw 0 5vw !important; }
-    .project-section .section-subtitle { margin-top: -20px !important; margin-bottom: 2px !important; font-size: 0.7rem !important; }
-    .project-section .section-title { font-size: 2.2rem !important; margin-bottom: 15px !important; }
+    .project-section { 
+        padding: 10px 5vw 0 5vw !important; 
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .project-section .section-subtitle { margin-top: -20px !important; margin-bottom: -5px !important; font-size: 0.7rem !important; order: unset !important; }
+    .project-section .section-title { font-size: 2rem !important; margin-bottom: 20px !important; order: unset !important; }
     
     /* MATIKAN FILTER LAMA DI HP */
     .project-filter { display: none !important; } 
     
-    /* KEMBALIKAN POSISI DROPDOWN PROJECT KE ATAS CAROUSEL */
-    #project-mobile-dropdown {
-        order: 0 !important; /* Menetralkan sifat turun ke bawah */
-        margin-top: 5px !important;
-        margin-bottom: 25px !important;
+    /* DROPDOWN UMUM (ACADEMIC) - JANGAN DIGANGGU */
+    .custom-mobile-dropdown {
+        display: block !important;
+        position: relative !important;
+        width: 75% !important; 
+        max-width: 250px !important;
+        margin: 0 auto 15px auto !important; 
+        font-family: 'Poppins', sans-serif !important;
+        box-sizing: border-box !important;
+        font-size: 0.85rem !important;
+        align-self: center !important;
+        order: unset !important;
     }
     
-    /* UKURAN PROJECT KARTU SUPER PICO */
-    .project-carousel-wrapper { padding: 10px 0 45px 0 !important; margin: 0 !important; }
+    /* ======================================================== */
+    /* INI DIA! KHUSUS DROPDOWN PROJECT: ATUR JARAK KE JUDUL DI SINI */
+    /* ======================================================== */
+    #project-mobile-dropdown {
+        order: unset !important; /* Hapus perintah urutan biar gak nyasar ke bawah! */
+        margin-top: 45px !important; /* <--- INI JARAK KE JUDUL (Makin besar = Makin jauh ke bawah) */
+        margin-bottom: 35px !important; /* <--- INI JARAK KE KOTAK PROJECT BAWAHNYA */
+        z-index: 100 !important;
+    }
+
+    /* UKURAN KOTAK DROPDOWN TETAP SLIM/NORMAL */
+    .dropdown-selected {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        padding: 8px 16px !important; 
+        background: rgba(11, 25, 30, 0.8) !important;
+        border: 1px solid var(--aksen-tosca) !important;
+        color: var(--aksen-tosca) !important;
+        border-radius: 8px !important; 
+        font-size: 0.85rem !important; 
+        font-weight: 600 !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        cursor: pointer !important;
+        box-shadow: 0 4px 15px rgba(0, 229, 255, 0.15) !important;
+    }
+    .dropdown-selected i:not(.chevron) { margin-right: 8px !important; font-size: 1rem !important; }
+    .dropdown-selected .chevron { font-size: 0.9rem !important; }
+    .dropdown-items {
+        display: none; 
+        position: absolute !important;
+        box-sizing: border-box !important;
+        background: rgba(4, 25, 28, 0.95) !important; 
+        backdrop-filter: blur(15px) !important;
+        -webkit-backdrop-filter: blur(15px) !important;
+        border: 1px solid rgba(0, 229, 255, 0.3) !important;
+        border-radius: 8px !important;
+        width: 100% !important;
+        top: 110% !important;
+        left: 0 !important;
+        z-index: 999 !important;
+        overflow: hidden !important;
+    }
+    .dropdown-items.show { display: block !important; }
+    
+    /* JARAK ANTAR PILIHAN DI DALAM DROPDOWN DIDEMPETIN */
+    .dropdown-item { 
+        padding: 6px 15px !important; 
+        font-size: 0.8rem !important; 
+        color: rgba(237, 246, 249, 0.8) !important; 
+        display: flex !important; 
+        align-items: center !important; 
+        border-bottom: 1px solid rgba(0, 229, 255, 0.1) !important; 
+    }
+    .dropdown-item i { margin-right: 8px !important; color: rgba(0, 229, 255, 0.6) !important; width: 18px !important; text-align: center !important; font-size: 0.8rem !important; }
+    .dropdown-item:last-child { border-bottom: none !important; }
+    .dropdown-item:hover { background: rgba(0, 229, 255, 0.15) !important; color: var(--aksen-tosca) !important; }
+    
+    /* CAROUSEL KARTU PROJECT */
+    .project-carousel-wrapper { order: unset !important; padding: 0 0 35px 0 !important; margin: 0 !important; width: 100% !important; }
     .project-track-container { padding: 0 !important; margin: 0 !important; mask-image: none; -webkit-mask-image: none; }
     
-    .project-slide { flex: 0 0 100%; padding: 0 25px !important; } 
+    .project-slide { flex: 0 0 100%; padding: 0 35px !important; box-sizing: border-box !important; } 
     
     .p-card-glass { 
-        padding: 15px 12px !important; 
-        border-radius: 12px !important; 
-        clip-path: none !important; 
-        -webkit-clip-path: none !important; 
-    }
-    .p-card-glass::before { display: none !important; }
-
-    /* 1. MENGATUR TOMBOL EXTERNAL KE KANAN ATAS */
-    .p-card-header { 
-        align-items: flex-start !important; 
-        flex-direction: row !important; /* Diubah jadi row agar teks di kiri, tombol di kanan */
-        justify-content: space-between !important;
-        gap: 10px !important; 
-    }
-    .p-card-title {
-        flex: 1 !important; /* Memastikan teks mengambil sisa ruang */
-    }
-    .p-card-title h3 { font-size: 1rem !important; line-height: 1.2; margin-bottom: 2px !important; }
-    .p-card-title p { font-size: 0.65rem !important; padding-right: 0; margin-top: 2px !important; line-height: 1.3 !important; }
-    
-    .btn-external { 
-        flex-shrink: 0 !important; /* Mencegah tombol gepeng */
-        width: 30px !important; 
-        height: 30px !important; 
-        font-size: 0.8rem !important; 
-        margin-top: 0 !important; 
-    }
-    
-    /* 2. MEMBUAT FOTO GALERI MENJADI PANJANG VERTIKAL (PORTRAIT) */
-    .p-card-gallery { display: flex !important; justify-content: space-between !important; gap: 5px !important; height: auto; margin-top: 15px !important; }
-    .p-card-gallery img { 
-        width: 23.5% !important; 
-        aspect-ratio: 9 / 16 !important; /* Ini kuncinya: rasio 9:16 akan membuat gambar panjang ke atas layaknya layar HP */
+        padding: 42px 15px 18px 15px !important; 
+        border-radius: 0 !important; 
+        clip-path: url(#card-slant) !important; 
+        -webkit-clip-path: url(#card-slant) !important; 
         height: auto !important; 
-        border-radius: 6px !important; 
+        gap: 0px !important; 
+    }
+    .p-card-glass::before { display: block !important; }
+
+    .p-card-header { align-items: flex-start !important; flex-direction: row !important; justify-content: space-between !important; gap: 8px !important; margin-bottom: 6px !important; }
+    .p-card-title { flex: 1 !important; }
+    .p-card-title h3 { font-size: 0.9rem !important; line-height: 1.2; margin-bottom: 2px !important; } 
+    .p-card-title p { font-size: 0.6rem !important; padding-right: 0; margin-top: 0 !important; line-height: 1.3 !important; } 
+    
+    .btn-external { flex-shrink: 0 !important; width: 28px !important; height: 28px !important; font-size: 0.7rem !important; margin-top: 0 !important; }
+    
+    .p-card-gallery { 
+        display: grid !important; 
+        grid-template-columns: repeat(4, 1fr) !important; 
+        gap: 6px !important; 
+        width: 100% !important;
+        height: auto !important;
+        margin-top: 5px !important; 
+        margin-bottom: 8px !important; 
+    }
+    .p-card-gallery img { 
+        width: 100% !important; 
+        height: auto !important; 
+        aspect-ratio: 9 / 16 !important; 
+        border-radius: 4px !important; 
         object-fit: cover !important; 
     }
     
-    .p-card-footer { flex-wrap: wrap; gap: 8px !important; justify-content: center; margin-top: 12px !important; }
-    .tool-icons { justify-content: center; width: 100%; gap: 4px !important; }
-    .tool-icons img, .tool-icons i { width: 22px !important; height: 22px !important; padding: 4px !important; border-width: 1px !important; }
+    .p-card-footer { flex-wrap: wrap; gap: 6px !important; justify-content: center; margin-top: 0px !important; } 
+    .tool-icons { justify-content: center; width: 100%; gap: 6px !important; }
     
-    /* 3. MEMINDAHKAN PANAH CAROUSEL KE SAMPING KOTAK */
+    .tool-icons img, .tool-icons i { 
+        width: 22px !important; 
+        height: 22px !important; 
+        padding: 4px !important; 
+        border-width: 1px !important; 
+        font-size: 0.75rem !important;
+    }
+    
     .carousel-btn { 
-        width: 35px !important; 
-        height: 35px !important; 
-        font-size: 0.85rem !important; 
-        top: 45% !important; /* Tarik panah ke tengah-tengah tinggi kotak */
-        bottom: auto !important; /* Matikan setingan bottom yang sebelumnya */
-        transform: translateY(-50%) !important; /* Presisi agar posisinya pas di tengah vertikal */
+        width: 32px !important; 
+        height: 32px !important; 
+        font-size: 0.8rem !important; 
+        top: 50% !important; 
+        bottom: auto !important; 
+        transform: translateY(-50%) !important; 
         background: var(--aksen-tosca) !important; 
         color: var(--bg-utama) !important; 
         z-index: 100 !important;
     }
-    .prev-btn { left: 0px !important; } /* Nempel di sebelah kiri */
-    .next-btn { right: 0px !important; } /* Nempel di sebelah kanan */
+    .prev-btn { left: 0px !important; } 
+    .next-btn { right: 0px !important; } 
     
     .project-counter { 
-        margin-top: 10px !important; /* Beri jarak sedikit dari kotak project */
-        font-size: 0.75rem !important; 
+        order: unset !important;
+        margin-top: -15px !important; 
+        font-size: 0.55rem !important; 
+        padding: 6px 20px !important; 
     }
 
     /* --- CONTACT SECTION & FOOTER --- */
-    .contact-section { padding: clamp(40px, 8vw, 60px) 5vw clamp(60px, 10vw, 80px) 5vw; }
-    .contact-section .section-title { font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: clamp(30px, 6vw, 40px); }
-    .contact-top-row { flex-direction: column; gap: clamp(30px, 6vw, 40px); }
-    .contact-form-new { overflow: visible; }
-    .form-row-2 { flex-direction: column; gap: 15px; }
-    .form-row-2 input, .form-row-1 input, .form-row-1 textarea { width: 100%; padding: clamp(15px, 4vw, 20px); font-size: clamp(0.9rem, 2.5vw, 1rem); border-radius: 20px; }
-    .form-row-1 textarea { border-radius: 24px; }
-    .btn-submit-new { width: 100%; text-align: center; border-radius: 40px; padding: clamp(15px, 4vw, 20px); }
-    .newsletter-card { padding: clamp(30px, 6vw, 40px) clamp(20px, 5vw, 30px); border-radius: 24px; text-align: center; }
-    .newsletter-card h3 { font-size: clamp(1.4rem, 4vw, 1.8rem); }
-    .contact-bottom-row { grid-template-columns: 1fr; gap: clamp(15px, 3vw, 20px); }
-    .info-box-new { padding: clamp(20px, 5vw, 25px); border-radius: 20px; }
+    .contact-section { padding: 40px 5vw 40px 5vw !important; }
+    
+    /* TARIK "GET IN TOUCH" KE ATAS DENGAN WAJAR & KASIH JARAK KE "CONTACT US" */
+    .contact-section .section-subtitle { 
+        margin-top: -60px !important; /* <-- Nah ini udah dijinakin, gak bablas lagi! */
+        margin-bottom: 8px !important; /* Jarak asik ke judul Contact Us */
+        font-size: 0.75rem !important; 
+    }
+    .contact-section .section-title { 
+        font-size: 2.2rem !important; 
+        margin-bottom: 30px !important; 
+    }
+    
+    /* ======================================================= */
+    /* LEBAR SEMUA KOTAK DIKECILIN BIAR GAK MENTOK KANAN-KIRI  */
+    /* ======================================================= */
+    .contact-content-new { 
+        width: 85% !important; /* Lebar dibatasi cuma 85% dari layar HP */
+        margin: 0 auto !important; /* Biar posisinya pas di tengah */
+    }
+    
+    .contact-top-row { flex-direction: column !important; gap: 20px !important; }
+    .contact-form-new { overflow: visible !important; }
+    .contact-form-new form { gap: 10px !important; }
+    .form-row-2 { flex-direction: column !important; gap: 10px !important; }
+    
+    /* INPUT & TEXTAREA DIKECILIN */
+    .form-row-2 input, .form-row-1 input, .form-row-1 textarea { 
+        width: 100% !important; 
+        padding: 10px 15px !important; 
+        font-size: 0.8rem !important; 
+        border-radius: 12px !important; 
+    }
+    .form-row-1 textarea { border-radius: 12px !important; height: 100px !important; } 
+    
+    /* TOMBOL SUBMIT DIKECILIN */
+    .btn-submit-new { 
+        width: 100% !important; 
+        text-align: center !important; 
+        border-radius: 20px !important; 
+        padding: 10px 20px !important; 
+        font-size: 0.75rem !important;
+        margin-top: 0 !important;
+    }
+    
+    /* KARTU NEWSLETTER DIKECILIN */
+    .newsletter-card { padding: 20px 15px !important; border-radius: 16px !important; text-align: center !important; }
+    .newsletter-card h3 { font-size: 1.1rem !important; margin-bottom: 8px !important; }
+    .newsletter-card p { font-size: 0.7rem !important; margin-bottom: 15px !important; line-height: 1.4 !important; }
+    .newsletter-form { gap: 8px !important; }
+    .newsletter-form input { padding: 10px 15px !important; font-size: 0.7rem !important; border-radius: 15px !important; }
+    .newsletter-form button { padding: 10px 15px !important; font-size: 0.75rem !important; border-radius: 15px !important; }
+    
+    /* 3 INFO BOX DI BAWAH DIKECILIN */
+    .contact-bottom-row { grid-template-columns: 1fr !important; gap: 10px !important; margin-top: -5px !important; }
+    .info-box-new { padding: 15px !important; border-radius: 12px !important; gap: 8px !important; }
+    .info-header-new { gap: 10px !important; }
+    .info-header-new i { font-size: 1.2rem !important; }
+    .info-header-new h4 { font-size: 0.8rem !important; }
+    .info-box-new p { font-size: 0.65rem !important; line-height: 1.4 !important; }
+
+
     .fat-footer { padding: clamp(50px, 10vw, 70px) 5vw clamp(25px, 5vw, 40px) 5vw; }
     .footer-top { grid-template-columns: 1fr; gap: clamp(40px, 8vw, 50px); text-align: center; }
     .brand-col { text-align: center; }

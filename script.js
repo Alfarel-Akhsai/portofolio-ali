@@ -1030,6 +1030,22 @@ if (skillModalOverlay) {
     });
 }
 
+// === FITUR TAMBAHAN: TUTUP MODAL PAKAI TOMBOL ESCAPE (ESC) ===
+document.addEventListener('keydown', (e) => {
+    // Mengecek apakah tombol yang ditekan adalah Escape
+    if (e.key === 'Escape') {
+        // Cek dan tutup modal Portofolio/Institusi jika sedang terbuka
+        if (modalOverlay && modalOverlay.classList.contains('active')) {
+            modalOverlay.classList.remove('active');
+        }
+        
+        // Cek dan tutup modal Skills/Kompetensi jika sedang terbuka
+        if (skillModalOverlay && skillModalOverlay.classList.contains('active')) {
+            skillModalOverlay.classList.remove('active');
+        }
+    }
+});
+
 /* --- 7. SKILLS FILTER --- */
 const filterBtns = document.querySelectorAll('.filter-btn');
 const skillCategories = document.querySelectorAll('.skill-category');

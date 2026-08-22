@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio</title>
-    
+    <title>AKHSAY | PROFILE</title>
+    <link rel="icon" type="image/png" href="assets/images/alfkam.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Fredoka:wght@600;700&family=Pacifico&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Lobster&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Fredoka:wght@600;700&family=Pacifico&family=Poppins:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Lobster&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Theme Switcher -->
@@ -26,16 +32,28 @@
     <!-- Top Navbar -->
     <header class="top-navbar" id="navbar">
         <div class="logo" id="rahasia-logo">Alfa<span>rel.</span></div>
-        
+
         <nav class="desktop-nav">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#project">Project</a>
-            <a href="#contact">Contact</a>
+            <a href="#home" data-i18n="nav_home">Home</a>
+            <a href="#about" data-i18n="nav_about">About</a>
+            <a href="#skills" data-i18n="nav_skills">Skills</a>
+            <a href="#project" data-i18n="nav_project">Project</a>
+            <a href="#contact" data-i18n="nav_contact">Contact</a>
         </nav>
 
         <div class="nav-right">
+            <div class="custom-lang-wrapper" id="custom-lang-wrapper">
+                <div class="lang-selected">
+                    <span id="lang-text">EN</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="lang-dropdown">
+                    <div class="lang-option" data-val="en">EN</div>
+                    <div class="lang-option" data-val="id">ID</div>
+                    <div class="lang-option" data-val="zh">中文</div>
+                </div>
+            </div>
+
             <a href="#contact" class="btn-lets-talk">Let's Talk</a>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -54,7 +72,7 @@
             <div class="logo">Alfa<span>rel.</span></div>
             <div class="close-btn" id="close-btn">&times;</div>
         </div>
-        
+
         <nav class="sidebar-nav">
             <a href="#home" class="active"><i class="fas fa-home"></i> Home</a>
             <a href="#about"><i class="fas fa-user"></i> About</a>
@@ -62,7 +80,7 @@
             <a href="#project"><i class="fas fa-folder-open"></i> Project</a>
             <a href="#resume"><i class="fas fa-file-alt"></i> Resume</a>
             <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
-            
+
             <div class="sidebar-promo">
                 <h4>Got an idea?<br>Let's bring it to life!</h4>
                 <p>See how I transform ideas into stunning, functional designs.</p>
@@ -93,7 +111,7 @@
             </div>
         </nav>
     </aside>
-    
+
     <!-- Hero Section -->
     <section class="hero-section" id="home">
         <div class="grid-bg"></div>
@@ -109,10 +127,11 @@
                 </div>
 
                 <div class="hero-content reveal">
-                    <span class="my-text">my</span>
-                    <span class="portofolio-text">portofolio</span>
-                    <span class="subtitle-text">Graphic Designer & Web Developer</span>
-                    <a href="#project" class="btn-about">My Work <span class="arrow">&rarr;</span></a>
+                    <span class="my-text" data-i18n="hero_my">my</span>
+                    <span class="portofolio-text" data-i18n="hero_portfolio">portfolio</span>
+                    <span class="subtitle-text" data-i18n="hero_subtitle">Graphic Designer & Web Developer</span>
+                    <a href="#project" class="btn-about"><span data-i18n="hero_btn">My Work</span> <span
+                            class="arrow">&rarr;</span></a>
                 </div>
             </div>
         </div>
@@ -121,7 +140,9 @@
     <!-- Transition (Wave) -->
     <div class="section-transition reveal">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill-opacity="1" d="M0,32L40,53.3C80,75,160,117,240,154.7C320,192,400,224,480,240C560,256,640,256,720,245.3C800,235,880,213,960,213.3C1040,213,1120,235,1200,202.7C1280,171,1360,85,1400,42.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+            <path fill-opacity="1"
+                d="M0,32L40,53.3C80,75,160,117,240,154.7C320,192,400,224,480,240C560,256,640,256,720,245.3C800,235,880,213,960,213.3C1040,213,1120,235,1200,202.7C1280,171,1360,85,1400,42.7L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
         </svg>
     </div>
 
@@ -129,7 +150,8 @@
     <section id="about" class="about-section">
         <div class="vector-splash-container">
             <!-- SVG Desktop (Bawaan asli lu) -->
-            <svg class="vector-splash desktop-splash" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="vector-splash desktop-splash" viewBox="0 0 100 100" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
                 <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
                 <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
@@ -144,54 +166,136 @@
 
             <!-- SVG Mobile (Jurus tumpuk 8x biar aman sentosa) -->
             <div class="mobile-splash-wrapper">
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
-                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z"/><path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z"/><path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z"/><circle cx="20" cy="75" r="1.5"/><circle cx="80" cy="30" r="2"/><circle cx="50" cy="15" r="1"/><circle cx="70" cy="85" r="2.5"/><circle cx="35" cy="90" r="1.2"/><circle cx="15" cy="45" r="0.8"/><circle cx="85" cy="15" r="1.5"/></svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
+                <svg class="vector-splash mobile-tile" viewBox="0 0 100 100" preserveAspectRatio="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M-10,20 C30,30 40,80 110,100 L110,110 L-10,110 Z" />
+                    <path d="M-10,40 C45,45 30,100 110,120 L-10,120 Z" />
+                    <path d="M110,-10 C70,10 60,-10 -10,30 L-10,-10 Z" />
+                    <circle cx="20" cy="75" r="1.5" />
+                    <circle cx="80" cy="30" r="2" />
+                    <circle cx="50" cy="15" r="1" />
+                    <circle cx="70" cy="85" r="2.5" />
+                    <circle cx="35" cy="90" r="1.2" />
+                    <circle cx="15" cy="45" r="0.8" />
+                    <circle cx="85" cy="15" r="1.5" />
+                </svg>
             </div>
         </div>
 
         <div class="about-container">
-            <h2 class="section-title reveal">About <span>Me</span></h2>
-            
+            <h2 class="section-title reveal" data-i18n="sec_about">About <span>Me</span></h2>
+        
             <div class="about-content-wrapper">
-                <!-- Top Row: Text & Image -->
                 <div class="about-top-row">
                     <div class="about-text-box reveal">
                         <!-- Teks versi Desktop -->
                         <div class="text-desktop">
-                            <p>
-                                Hi, I am <strong>M. Alfarel</strong>, usually called <strong>AL</strong>. Currently, I am taking a double degree program, studying Informatics Engineering at Institut Teknologi Sumatera and Business at BINUS University.
-                            </p>
-                            <p>
-                                My journey into the IT field did not start with a background in coding. In fact, I am currently learning programming completely from zero. My main focus has always been Graphic Design. I regularly create visual materials such as digital posters, pamphlets, banners, and professional presentation decks.
-                            </p>
-                            <p>
-                                My practical skills were shaped through real work experiences. My ability to troubleshoot and repair computer hardware was developed during my internship at CV. RKU Komputer. Additionally, I have valuable operational experience from my time working at Bawaslu, where I assisted in managing regional election processes. I decided to study IT to build a technical foundation that supports these creative and practical skills.
-                            </p>
+                            <p data-i18n="about_d1">Hi! I am <strong>M. Alfarel</strong>...</p>
+                            <p data-i18n="about_d2">My journey into IT didn't start...</p>
+                            <p data-i18n="about_d3">My practical skills were significantly...</p>
                         </div>
-
                         <!-- Teks versi Mobile -->
                         <div class="text-mobile">
-                            <p>
-                                Hi, I am <strong>M. Alfarel</strong> (AL). I am currently taking a double degree in Informatics at ITERA and Business at BINUS.
-                            </p>
-                            <p>
-                                My main focus is Graphic Design, specifically creating posters, banners, and presentations. As for coding, I am just starting to learn it from zero.
-                            </p>
-                            <p>
-                                I also have practical experience from my internships. I developed my hardware repair skills at CV. RKU Komputer and gained administrative experience managing election processes at Bawaslu.
-                            </p>
+                            <p data-i18n="about_m1">Hi, I am <strong>M. Alfarel</strong> (AL)...</p>
+                            <p data-i18n="about_m2">My core focus has always been...</p>
+                            <p data-i18n="about_m3">I bring a strong track record...</p>
                         </div>
-                        <a href="#" class="btn-read-more">Read More <i class="fas fa-arrow-down"></i></a>
+                        <a href="#" class="btn-read-more" data-i18n="about_btn">Read More <i class="fas fa-arrow-down"></i></a>
                     </div>
-                    
+        
                     <div class="about-image-wrapper reveal">
-                        <h3 class="about-subtitle-photo">Hello, I'm <br> <span>M. Alfarel</span></h3>
+                        <h3 class="about-subtitle-photo" data-i18n="about_hello">Hello, I'm <br> <span>M. Alfarel</span></h3>
                         <div class="transform-box">
                             <div class="about-glow"></div>
                             <div class="oval-ring ring-bg-solid"></div>
@@ -202,14 +306,14 @@
                             <span class="anchor top-right"></span>
                             <span class="anchor bottom-left"></span>
                             <span class="anchor bottom-right"></span>
-                            
+
                             <div class="popout-wrapper">
                                 <div class="oval-mask">
                                     <img src="assets/images/ALI1.png" alt="Background" class="bg-img">
                                 </div>
                                 <img src="assets/images/ALI2.png" alt="M. Alfarel" class="popout-img">
                             </div>
-                            
+
                             <div class="ai-toolbar">
                                 <i class="fas fa-mouse-pointer active"></i>
                                 <i class="fas fa-crop-alt"></i>
@@ -227,7 +331,7 @@
                     <button id="btn-close-extra" class="btn-read-less-icon" title="Tutup">
                         <i class="fas fa-chevron-up"></i>
                     </button>
-                    
+
                     <div class="info-grid-split">
                         <!-- Left Column (Academic / Achievement) -->
                         <div class="split-col">
@@ -251,7 +355,7 @@
                                             <span class="timeline-badge">SD</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-zigzag-item right-side">
                                         <div class="dot-zigzag"></div>
                                         <div class="timeline-card">
@@ -260,7 +364,7 @@
                                             <span class="timeline-badge">SMP / MTs</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-zigzag-item left-side">
                                         <div class="dot-zigzag"></div>
                                         <div class="timeline-card">
@@ -269,21 +373,21 @@
                                             <span class="timeline-badge">SMA / SMK</span>
                                         </div>
                                     </div>
-                                    
+
                                     <div class="timeline-zigzag-item full-width">
                                         <div class="branch-fork-center"></div>
                                         <div class="split-cards-zigzag">
                                             <div class="timeline-card branch-card">
-                                                <span class="timeline-date">2025 – Sekarang</span>
+                                                <span class="timeline-date">2025 – Present</span>
                                                 <h4>Institut Teknologi Sumatera</h4>
                                                 <p>Informatics Engineering</p>
-                                                <span class="timeline-badge">PTN</span>
+                                                <span class="timeline-badge">State Univ.</span>
                                             </div>
                                             <div class="timeline-card branch-card">
-                                                <span class="timeline-date">2026 – Sekarang</span>
+                                                <span class="timeline-date">2026 – Present</span>
                                                 <h4>BINUS University</h4>
                                                 <p>Business</p>
-                                                <span class="timeline-badge">PTS</span>
+                                                <span class="timeline-badge">Private Univ.</span>
                                             </div>
                                         </div>
                                     </div>
@@ -335,18 +439,8 @@
                                             <div class="timeline-card">
                                                 <span class="timeline-date">2023</span>
                                                 <h4>CV. RKU Komputer</h4>
-                                                <p>Praktik Kerja Lapangan (PKL)</p>
+                                                <p>Professional Internship</p>
                                                 <span class="timeline-badge">Internship</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="timeline-item">
-                                            <div class="dot"></div>
-                                            <div class="timeline-card">
-                                                <span class="timeline-date">2026</span>
-                                                <h4>Google Student Ambassador</h4>
-                                                <p>Candidate 2026</p>
-                                                <span class="timeline-badge">Program</span>
                                             </div>
                                         </div>
                                     </div>
@@ -362,7 +456,7 @@
                                                 <span class="timeline-badge">Work</span>
                                             </div>
                                         </div>
-                                        
+
                                         <div class="timeline-item">
                                             <div class="dot"></div>
                                             <div class="timeline-card">
@@ -382,10 +476,12 @@
                                     <!-- Certificate 1 -->
                                     <div class="cert-card" data-title="Bawaslu Internship Certificate">
                                         <div class="cert-img-wrapper">
-                                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+Bawaslu" alt="Bawaslu Certificate">
+                                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+Bawaslu"
+                                                alt="Bawaslu Certificate">
                                             <div class="cert-overlay">
                                                 <button class="btn-cert-about">About</button>
-                                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+Bawaslu" target="_blank" class="btn-cert-view">View</a>
+                                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+Bawaslu"
+                                                    target="_blank" class="btn-cert-view">View</a>
                                             </div>
                                         </div>
                                         <div class="cert-info">
@@ -397,10 +493,12 @@
                                     <!-- Certificate 2 -->
                                     <div class="cert-card" data-title="RKU Komputer Internship Certificate">
                                         <div class="cert-img-wrapper">
-                                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+RKU" alt="RKU Certificate">
+                                            <img src="https://placehold.co/400x300/0B191E/00E5FF?text=Sertifikat+RKU"
+                                                alt="RKU Certificate">
                                             <div class="cert-overlay">
                                                 <button class="btn-cert-about">About</button>
-                                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+RKU" target="_blank" class="btn-cert-view">View</a>
+                                                <a href="https://placehold.co/800x600/0B191E/00E5FF?text=Sertifikat+RKU"
+                                                    target="_blank" class="btn-cert-view">View</a>
                                             </div>
                                         </div>
                                         <div class="cert-info">
@@ -428,19 +526,19 @@
 
     <!-- Skills Section -->
     <section id="skills" class="skills-section">
-        <p class="section-subtitle reveal">WHAT I BRING</p>
-        <h2 class="section-title reveal">Skills & <span>Tools</span></h2>
-        
+        <p class="section-subtitle reveal" data-i18n="sec_skill_sub">WHAT I BRING</p>
+        <h2 class="section-title reveal" data-i18n="sec_skill_title">Skills & <span>Tools</span></h2>
+
         <!-- Filter Buttons -->
         <div class="skills-filter reveal">
-            <button class="filter-btn active" data-filter="all">Core</button>
-            <button class="filter-btn" data-filter="expertise">Expertise</button>
-            <button class="filter-btn" data-filter="languages">Languages</button>
-            <button class="filter-btn" data-filter="tools">Tools</button>
+            <button class="filter-btn active" data-filter="all" data-i18n="filter_s_core">Core</button>
+            <button class="filter-btn" data-filter="expertise" data-i18n="filter_s_exp">Expertise</button>
+            <button class="filter-btn" data-filter="languages" data-i18n="filter_s_lang">Languages</button>
+            <button class="filter-btn" data-filter="tools" data-i18n="filter_s_tools">Tools</button>
         </div>
 
         <div class="skills-wrapper reveal">
-            
+
             <!-- Category: Expertise -->
             <div class="skill-category" id="cat-expertise">
                 <h3 class="category-title">Expertise</h3>
@@ -452,13 +550,18 @@
                         <div class="expertise-card"><i class="fas fa-tools"></i><span>Hardware Repair</span></div>
                         <div class="expertise-card"><i class="fas fa-cogs"></i><span>Software Repair</span></div>
                         <div class="expertise-card"><i class="fas fa-code"></i><span>Web Developer</span></div>
-                        
+
                         <!-- Marquee Duplicates -->
-                        <div class="expertise-card duplicate"><i class="fas fa-object-group"></i><span>UI/UX Design</span></div>
-                        <div class="expertise-card duplicate"><i class="fas fa-pen-nib"></i><span>Graphic Design</span></div>
-                        <div class="expertise-card duplicate"><i class="fas fa-tools"></i><span>Hardware Repair</span></div>
-                        <div class="expertise-card duplicate"><i class="fas fa-cogs"></i><span>Software Repair</span></div>
-                        <div class="expertise-card duplicate"><i class="fas fa-code"></i><span>Web Developer</span></div>
+                        <div class="expertise-card duplicate"><i class="fas fa-object-group"></i><span>UI/UX
+                                Design</span></div>
+                        <div class="expertise-card duplicate"><i class="fas fa-pen-nib"></i><span>Graphic Design</span>
+                        </div>
+                        <div class="expertise-card duplicate"><i class="fas fa-tools"></i><span>Hardware Repair</span>
+                        </div>
+                        <div class="expertise-card duplicate"><i class="fas fa-cogs"></i><span>Software Repair</span>
+                        </div>
+                        <div class="expertise-card duplicate"><i class="fas fa-code"></i><span>Web Developer</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -469,24 +572,42 @@
                 <div class="marquee-container">
                     <div class="marquee-track track-right">
                         <!-- Items -->
-                        <div class="skill-pill" style="--brand-color: #E34F26;"><i class="fab fa-html5"></i> <span>HTML</span></div>
-                        <div class="skill-pill" style="--brand-color: #1572B6;"><i class="fab fa-css3-alt"></i> <span>CSS</span></div>
-                        <div class="skill-pill" style="--brand-color: #F7DF1E;"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                        <div class="skill-pill" style="--brand-color: #777BB4;"><i class="fab fa-php"></i> <span>PHP</span></div>
-                        <div class="skill-pill" style="--brand-color: #F29111;"><i class="fas fa-database"></i> <span>SQL</span></div>
-                        <div class="skill-pill" style="--brand-color: #3776AB;"><i class="fab fa-python"></i> <span>Python</span></div>
-                        <div class="skill-pill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="real-icon" alt="C++"> <span>C++</span></div>
-                        <div class="skill-pill" style="--brand-color: #008080;"><i class="fas fa-file-code"></i> <span>LaTeX</span></div>
-                        
+                        <div class="skill-pill" style="--brand-color: #E34F26;"><i class="fab fa-html5"></i>
+                            <span>HTML</span></div>
+                        <div class="skill-pill" style="--brand-color: #1572B6;"><i class="fab fa-css3-alt"></i>
+                            <span>CSS</span></div>
+                        <div class="skill-pill" style="--brand-color: #F7DF1E;"><i class="fab fa-js"></i>
+                            <span>JavaScript</span></div>
+                        <div class="skill-pill" style="--brand-color: #777BB4;"><i class="fab fa-php"></i>
+                            <span>PHP</span></div>
+                        <div class="skill-pill" style="--brand-color: #F29111;"><i class="fas fa-database"></i>
+                            <span>SQL</span></div>
+                        <div class="skill-pill" style="--brand-color: #3776AB;"><i class="fab fa-python"></i>
+                            <span>Python</span></div>
+                        <div class="skill-pill"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                                class="real-icon" alt="C++"> <span>C++</span></div>
+                        <div class="skill-pill" style="--brand-color: #008080;"><i class="fas fa-file-code"></i>
+                            <span>LaTeX</span></div>
+
                         <!-- Marquee Duplicates -->
-                        <div class="skill-pill duplicate" style="--brand-color: #E34F26;"><i class="fab fa-html5"></i> <span>HTML</span></div>
-                        <div class="skill-pill duplicate" style="--brand-color: #1572B6;"><i class="fab fa-css3-alt"></i> <span>CSS</span></div>
-                        <div class="skill-pill duplicate" style="--brand-color: #F7DF1E;"><i class="fab fa-js"></i> <span>JavaScript</span></div>
-                        <div class="skill-pill duplicate" style="--brand-color: #777BB4;"><i class="fab fa-php"></i> <span>PHP</span></div>
-                        <div class="skill-pill duplicate" style="--brand-color: #F29111;"><i class="fas fa-database"></i> <span>SQL</span></div>
-                        <div class="skill-pill duplicate" style="--brand-color: #3776AB;"><i class="fab fa-python"></i> <span>Python</span></div>
-                        <div class="skill-pill duplicate"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="real-icon" alt="C++"> <span>C++</span></div>
-                        <div class="skill-pill duplicate" style="--brand-color: #008080;"><i class="fas fa-file-code"></i> <span>LaTeX</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #E34F26;"><i class="fab fa-html5"></i>
+                            <span>HTML</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #1572B6;"><i
+                                class="fab fa-css3-alt"></i> <span>CSS</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #F7DF1E;"><i class="fab fa-js"></i>
+                            <span>JavaScript</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #777BB4;"><i class="fab fa-php"></i>
+                            <span>PHP</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #F29111;"><i
+                                class="fas fa-database"></i> <span>SQL</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #3776AB;"><i class="fab fa-python"></i>
+                            <span>Python</span></div>
+                        <div class="skill-pill duplicate"><img
+                                src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg"
+                                class="real-icon" alt="C++"> <span>C++</span></div>
+                        <div class="skill-pill duplicate" style="--brand-color: #008080;"><i
+                                class="fas fa-file-code"></i> <span>LaTeX</span></div>
                     </div>
                 </div>
             </div>
@@ -497,40 +618,72 @@
                 <div class="marquee-container">
                     <div class="marquee-track track-left">
                         <!-- Items -->
-                        <div class="skill-pill"><img src="assets/images/tools/figma.webp" class="real-icon" alt="Figma"> <span>Figma</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/canva.webp" class="real-icon" alt="Canva"> <span>Canva</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/pshp.webp" class="real-icon" alt="Photoshop"> <span>Photoshop</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/illustrator.webp" class="real-icon" alt="Illustrator"> <span>Illustrator</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/lr.webp" class="real-icon" alt="Lightroom"> <span>Lightroom</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/coreldraw.png" class="real-icon" alt="CorelDraw"> <span>CorelDraw</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/plab.png" class="real-icon" alt="Pixellab"> <span>Pixellab</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/capcut.webp" class="real-icon" alt="CapCut"> <span>CapCut</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/filmora.png" class="real-icon" alt="Filmora"> <span>Filmora</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/clipchamp.webp" class="real-icon" alt="Clipchamp"> <span>Clipchamp</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/git.png" class="real-icon" alt="Git"> <span>Git</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/github.png" class="real-icon invert-on-dark" alt="GitHub"> <span>GitHub</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/docker.png" class="real-icon" alt="Docker"> <span>Docker</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/vscode.webp" class="real-icon" alt="VS Code"> <span>VS Code</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/excel.webp" class="real-icon" alt="Excel"> <span>Excel</span></div>
-                        <div class="skill-pill"><img src="assets/images/tools/word.webp" class="real-icon" alt="Word"> <span>Word</span></div>
-                        
+                        <div class="skill-pill"><img src="assets/images/tools/figma.webp" class="real-icon" alt="Figma">
+                            <span>Figma</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/canva.webp" class="real-icon" alt="Canva">
+                            <span>Canva</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/pshp.webp" class="real-icon"
+                                alt="Photoshop"> <span>Photoshop</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/illustrator.webp" class="real-icon"
+                                alt="Illustrator"> <span>Illustrator</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/lr.webp" class="real-icon"
+                                alt="Lightroom"> <span>Lightroom</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/coreldraw.png" class="real-icon"
+                                alt="CorelDraw"> <span>CorelDraw</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/plab.png" class="real-icon"
+                                alt="Pixellab"> <span>Pixellab</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/capcut.webp" class="real-icon"
+                                alt="CapCut"> <span>CapCut</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/filmora.png" class="real-icon"
+                                alt="Filmora"> <span>Filmora</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/clipchamp.webp" class="real-icon"
+                                alt="Clipchamp"> <span>Clipchamp</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/git.png" class="real-icon" alt="Git">
+                            <span>Git</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/github.png"
+                                class="real-icon invert-on-dark" alt="GitHub"> <span>GitHub</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/docker.png" class="real-icon"
+                                alt="Docker"> <span>Docker</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/vscode.webp" class="real-icon"
+                                alt="VS Code"> <span>VS Code</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/excel.webp" class="real-icon" alt="Excel">
+                            <span>Excel</span></div>
+                        <div class="skill-pill"><img src="assets/images/tools/word.webp" class="real-icon" alt="Word">
+                            <span>Word</span></div>
+
                         <!-- Marquee Duplicates -->
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/figma.webp" class="real-icon" alt="Figma"> <span>Figma</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/canva.webp" class="real-icon" alt="Canva"> <span>Canva</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/pshp.webp" class="real-icon" alt="Photoshop"> <span>Photoshop</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/illustrator.webp" class="real-icon" alt="Illustrator"> <span>Illustrator</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/lr.webp" class="real-icon" alt="Lightroom"> <span>Lightroom</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/coreldraw.png" class="real-icon" alt="CorelDraw"> <span>CorelDraw</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/plab.png" class="real-icon" alt="Pixellab"> <span>Pixellab</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/capcut.webp" class="real-icon" alt="CapCut"> <span>CapCut</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/filmora.png" class="real-icon" alt="Filmora"> <span>Filmora</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/clipchamp.webp" class="real-icon" alt="Clipchamp"> <span>Clipchamp</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/git.png" class="real-icon" alt="Git"> <span>Git</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/github.png" class="real-icon invert-on-dark" alt="GitHub"> <span>GitHub</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/docker.png" class="real-icon" alt="Docker"> <span>Docker</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/vscode.webp" class="real-icon" alt="VS Code"> <span>VS Code</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/excel.webp" class="real-icon" alt="Excel"> <span>Excel</span></div>
-                        <div class="skill-pill duplicate"><img src="assets/images/tools/word.webp" class="real-icon" alt="Word"> <span>Word</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/figma.webp" class="real-icon"
+                                alt="Figma"> <span>Figma</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/canva.webp" class="real-icon"
+                                alt="Canva"> <span>Canva</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/pshp.webp" class="real-icon"
+                                alt="Photoshop"> <span>Photoshop</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/illustrator.webp"
+                                class="real-icon" alt="Illustrator"> <span>Illustrator</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/lr.webp" class="real-icon"
+                                alt="Lightroom"> <span>Lightroom</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/coreldraw.png" class="real-icon"
+                                alt="CorelDraw"> <span>CorelDraw</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/plab.png" class="real-icon"
+                                alt="Pixellab"> <span>Pixellab</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/capcut.webp" class="real-icon"
+                                alt="CapCut"> <span>CapCut</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/filmora.png" class="real-icon"
+                                alt="Filmora"> <span>Filmora</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/clipchamp.webp"
+                                class="real-icon" alt="Clipchamp"> <span>Clipchamp</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/git.png" class="real-icon"
+                                alt="Git"> <span>Git</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/github.png"
+                                class="real-icon invert-on-dark" alt="GitHub"> <span>GitHub</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/docker.png" class="real-icon"
+                                alt="Docker"> <span>Docker</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/vscode.webp" class="real-icon"
+                                alt="VS Code"> <span>VS Code</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/excel.webp" class="real-icon"
+                                alt="Excel"> <span>Excel</span></div>
+                        <div class="skill-pill duplicate"><img src="assets/images/tools/word.webp" class="real-icon"
+                                alt="Word"> <span>Word</span></div>
                     </div>
                 </div>
             </div>
@@ -541,23 +694,27 @@
     <!-- Transition (Wave) -->
     <div class="wave-transition reveal">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill-opacity="1" d="M0,64L34.3,74.7C68.6,85,137,107,206,112C274.3,117,343,107,411,112C480,117,549,139,617,133.3C685.7,128,754,96,823,106.7C891.4,117,960,171,1029,160C1097.1,149,1166,75,1234,48C1302.9,21,1371,43,1406,53.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path>
+            <path fill-opacity="1"
+                d="M0,64L34.3,74.7C68.6,85,137,107,206,112C274.3,117,343,107,411,112C480,117,549,139,617,133.3C685.7,128,754,96,823,106.7C891.4,117,960,171,1029,160C1097.1,149,1166,75,1234,48C1302.9,21,1371,43,1406,53.3L1440,64L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z">
+            </path>
         </svg>
     </div>
 
     <!-- Project Section -->
     <section id="project" class="project-section">
-        
+
         <svg width="0" height="0" style="position: absolute;">
             <defs>
                 <clipPath id="card-slant" clipPathUnits="objectBoundingBox">
-                    <path d="M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z" />
+                    <path
+                        d="M 0,0.16 Q 0,0.09 0.06,0.08 L 0.94,0.01 Q 1,-0.005 1,0.07 L 1,0.93 Q 1,1 0.94,1 L 0.06,1 Q 0,1 0,0.93 Z" />
                 </clipPath>
             </defs>
         </svg>
 
         <div class="vector-splash-container-project">
-            <svg class="vector-splash-project" viewBox="0 0 100 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <svg class="vector-splash-project" viewBox="0 0 100 100" preserveAspectRatio="none"
+                xmlns="http://www.w3.org/2000/svg">
                 <path d="M-10,80 C40,90 60,30 110,20 L110,-10 L-10,-10 Z" />
                 <path d="M-10,60 C30,70 50,10 110,0 L110,-10 L-10,-10 Z" />
                 <path d="M-10,110 C40,70 70,110 110,60 L110,110 L-10,110 Z" />
@@ -571,16 +728,16 @@
             </svg>
         </div>
 
-        <p class="section-subtitle reveal">MY PORTFOLIO</p>
-        <h2 class="section-title reveal">Featured <span>Projects</span></h2>
-        
+        <p class="section-subtitle reveal" data-i18n="sec_proj_sub">MY PORTFOLIO</p>
+        <h2 class="section-title reveal" data-i18n="sec_proj_title">Featured <span>Projects</span></h2>
+
         <!-- Filter Buttons -->
         <div class="project-filter reveal">
-            <button class="p-filter-btn active" data-filter="all">All</button>
-            <button class="p-filter-btn" data-filter="design">Design & Creative</button>
-            <button class="p-filter-btn" data-filter="webdev">Web Dev</button>
-            <button class="p-filter-btn" data-filter="hardware">IT & Hardware</button>
-            <button class="p-filter-btn" data-filter="research">Research</button>
+            <button class="p-filter-btn active" data-filter="all" data-i18n="filter_p_all">All</button>
+            <button class="p-filter-btn" data-filter="design" data-i18n="filter_p_des">Design & Creative</button>
+            <button class="p-filter-btn" data-filter="webdev" data-i18n="filter_p_web">Web Dev</button>
+            <button class="p-filter-btn" data-filter="hardware" data-i18n="filter_p_hard">IT & Hardware</button>
+            <button class="p-filter-btn" data-filter="research" data-i18n="filter_p_res">Research</button>
         </div>
 
         <!-- Carousel Container -->
@@ -590,38 +747,49 @@
 
             <div id="empty-project-msg" class="empty-project-msg">
                 <i class="fas fa-folder-open"></i>
-                <p>Oops! No projects in this category yet. Stay tuned!</p>
+                <p data-i18n="empty_project_msg">Oops! No projects in this category yet. Stay tuned!</p>
             </div>
 
             <div class="project-track-container">
                 <div class="project-track" id="project-track">
-                    
+
                     <!-- Project 1 -->
                     <div class="project-slide" data-category="design">
-                        <div class="p-card-shadow"> 
-                            <div class="p-card-glass"> 
+                        <div class="p-card-shadow">
+                            <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Social Media & Digital Campaign</h3>
-                                        <p>Kompilasi aset visual media sosial, kampanye digital, dan identitas acara (Novo Club, GSA, dll).</p>
+                                        <h3 data-i18n="p1_title">Social Media & Digital Campaign</h3>
+                                        <p data-i18n="p1_desc">A compilation of social media...</p>
                                     </div>
-                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="btn-external"><i
+                                            class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                 <div class="p-card-gallery">
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Amarta\nCampaign" class="img-dark" alt="Amarta Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Amarta\nCampaign" class="img-light" alt="Amarta Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Rohis\nAssets" class="img-dark" alt="Rohis Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Rohis\nAssets" class="img-light" alt="Rohis Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Instagram\nFeeds" class="img-dark" alt="IG Feeds Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Instagram\nFeeds" class="img-light" alt="IG Feeds Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Digital\nPoster" class="img-dark" alt="Poster Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Digital\nPoster" class="img-light" alt="Poster Light">
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Amarta\nCampaign"
+                                        class="img-dark" alt="Amarta Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Amarta\nCampaign"
+                                        class="img-light" alt="Amarta Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Rohis\nAssets"
+                                        class="img-dark" alt="Rohis Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Rohis\nAssets"
+                                        class="img-light" alt="Rohis Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Instagram\nFeeds"
+                                        class="img-dark" alt="IG Feeds Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Instagram\nFeeds"
+                                        class="img-light" alt="IG Feeds Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Digital\nPoster"
+                                        class="img-dark" alt="Poster Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Digital\nPoster"
+                                        class="img-light" alt="Poster Light">
                                 </div>
                                 <div class="p-card-footer">
-                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-line">
+                                        <div class="line"></div><i class="fas fa-caret-right"></i>
+                                    </div>
                                     <div class="tool-icons">
                                         <img src="assets/images/tools/illustrator.webp" alt="Illustrator">
                                         <img src="assets/images/tools/pshp.webp" alt="Photoshop">
@@ -634,31 +802,34 @@
 
                     <!-- Project 2 -->
                     <div class="project-slide" data-category="design">
-                        <div class="p-card-shadow"> 
-                            <div class="p-card-glass"> 
+                        <div class="p-card-shadow">
+                            <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Brand Identity & Print Materials</h3>
-                                        <p>Perancangan identitas visual merek, logo, spanduk, brosur, hingga ID card untuk berbagai kebutuhan.</p>
+                                        <h3 data-i18n="p2_title">Brand Identity & Print Materials</h3>
+                                        <p data-i18n="p2_desc">Visual brand identity design...</p>
                                     </div>
-                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="btn-external"><i
+                                            class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                 <div class="p-card-gallery">
                                     <!-- Ganti src img-light pake file gambar desain light lu nanti ya bang! -->
                                     <img src="assets/images/project/3.png" class="img-dark" alt="Print 1 Dark">
                                     <img src="assets/images/project/3-light.png" class="img-light" alt="Print 1 Light">
-                                    
+
                                     <img src="assets/images/project/2.png" class="img-dark" alt="Print 2 Dark">
                                     <img src="assets/images/project/2-light.png" class="img-light" alt="Print 2 Light">
-                                    
+
                                     <img src="assets/images/project/1.png" class="img-dark" alt="Print 3 Dark">
                                     <img src="assets/images/project/1-light.png" class="img-light" alt="Print 3 Light">
-                                    
+
                                     <img src="assets/images/project/4.png" class="img-dark" alt="Print 4 Dark">
                                     <img src="assets/images/project/4-light.png" class="img-light" alt="Print 4 Light">
                                 </div>
                                 <div class="p-card-footer">
-                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-line">
+                                        <div class="line"></div><i class="fas fa-caret-right"></i>
+                                    </div>
                                     <div class="tool-icons">
                                         <img src="assets/images/tools/coreldraw.png" alt="CorelDraw">
                                         <img src="assets/images/tools/illustrator.webp" alt="Illustrator">
@@ -671,30 +842,42 @@
 
                     <!-- Project 3 -->
                     <div class="project-slide" data-category="design">
-                        <div class="p-card-shadow"> 
-                            <div class="p-card-glass"> 
+                        <div class="p-card-shadow">
+                            <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Corporate Deck & Presentations</h3>
-                                        <p>Desain layout presentasi profesional dan memukau untuk kebutuhan korporat, instansi, hingga akademis.</p>
+                                        <h3 data-i18n="p3_title">Corporate Deck & Presentations</h3>
+                                        <p data-i18n="p3_desc">Professional and engaging presentation layouts tailored for corporate,
+                                            institutional, and academic purposes.</p>
                                     </div>
-                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="btn-external"><i
+                                            class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                 <div class="p-card-gallery">
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Pitch\nDeck" class="img-dark" alt="Pitch Deck Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Pitch\nDeck" class="img-light" alt="Pitch Deck Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Company\nProfile" class="img-dark" alt="Compro Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Company\nProfile" class="img-light" alt="Compro Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Academic\nSlide" class="img-dark" alt="Academic Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Academic\nSlide" class="img-light" alt="Academic Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Data\nChart" class="img-dark" alt="Chart Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Data\nChart" class="img-light" alt="Chart Light">
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Pitch\nDeck"
+                                        class="img-dark" alt="Pitch Deck Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Pitch\nDeck"
+                                        class="img-light" alt="Pitch Deck Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Company\nProfile"
+                                        class="img-dark" alt="Compro Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Company\nProfile"
+                                        class="img-light" alt="Compro Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Academic\nSlide"
+                                        class="img-dark" alt="Academic Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Academic\nSlide"
+                                        class="img-light" alt="Academic Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Data\nChart"
+                                        class="img-dark" alt="Chart Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Data\nChart"
+                                        class="img-light" alt="Chart Light">
                                 </div>
                                 <div class="p-card-footer">
-                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-line">
+                                        <div class="line"></div><i class="fas fa-caret-right"></i>
+                                    </div>
                                     <div class="tool-icons">
                                         <img src="assets/images/tools/canva.webp" alt="Canva">
                                         <img src="assets/images/tools/figma.webp" alt="Figma">
@@ -710,30 +893,46 @@
                             <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Interactive Portfolio Website</h3>
-                                        <p>Pengembangan website portofolio interaktif dengan animasi custom dan DOM murni dari nol.</p>
+                                        <h3 data-i18n="p4_title">Interactive Portfolio Website</h3>
+                                        <p data-i18n="p4_desc">Development of an interactive portfolio website featuring custom animations
+                                            and pure DOM manipulation from
+                                            scratch.</p>
                                     </div>
-                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="btn-external"><i
+                                            class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                 <div class="p-card-gallery">
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=HTML+CSS\nStructure" class="img-dark" alt="HTML CSS Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=HTML+CSS\nStructure" class="img-light" alt="HTML CSS Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=JS+DOM\nLogic" class="img-dark" alt="JS DOM Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=JS+DOM\nLogic" class="img-light" alt="JS DOM Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Responsive\nLayout" class="img-dark" alt="Responsive Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Responsive\nLayout" class="img-light" alt="Responsive Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=UI\nUX" class="img-dark" alt="UI UX Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=UI\nUX" class="img-light" alt="UI UX Light">
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=HTML+CSS\nStructure"
+                                        class="img-dark" alt="HTML CSS Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=HTML+CSS\nStructure"
+                                        class="img-light" alt="HTML CSS Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=JS+DOM\nLogic"
+                                        class="img-dark" alt="JS DOM Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=JS+DOM\nLogic"
+                                        class="img-light" alt="JS DOM Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Responsive\nLayout"
+                                        class="img-dark" alt="Responsive Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Responsive\nLayout"
+                                        class="img-light" alt="Responsive Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=UI\nUX" class="img-dark"
+                                        alt="UI UX Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=UI\nUX" class="img-light"
+                                        alt="UI UX Light">
                                 </div>
                                 <div class="p-card-footer">
-                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-line">
+                                        <div class="line"></div><i class="fas fa-caret-right"></i>
+                                    </div>
                                     <div class="tool-icons">
-                                        <i class="fab fa-html5" style="color:#E34F26; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                        <i class="fab fa-css3-alt" style="color:#1572B6; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                        <i class="fab fa-js" style="color:#F7DF1E; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-html5"
+                                            style="color:#E34F26; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-css3-alt"
+                                            style="color:#1572B6; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-js"
+                                            style="color:#F7DF1E; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
                                     </div>
                                 </div>
                             </div>
@@ -746,37 +945,51 @@
                             <div class="p-card-glass">
                                 <div class="p-card-header">
                                     <div class="p-card-title">
-                                        <h3>Hardware Repair & OS Customization</h3>
-                                        <p>Troubleshooting komponen fisik PC/Laptop dan kustomisasi mendalam pada ekosistem Linux (Ubuntu).</p>
+                                        <h3 data-i18n="p5_title">Hardware Repair & OS Customization</h3>
+                                        <p data-i18n="p5_desc">Physical PC/laptop hardware troubleshooting and deep customization within the
+                                            Linux (Ubuntu) ecosystem.</p>
                                     </div>
-                                    <a href="#" class="btn-external"><i class="fas fa-arrow-up-right-from-square"></i></a>
+                                    <a href="#" class="btn-external"><i
+                                            class="fas fa-arrow-up-right-from-square"></i></a>
                                 </div>
                                 <div class="p-card-gallery">
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Re-Install\nOS" class="img-dark" alt="Ubuntu Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Re-Install\nOS" class="img-light" alt="Ubuntu Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Linux\nTerminal" class="img-dark" alt="Terminal Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Linux\nTerminal" class="img-light" alt="Terminal Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=PC\nTeardown" class="img-dark" alt="Teardown Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=PC\nTeardown" class="img-light" alt="Teardown Light">
-                                    
-                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Hardware\nRepair" class="img-dark" alt="Repair Dark">
-                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Hardware\nRepair" class="img-light" alt="Repair Light">
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Re-Install\nOS"
+                                        class="img-dark" alt="Ubuntu Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Re-Install\nOS"
+                                        class="img-light" alt="Ubuntu Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Linux\nTerminal"
+                                        class="img-dark" alt="Terminal Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Linux\nTerminal"
+                                        class="img-light" alt="Terminal Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=PC\nTeardown"
+                                        class="img-dark" alt="Teardown Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=PC\nTeardown"
+                                        class="img-light" alt="Teardown Light">
+
+                                    <img src="https://placehold.co/400x600/0B191E/00E5FF?text=Hardware\nRepair"
+                                        class="img-dark" alt="Repair Dark">
+                                    <img src="https://placehold.co/400x600/D0E2E6/1A2E2F?text=Hardware\nRepair"
+                                        class="img-light" alt="Repair Light">
                                 </div>
                                 <div class="p-card-footer">
-                                    <div class="tool-line"><div class="line"></div><i class="fas fa-caret-right"></i></div>
+                                    <div class="tool-line">
+                                        <div class="line"></div><i class="fas fa-caret-right"></i>
+                                    </div>
                                     <div class="tool-icons">
-                                        <i class="fas fa-tools" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
-                                        <i class="fab fa-linux" style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fas fa-tools"
+                                            style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
+                                        <i class="fab fa-linux"
+                                            style="color:#fff; background:rgba(255,255,255,0.1); padding:8px; border-radius:50%;"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Project 6: Research -->
-                    
+
                 </div>
             </div>
         </div>
@@ -789,42 +1002,46 @@
     <!-- Transition (Wave) -->
     <div class="wave-transition-contact">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#0099ff" fill-opacity="1" d="M0,288L34.3,256C68.6,224,137,160,206,128C274.3,96,343,96,411,96C480,96,549,96,617,80C685.7,64,754,32,823,37.3C891.4,43,960,85,1029,90.7C1097.1,96,1166,64,1234,90.7C1302.9,117,1371,203,1406,245.3L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z"></path>
+            <path fill="#0099ff" fill-opacity="1"
+                d="M0,288L34.3,256C68.6,224,137,160,206,128C274.3,96,343,96,411,96C480,96,549,96,617,80C685.7,64,754,32,823,37.3C891.4,43,960,85,1029,90.7C1097.1,96,1166,64,1234,90.7C1302.9,117,1371,203,1406,245.3L1440,288L1440,0L1405.7,0C1371.4,0,1303,0,1234,0C1165.7,0,1097,0,1029,0C960,0,891,0,823,0C754.3,0,686,0,617,0C548.6,0,480,0,411,0C342.9,0,274,0,206,0C137.1,0,69,0,34,0L0,0Z">
+            </path>
         </svg>
     </div>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="glow-circle-contact"></div>
-        
+
         <div class="contact-wrapper">
-            <p class="section-subtitle reveal">GET IN TOUCH</p>
-            <h2 class="section-title reveal">Contact <span>Us</span></h2>
-            
+            <p class="section-subtitle reveal" data-i18n="sec_cont_sub">GET IN TOUCH</p>
+            <h2 class="section-title reveal" data-i18n="sec_cont_title">Contact <span>Us</span></h2>
+
             <div class="contact-content-new reveal">
                 <!-- Bagian Atas: Form & Newsletter -->
                 <div class="contact-top-row">
                     <div class="contact-form-new">
                         <form action="#" method="POST">
                             <div class="form-row-2">
-                                <input type="email" id="email" name="email" placeholder="Email" required>
-                                <input type="tel" id="phone" name="phone" placeholder="Phone (Optional)">
+                                <input type="email" id="email" name="email" placeholder="Email" required data-i18n="c_email">
+                                <input type="tel" id="phone" name="phone" placeholder="Phone (Optional)" data-i18n="c_phone">
                             </div>
                             <div class="form-row-1">
-                                <input type="text" id="name" name="name" placeholder="Name" required>
+                                <input type="text" id="name" name="name" placeholder="Name" required data-i18n="c_name">
                             </div>
                             <div class="form-row-1">
-                                <textarea id="message" name="message" rows="5" placeholder="Message" required></textarea>
+                                <textarea id="message" name="message" rows="5" placeholder="Message"
+                                    required data-i18n="c_message"></textarea>
                             </div>
-                            <button type="submit" class="btn-submit-new">Submit Message</button>
+                            <button type="submit" class="btn-submit-new" data-i18n="c_submit">Submit Message</button>
                         </form>
                     </div>
                     <div class="newsletter-card">
-                        <h3>Stay Updated</h3>
-                        <p>Subscribe to my newsletter for the latest tech insights, design trends, and behind-the-scenes looks at my projects.</p>
+                        <h3 data-i18n="c_newsletter_title">Stay Updated</h3>
+                        <p data-i18n="c_newsletter_desc">Subscribe to my newsletter for the latest tech insights, design trends, and behind-the-scenes
+                            looks at my projects.</p>
                         <form action="#" class="newsletter-form">
-                            <input type="email" placeholder="Enter your email address" required>
-                            <button type="submit">Subscribe Now</button>
+                            <input type="email" placeholder="Enter your email address" required data-i18n="c_newsletter_email">
+                            <button type="submit" data-i18n="c_newsletter_submit">Subscribe Now</button>
                         </form>
                     </div>
                 </div>
@@ -836,21 +1053,22 @@
                             <i class="fas fa-phone-volume"></i>
                             <h4>(+62) 813 6867 0212</h4>
                         </div>
-                        <p>Available for freelance opportunities and full-time positions. Let's discuss how I can help.</p>
+                        <p data-i18n="info_phone">Open to freelance opportunities...</p>
+                        </p>
                     </div>
                     <div class="info-box-new mid-box">
                         <div class="info-header-new">
                             <i class="fas fa-envelope-open-text"></i>
                             <h4>alfarelamr587@gmail.com</h4>
                         </div>
-                        <p>Prefer writing? Drop me an email anytime. I usually respond within 24 hours.</p>
+                        <p data-i18n="info_email">Prefer written communication?...</p>
                     </div>
                     <div class="info-box-new light-box">
                         <div class="info-header-new">
                             <i class="fas fa-map-marker-alt"></i>
                             <h4>Palembang, Indonesia</h4>
                         </div>
-                        <p>Currently based in Palembang, South Sumatra. Open to remote work globally.</p>
+                        <p data-i18n="info_loc">Currently based in Palembang...</p>
                     </div>
                 </div>
             </div>
@@ -863,10 +1081,11 @@
             <div class="footer-top">
                 <div class="footer-col brand-col">
                     <div class="logo">Alfa<span>rel.</span></div>
-                    <p>Transforming complex problems into elegant, user-centric digital solutions. Let's build something extraordinary together.</p>
+                    <p data-i18n="f_brand_desc">Transforming complex problems into elegant, user-centric digital solutions. Let's build something
+                        extraordinary together.</p>
                 </div>
                 <div class="footer-col link-col">
-                    <h4>Navigation</h4>
+                    <h4 data-i18n="f_nav">Navigation</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#about">About</a></li>
@@ -875,7 +1094,7 @@
                     </ul>
                 </div>
                 <div class="footer-col link-col">
-                    <h4>Quick Links</h4>
+                    <h4 data-i18n="f_quick_links">Quick Links</h4>
                     <ul>
                         <li><a href="#contact">Contact Us</a></li>
                         <li><a href="assets/Alfarel_CV.pdf" download="Alfarel_CV.pdf">Download CV</a></li>
@@ -883,7 +1102,7 @@
                     </ul>
                 </div>
                 <div class="footer-col link-col">
-                    <h4>Services</h4>
+                    <h4 data-i18n="f_services">Services</h4>
                     <ul>
                         <li><a href="#">Web Development</a></li>
                         <li><a href="#">UI/UX Design</a></li>
@@ -907,14 +1126,16 @@
                     <span>alfarelamr587@gmail.com</span>
                 </div>
                 <div class="f-socials">
-                    <a href="https://www.instagram.com/alfarel_amr/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/in/muhammad-alfarel-2b202528a/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/alfarel_amr/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/muhammad-alfarel-2b202528a/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
                     <a href="https://github.com/alfarel" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 M. Alfarel Portfolio •</p>
+                <p data-i18n="f_copyright">&copy; 2026 M. Alfarel Portfolio •</p>
             </div>
         </div>
     </footer>
@@ -929,11 +1150,11 @@
             </div>
             <h3 id="modal-title">Institution Name</h3>
             <p id="modal-subtitle">Year - Location</p>
-            
+
             <div class="modal-badges" id="modal-badges"></div>
-            
+
             <p id="modal-desc" class="modal-desc">A brief description will appear here...</p>
-            
+
             <div class="modal-achievements">
                 <h4>Achievements</h4>
                 <ul id="modal-achievements-list"></ul>
@@ -958,7 +1179,7 @@
                 </div>
                 <button class="skill-modal-close" id="skill-close-btn" title="Close">&times;</button>
             </div>
-            
+
             <div class="skill-modal-body">
                 <p id="skill-modal-desc" class="skill-modal-desc">Tool or skill description will appear here.</p>
                 <h4 class="skill-modal-section-title">CORE EXPERTISE:</h4>
@@ -969,4 +1190,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

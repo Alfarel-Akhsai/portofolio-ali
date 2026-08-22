@@ -163,6 +163,86 @@ body {
     gap: 30px; 
 }
 
+/* --- CUSTOM LANGUAGE SWITCHER AESTHETIC --- */
+.custom-lang-wrapper {
+    position: relative;
+    margin-right: 15px;
+    font-family: 'Poppins', sans-serif;
+    user-select: none;
+}
+
+.lang-selected {
+    background: rgba(11, 25, 30, 0.5); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: var(--teks-putih);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+.lang-selected i {
+    font-size: 0.7rem;
+    color: var(--aksen-tosca);
+    transition: transform 0.3s ease;
+}
+.lang-selected:hover, .custom-lang-wrapper.open .lang-selected {
+    border-color: var(--aksen-tosca);
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5), 0 0 10px rgba(0, 229, 255, 0.3);
+}
+.custom-lang-wrapper.open .lang-selected i {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown {
+    position: absolute;
+    top: 130%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(11, 25, 30, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 12px;
+    padding: 5px 0;
+    width: 60px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.custom-lang-wrapper.open .lang-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+.lang-option {
+    padding: 8px 0;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: rgba(237, 246, 249, 0.7);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-option:hover {
+    color: var(--aksen-tosca);
+    background: rgba(0, 229, 255, 0.1);
+}
+.lang-option.active {
+    color: var(--aksen-tosca);
+    font-weight: 600;
+}
+
 .btn-lets-talk { 
     border: 1px solid var(--aksen-tosca); 
     padding: 5px 15px; 
@@ -688,6 +768,30 @@ body {
 
 .btn-about:hover .arrow { 
     transform: translateX(5px); 
+}
+
+/* --- PENYESUAIAN MULTI-BAHASA (MANDARIN & INDONESIA) --- */
+body.lang-id .my-text {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    margin-left: clamp(20px, 4vw, 50px);
+    margin-bottom: clamp(-60px, -4vw, -20px);
+}
+
+body.lang-zh .my-text {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'STKaiti', cursive, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: clamp(-45px, -3.5vw, -20px);
+    margin-left: clamp(15px, 2.5vw, 35px);
+}
+
+body.lang-zh .portofolio-text {
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Fredoka', sans-serif;
+    font-size: clamp(5.5rem, 11.5vw, 10.5rem); 
+    letter-spacing: clamp(6px, 1.5vw, 15px);
+}
+
+body.lang-zh .subtitle-text {
+    letter-spacing: clamp(6px, 1vw, 14px);
 }
 
 .grid-bg { 
@@ -2928,6 +3032,36 @@ body.light-mode {
     --bayangan-gelombang: drop-shadow(0px -10px 20px rgba(26, 46, 47, 0.05));
 }
 
+/* Languadge Switcher */
+body.light-mode .lang-selected {
+    background: #D0E2E6;
+    border-color: #9BB9BB;
+    color: #1A2E2F;
+    box-shadow: inset 0 2px 5px rgba(26, 46, 47, 0.15);
+}
+body.light-mode .lang-selected i {
+    color: #1A2E2F;
+}
+body.light-mode .lang-selected:hover, body.light-mode .custom-lang-wrapper.open .lang-selected {
+    background: #9BB9BB;
+    border-color: #688F8E;
+    box-shadow: inset 0 2px 5px rgba(26, 46, 47, 0.2), 0 4px 10px rgba(26, 46, 47, 0.1);
+}
+body.light-mode .lang-dropdown {
+    background: rgba(244, 247, 247, 0.95);
+    border-color: #9BB9BB;
+    box-shadow: 0 10px 25px rgba(26, 46, 47, 0.15);
+}
+body.light-mode .lang-option {
+    color: #1A2E2F;
+}
+body.light-mode .lang-option:hover {
+    background: #D0E2E6;
+    color: #688F8E;
+}
+body.light-mode .lang-option.active {
+    color: #688F8E;
+}
 /* Nav & Sidebar */
 body.light-mode .top-navbar { background: rgba(244, 247, 247, 0.9); border-bottom: 1px solid #D0E2E6; }
 body.light-mode .top-navbar.scrolled { background: rgba(155, 185, 187, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 4px 20px rgba(26, 46, 47, 0.15); border-bottom: 1px solid rgba(255, 255, 255, 0.4); }

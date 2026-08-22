@@ -1,3 +1,211 @@
+/* --- TRANSLATION DICTIONARY & LOGIC --- */
+const translations = {
+    en: {
+        // Navbar & Sidebar
+        nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_project: "Project", nav_contact: "Contact", nav_lets_talk: "Let's Talk",
+        side_promo_title: "Got an idea?<br>Let's bring it to life!", side_promo_desc: "See how I transform ideas into stunning, functional designs.", side_book: "Book a Coffee Chat", side_cv: "Download CV", side_follow: "FOLLOW ME",
+
+        // Hero
+        hero_my: "my", hero_portfolio: "portfolio", hero_subtitle: "Graphic Designer & Web Developer", hero_btn: "My Work",
+
+        // About
+        sec_about: "About <span>Me</span>",
+        about_hello: "Hello, I'm <br> <span>M. Alfarel</span>",
+        about_d1: "Hi! I am <strong>M. Alfarel</strong>, usually called <strong>AL</strong>. Currently, I am pursuing a double degree in two complementary fields: Informatics Engineering at Institut Teknologi Sumatera (ITERA) and Business Management at BINUS University.",
+        about_d2: "My journey into IT didn't start with a coding background; in fact, I am actively building my programming skills from the ground up. Historically, my core expertise has been deeply rooted in Graphic Design, where I regularly craft visual materials such as digital posters, banners, and professional pitch decks.",
+        about_d3: "My practical skills were significantly shaped through hands-on work experiences. I refined my hardware troubleshooting abilities during my internship at CV. RKU Komputer, and gained valuable operational and managerial insights while working at Bawaslu. I chose to study IT to establish a strong technical foundation that perfectly complements my creative and practical skill sets.",
+        about_m1: "Hi, I am <strong>M. Alfarel</strong> (AL). I am currently pursuing a double degree in Informatics (ITERA) and Business (BINUS).",
+        about_m2: "My core focus has always been Graphic Design. Now, I am highly enthusiastic about building my coding skills from zero.",
+        about_m3: "I bring a strong track record of practical hardware repair (CV. RKU Komputer) and operational management experience (Bawaslu).",
+        about_btn: "Read More <i class='fas fa-arrow-down'></i>",
+
+        tab_acad: "<i class='fas fa-graduation-cap'></i> Academic", tab_achieve: "<i class='fas fa-trophy'></i> Achievement", tab_exp: "<i class='fas fa-users'></i> Experience", tab_cert: "<i class='fas fa-certificate'></i> Certificate",
+
+        // Skills & Project
+        sec_skill_sub: "PROFESSIONAL VALUE", sec_skill_title: "Skills & <span>Tools</span>",
+        filter_s_core: "Core", filter_s_exp: "Expertise", filter_s_lang: "Languages", filter_s_tools: "Tools",
+        cat_exp: "Core Expertise", cat_lang: "Language & Framework", cat_tool: "Tools & Environment",
+
+        sec_proj_sub: "PORTFOLIO ARCHIVE", sec_proj_title: "Featured <span>Projects</span>",
+        filter_p_all: "All", filter_p_des: "Design & Creative", filter_p_web: "Web Dev", filter_p_hard: "IT & Hardware", filter_p_res: "Research",
+        
+        p1_title: "Social Media & Digital Campaign", p1_desc: "A comprehensive compilation of social media visual assets, digital campaigns, and event identities.",
+        p2_title: "Brand Identity & Print Materials", p2_desc: "Visual brand identity design, including custom logos, banners, brochures, and corporate ID cards.",
+        p3_title: "Corporate Deck & Presentations", p3_desc: "Professional and engaging presentation layouts thoughtfully tailored for corporate, institutional, and academic purposes.",
+        p4_title: "Interactive Portfolio Website", p4_desc: "Development of an interactive portfolio website featuring custom animations and pure DOM manipulation built from scratch.",
+        p5_title: "Hardware Repair & OS Customization", p5_desc: "Physical PC/laptop hardware troubleshooting and deep system customization within the Linux (Ubuntu) ecosystem.",
+        
+        // Contact
+        sec_cont_sub: "GET IN TOUCH", sec_cont_title: "Contact <span>Me</span>",
+        c_email: "Email Address", c_phone: "Phone (Optional)", c_name: "Full Name", c_msg: "Write your message here...", c_btn: "Submit Message",
+        n_title: "Stay Updated", n_desc: "Subscribe to my newsletter for the latest tech insights and exclusive behind-the-scenes looks at my projects.", n_plc: "Enter your email address", n_btn: "Subscribe Now",
+        info_phone: "Open to freelance opportunities and full-time positions. Let's discuss how I can bring value to your team.",
+        info_email: "Prefer written communication? Feel free to drop me an email anytime. I typically respond within 24 hours.",
+        info_loc: "Currently based in Palembang, South Sumatra. Highly open to remote work opportunities globally.",
+
+        // Footer
+        foot_desc: "Transforming complex challenges into elegant, user-centric digital solutions. Let's build something extraordinary together.",
+        foot_nav: "Navigation", foot_link: "Quick Links", foot_serv: "Services"
+    },
+    id: {
+        // Navbar & Sidebar
+        nav_home: "Beranda", nav_about: "Profil", nav_skills: "Kompetensi", nav_project: "Proyek", nav_contact: "Hubungi", nav_lets_talk: "Mari Berbincang",
+        side_promo_title: "Punya ide brilian?<br>Mari wujudkan!", side_promo_desc: "Lihat bagaimana saya menerjemahkan ide Anda menjadi desain yang fungsional dan estetis.", side_book: "Jadwalkan Diskusi", side_cv: "Unduh CV", side_follow: "IKUTI SAYA",
+
+        // Hero
+        hero_my: "arsip", hero_portfolio: "portofolio", hero_subtitle: "Desainer Grafis & Web Developer", hero_btn: "Jelajahi Karya",
+
+        // About
+        sec_about: "Mengenal <span>Saya</span>",
+        about_hello: "Halo, Saya <br> <span>M. Alfarel</span>",
+        about_d1: "Halo! Saya <strong>M. Alfarel</strong>, akrab dipanggil <strong>AL</strong>. Saat ini, saya sedang menempuh program <i>double degree</i> di dua bidang yang saling melengkapi: Teknik Informatika di Institut Teknologi Sumatera (ITERA) dan Manajemen Bisnis di BINUS University.",
+        about_d2: "Perjalanan saya di dunia IT tidak berawal dari keahlian <i>coding</i>—faktanya, saya membangun pemahaman pemrograman ini benar-benar dari nol. Sebelumnya, fondasi keahlian saya berakar kuat di bidang Desain Grafis, tempat saya terbiasa merancang berbagai materi visual seperti poster digital, <i>banner</i>, hingga <i>pitch deck</i> presentasi yang profesional.",
+        about_d3: "Keterampilan praktis saya banyak terbentuk melalui pengalaman terjun langsung ke lapangan. Kemampuan <i>troubleshooting</i> dan perbaikan <i>hardware</i> saya asah ketika magang di CV. RKU Komputer, sementara pemahaman terkait operasional saya dapatkan dari pengalaman bekerja di Bawaslu. Saya memutuskan untuk mendalami IT guna membangun fondasi teknis yang solid, sekaligus menyatukan sisi kreatif dan praktis yang saya miliki.",
+        about_m1: "Halo, saya <strong>M. Alfarel</strong> (AL). Saat ini saya sedang menempuh <i>double degree</i> di bidang Informatika (ITERA) dan Bisnis (BINUS).",
+        about_m2: "Fokus keahlian saya berakar pada Desain Grafis. Kini, saya juga antusias membangun kemampuan <i>coding</i> secara mandiri dari nol.",
+        about_m3: "Saya memiliki rekam jejak praktis dalam perbaikan <i>hardware</i> (CV. RKU Komputer) dan pengalaman manajerial operasional (Bawaslu).",
+        about_btn: "Baca Selengkapnya <i class='fas fa-arrow-down'></i>",
+
+        tab_acad: "<i class='fas fa-graduation-cap'></i> Akademik", tab_achieve: "<i class='fas fa-trophy'></i> Pencapaian", tab_exp: "<i class='fas fa-users'></i> Pengalaman", tab_cert: "<i class='fas fa-certificate'></i> Sertifikat",
+
+        // Skills & Project
+        sec_skill_sub: "NILAI PROFESIONAL", sec_skill_title: "Kompetensi & <span>Alat</span>",
+        filter_s_core: "Utama", filter_s_exp: "Spesialisasi", filter_s_lang: "Bahasa", filter_s_tools: "Tools",
+        cat_exp: "Bidang Keahlian", cat_lang: "Bahasa & Framework", cat_tool: "Software & Environment",
+
+        sec_proj_sub: "ARSIP KARYA", sec_proj_title: "Proyek <span>Pilihan</span>",
+        filter_p_all: "Semua", filter_p_des: "Desain & Kreatif", filter_p_web: "Web Dev", filter_p_hard: "IT & Hardware", filter_p_res: "Riset",
+
+        p1_title: "Kampanye Digital & Media Sosial", p1_desc: "Kompilasi komprehensif aset visual media sosial, kampanye digital, dan identitas acara.",
+        p2_title: "Identitas Merek & Material Cetak", p2_desc: "Perancangan identitas visual merek, mencakup logo kustom, spanduk, brosur, hingga ID card korporat.",
+        p3_title: "Presentasi & Deck Korporat", p3_desc: "Desain tata letak presentasi yang profesional dan rapi, disesuaikan untuk kebutuhan korporat, instansi, maupun akademis.",
+        p4_title: "Website Portofolio Interaktif", p4_desc: "Pengembangan website portofolio interaktif yang dibangun murni dari nol menggunakan manipulasi DOM dan animasi kustom.",
+        p5_title: "Perbaikan Hardware & OS Linux", p5_desc: "Pemecahan masalah komponen fisik PC/Laptop dan kustomisasi mendalam sistem pada ekosistem operasi Linux (Ubuntu).",
+
+        // Contact
+        sec_cont_sub: "MARI TERHUBUNG", sec_cont_title: "Hubungi <span>Saya</span>",
+        c_email: "Alamat Email", c_phone: "Nomor Telepon (Opsional)", c_name: "Nama Lengkap", c_msg: "Tulis pesan Anda di sini...", c_btn: "Kirim Pesan",
+        n_title: "Tetap Terkini", n_desc: "Berlangganan buletin saya untuk mendapatkan insight teknologi terbaru dan melihat di balik layar proyek-proyek saya.", n_plc: "Masukkan alamat email", n_btn: "Berlangganan",
+        info_phone: "Terbuka untuk kolaborasi freelance maupun posisi penuh waktu (full-time). Mari diskusikan bagaimana saya bisa memberikan nilai tambah untuk Anda.",
+        info_email: "Lebih nyaman berkomunikasi lewat tulisan? Jangan ragu untuk mengirimkan email. Saya biasanya merespons dalam kurun waktu 24 jam.",
+        info_loc: "Saat ini berdomisili di Palembang, Sumatera Selatan, dan sangat terbuka untuk kesempatan kerja remote secara global.",
+
+        // Footer
+        foot_desc: "Mengubah permasalahan kompleks menjadi solusi digital yang elegan dan berpusat pada pengguna. Mari berkolaborasi dan ciptakan sesuatu yang luar biasa.",
+        foot_nav: "Navigasi", foot_link: "Tautan Singkat", foot_serv: "Layanan"
+    },
+    zh: {
+        // Navbar & Sidebar
+        nav_home: "首页", nav_about: "关于我", nav_skills: "专业能力", nav_project: "项目作品", nav_contact: "联系我", nav_lets_talk: "立即沟通",
+        side_promo_title: "有绝妙的想法？<br>让我们实现它！", side_promo_desc: "看看我如何将您的想法转化为令人惊叹的实用设计。", side_book: "预约交流", side_cv: "下载简历", side_follow: "关注我",
+
+        // Hero
+        hero_my: "我的", hero_portfolio: "作品集", hero_subtitle: "平面设计师 & 网页开发者", hero_btn: "探索作品",
+
+        // About
+        sec_about: "关于 <span>我</span>",
+        about_hello: "你好，我是 <br> <span>M. Alfarel</span>",
+        about_d1: "您好！我是 <strong>M. Alfarel</strong>，大家通常叫我 <strong>AL</strong>。目前我正在攻读双学位，在苏门答腊理工学院 (ITERA) 学习信息工程，同时在建国大学 (BINUS) 学习商业管理。",
+        about_d2: "我的IT之旅并非源于编程背景；事实上，我是从零开始稳步构建编程技能的。一直以来，我的核心专长扎根于平面设计领域，经常创作数字海报、横幅和专业的商业演示文稿。",
+        about_d3: "我的实践技能是在真实的职场经历中磨练出来的。在 CV. RKU Komputer 实习期间，我提升了硬件故障排除能力；而在 Bawaslu 的工作则让我积累了宝贵的运营管理经验。我决定深耕 IT 领域，是为了建立扎实的技术基础，从而完美融合我的创造力与实践能力。",
+        about_m1: "您好，我是 <strong>M. Alfarel (AL)</strong>。目前在 ITERA 和 BINUS 攻读双学位。",
+        about_m2: "我的核心专长是平面设计。如今，我也怀着极大的热情从零开始构建编程能力。",
+        about_m3: "我具备扎实的硬件维修实操经验（CV. RKU Komputer）以及行政管理洞察力（Bawaslu）。",
+        about_btn: "阅读更多 <i class='fas fa-arrow-down'></i>",
+
+        tab_acad: "<i class='fas fa-graduation-cap'></i> 教育背景", tab_achieve: "<i class='fas fa-trophy'></i> 荣誉成就", tab_exp: "<i class='fas fa-users'></i> 实践经验", tab_cert: "<i class='fas fa-certificate'></i> 资质证书",
+
+        // Skills & Project
+        sec_skill_sub: "专业价值", sec_skill_title: "能力与 <span>工具</span>",
+        filter_s_core: "核心", filter_s_exp: "专长", filter_s_lang: "语言", filter_s_tools: "工具",
+        cat_exp: "核心专长", cat_lang: "编程语言与框架", cat_tool: "软件与环境",
+
+        sec_proj_sub: "作品档案", sec_proj_title: "精选 <span>项目</span>",
+        filter_p_all: "全部", filter_p_des: "设计与创意", filter_p_web: "网页开发", filter_p_hard: "IT与硬件", filter_p_res: "学术研究",
+
+        p1_title: "社交媒体与数字营销", p1_desc: "全面汇集了社交媒体视觉资产、数字营销活动和活动标识设计。",
+        p2_title: "品牌形象与印刷材料", p2_desc: "视觉品牌形象设计，包括定制徽标、横幅、宣传册以及企业身份证设计。",
+        p3_title: "企业演示文稿", p3_desc: "为企业、机构和学术目的量身定制的专业且引人入胜的演示文稿排版设计。",
+        p4_title: "交互式作品集网站", p4_desc: "从零开始开发的一个交互式作品集网站，包含自定义动画和纯 DOM 操作。",
+        p5_title: "硬件维修与Linux定制", p5_desc: "物理 PC/笔记本电脑硬件故障排除，以及在 Linux (Ubuntu) 生态系统中的深度系统定制。",
+
+        // Contact
+        sec_cont_sub: "保持联系", sec_cont_title: "联系 <span>我</span>",
+        c_email: "电子邮箱", c_phone: "电话 (可选)", c_name: "您的姓名", c_msg: "在这里写下您的信息...", c_btn: "提交信息",
+        n_title: "订阅更新", n_desc: "订阅我的简报，获取最新的技术见解以及我项目的独家幕后故事。", n_plc: "输入您的电子邮件地址", n_btn: "立即订阅",
+        info_phone: "接受自由职业项目和全职工作。欢迎探讨我能如何为您的团队带来价值。",
+        info_email: "更喜欢文字交流？随时给我发邮件。我通常会在 24 小时内回复。",
+        info_loc: "目前常驻南苏门答腊巨港。非常期待全球范围内的远程工作机会。",
+
+        // Footer
+        foot_desc: "将复杂挑战转化为优雅的、以用户为中心的数字解决方案。让我们一起创造非凡。",
+        foot_nav: "导航", foot_link: "快速链接", foot_serv: "服务"
+    }
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+    // === LOGIKA CUSTOM DROPDOWN BAHASA ===
+    const langWrapper = document.getElementById('custom-lang-wrapper');
+    const langSelected = document.querySelector('.lang-selected');
+    const langText = document.getElementById('lang-text');
+    const langOptions = document.querySelectorAll('.lang-option');
+    
+    let currentLang = localStorage.getItem('app_lang') || 'en';
+    
+    function applyLanguage(lang) {
+        // Update teks kamus
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                // Cek kalau dia input atau textarea, yang diganti adalah placeholder-nya
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[lang][key];
+                } else {
+                    // Pakai innerHTML biar tag <span>, <strong>, <i> berfungsi jadi desain, bukan teks mentah
+                    el.innerHTML = translations[lang][key];
+                }
+            }
+        });
+
+        document.body.classList.remove('lang-en', 'lang-id', 'lang-zh');
+        document.body.classList.add('lang-' + lang);
+
+        langText.innerText = lang.toUpperCase();
+        langOptions.forEach(opt => {
+            opt.classList.remove('active');
+            if(opt.getAttribute('data-val') === lang) {
+                opt.classList.add('active');
+            }
+        });
+
+        localStorage.setItem('app_lang', lang);
+        currentLang = lang;
+    }
+
+    applyLanguage(currentLang);
+
+    if(langSelected) {
+        langSelected.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langWrapper.classList.toggle('open');
+        });
+    }
+
+    document.addEventListener('click', () => {
+        if (langWrapper && langWrapper.classList.contains('open')) {
+            langWrapper.classList.remove('open');
+        }
+    });
+    langOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.stopPropagation(); // Mencegah trigger event ke luar
+            const selectedLang = option.getAttribute('data-val');
+            applyLanguage(selectedLang);
+            langWrapper.classList.remove('open');
+        });
+    });
+});
+
 /* --- 1. SIDEBAR & NAVIGATION --- */
 const mobileMenuBtn = document.getElementById('mobile-menu');
 const sidebar = document.getElementById('sidebar');
@@ -307,17 +515,6 @@ const portfolioData = {
         ],
         image: ""
     },
-    "Google Student Ambassador": {
-        icon: "fa-google",
-        subtitle: "Candidate • 2026",
-        badges: ["Program", "Global Tech"],
-        desc: "Applied as a candidate for the Google Student Ambassador 2026 program. My goal is to foster a strong technology community on campus and represent the Google ecosystem among university students.",
-        achievements: [
-            "Prepared comprehensive application videos, campaign scripts, and promotional captions",
-            "Passed the initial selection phase to become a highly anticipated GSA 2026 Candidate"
-        ],
-        image: ""
-    },
     "Novo Club": {
         icon: "fa-lightbulb",
         subtitle: "Batch 4 Participant • 2026",
@@ -335,10 +532,10 @@ const portfolioData = {
         icon: "fa-microphone-alt",
         subtitle: "Champion • STIE & AKUBANK Mulia Darma Pratama",
         badges: ["1st Winner", "Religion", "City Level"],
-        desc: "Berhasil meraih Juara 1 pada ajang lomba Adzan tingkat SMA/SMK/MA se-Kota Palembang yang diselenggarakan oleh STIE & AKUBANK Mulia Darma Pratama. Kompetisi ini melatih kepercayaan diri, vokal, dan keberanian tampil di depan umum.",
+        desc: "Secured 1st Place in the city-wide high school Adzan competition organized by STIE & AKUBANK Mulia Darma Pratama. Participating in this event significantly built my public speaking confidence and vocal projection.",
         achievements: [
-            "Juara 1 Lomba Adzan se-Kota Palembang",
-            "Menyisihkan puluhan peserta dari berbagai sekolah tingkat atas"
+            "1st Place Adzan Competition across Palembang City",
+            "Outperformed dozens of participants from various high schools"
         ],
         image: "" 
     },
@@ -346,10 +543,10 @@ const portfolioData = {
         icon: "fa-book-open",
         subtitle: "Runner Up • SMAN 7 Palembang",
         badges: ["2nd Winner", "Religion", "Provincial Level"],
-        desc: "Meraih Juara 2 pada lomba Asmaul Husna tingkat SMA/SMK/MA se-Provinsi Sumatera Selatan yang diselenggarakan di SMAN 7 Palembang. Kompetisi ini sangat menguji daya ingat, pelafalan tajwid, dan ketenangan mental peserta.",
+        desc: "Achieved 2nd Place in the provincial high school Asmaul Husna competition held at SMAN 7 Palembang. This contest rigorously tested memory, precise pronunciation (tajwid), and mental composure under pressure.",
         achievements: [
-            "Juara 2 Lomba Asmaul Husna tingkat Provinsi Sumatera Selatan",
-            "Menunjukkan dedikasi tinggi dalam menghafal dan melafalkan Asmaul Husna"
+            "2nd Place Asmaul Husna Competition in South Sumatra",
+            "Demonstrated strong dedication in memorizing and reciting the Asmaul Husna"
         ],
         image: ""
     },
@@ -357,10 +554,10 @@ const portfolioData = {
         icon: "fa-medal",
         subtitle: "Academic Excellence • SMKN 8 Palembang",
         badges: ["Top Rank", "Academic", "Consistent"],
-        desc: "Mendapatkan 4 sertifikat penghargaan sebagai bentuk pengakuan atas pencapaian akademik (peringkat kelas) selama menempuh pendidikan. Pencapaian ini membuktikan konsistensi, kedisiplinan, dan tanggung jawab terhadap pendidikan formil.",
+        desc: "Received 4 certificates of excellence in recognition of top academic rankings throughout my studies. This achievement highlights my consistency, discipline, and strong commitment to formal education.",
         achievements: [
-            "Memperoleh total 4 sertifikat peringkat kelas",
-            "Konsisten mempertahankan nilai akademik yang tinggi di sekolah"
+            "Awarded a total of 4 class ranking certificates",
+            "Consistently maintained high academic grades throughout high school"
         ],
         image: ""
     },
@@ -368,10 +565,10 @@ const portfolioData = {
         icon: "fa-file-signature",
         subtitle: "Official Certificate • Bawaslu Prov. Sumsel",
         badges: ["Internship", "Government", "Administration"],
-        desc: "Sertifikat resmi yang diberikan sebagai bukti telah menyelesaikan program magang di Badan Pengawas Pemilihan Umum (Bawaslu) Provinsi Sumatera Selatan dengan kedisiplinan tinggi dan kontribusi administratif yang nyata.",
+        desc: "An official certificate confirming the successful completion of my internship at the General Election Supervisory Agency (Bawaslu) of South Sumatra. It recognizes my strict discipline and tangible administrative contributions.",
         achievements: [
-            "Lulus program magang dengan evaluasi yang memuaskan",
-            "Mendapatkan apresiasi atas ketelitian dalam manajemen arsip"
+            "Completed the internship program with highly satisfactory evaluations",
+            "Received special appreciation for meticulous archive management"
         ],
         image: ""
     },
@@ -379,10 +576,10 @@ const portfolioData = {
         icon: "fa-tools",
         subtitle: "Official Certificate • CV. RKU Komputer",
         badges: ["Internship", "Hardware", "Technical Skill"],
-        desc: "Sertifikat kelulusan Praktik Kerja Lapangan (PKL) dari CV. RKU Komputer, sebagai validasi atas kemampuan teknis dalam melakukan troubleshooting dan perbaikan pada perangkat keras maupun lunak di lingkungan kerja nyata.",
+        desc: "Certificate of completion for my field internship at CV. RKU Komputer. This credential validates my technical capability to troubleshoot and resolve hardware and software issues within a fast-paced, real-world work environment.",
         achievements: [
-            "Diakui kemampuannya dalam menangani masalah hardware klien",
-            "Lulus praktik lapangan dengan nilai evaluasi kinerja yang sangat baik"
+            "Recognized for proficiency in handling client hardware issues",
+            "Passed the field practice with excellent performance evaluations"
         ],
         image: ""
     }

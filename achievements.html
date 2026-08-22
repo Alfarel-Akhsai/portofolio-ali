@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - M. Alfarel</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Fredoka:wght@600;700&family=Pacifico&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS Utama -->
+    <link rel="stylesheet" href="style.css">
+    <!-- CSS Khusus Achievements (Modern Version) -->
+    <link rel="stylesheet" href="achievements.css">
+</head>
+<body>
+
+    <!-- Theme Switcher -->
+    <label class="theme-switch vertical-theme-switch">
+        <input type="checkbox" class="theme-toggle-btn" checked>
+        <span class="slider">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </span>
+    </label>
+
+    <!-- Top Navbar -->
+    <header class="top-navbar scrolled" id="navbar">
+        <a href="index.html" style="text-decoration: none;">
+            <div class="logo">Alfa<span>rel.</span></div>
+        </a>
+        <nav class="desktop-nav">
+            <a href="index.html#home">Home</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#skills">Skills</a>
+            <a href="index.html#project">Project</a>
+            <a href="achievements.html" class="active">Achievements</a>
+        </nav>
+        <div class="nav-right">
+            <a href="index.html#contact" class="btn-lets-talk">Let's Talk</a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar Overlay & Mobile Sidebar -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">Alfa<span>rel.</span></div>
+            <div class="close-btn" id="close-btn">&times;</div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html#home"><i class="fas fa-home"></i> Home</a>
+            <a href="index.html#about"><i class="fas fa-user"></i> About</a>
+            <a href="index.html#skills"><i class="fas fa-laptop-code"></i> Skills</a>
+            <a href="index.html#project"><i class="fas fa-folder-open"></i> Project</a>
+            <a href="achievements.html" class="active"><i class="fas fa-trophy"></i> Achievements</a>
+            <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </aside>
+
+    <!-- MAIN CONTENT: Achievements Page -->
+    <main class="achievements-page">
+        <!-- Latar belakang pola titik-titik khas portofoliomu -->
+        <div class="achievements-bg-pattern"></div>
+        
+        <div class="achievements-container">
+            <!-- Header Page -->
+            <div class="achievements-header reveal">
+                <p class="section-subtitle">MY JOURNEY</p>
+                <h1 class="section-title">Achieve<span>ments</span></h1>
+                <p class="page-desc">A curated collection of certificates, awards, and badges I've earned throughout my professional and academic journey.</p>
+            </div>
+
+            <!-- Filter & Search Section -->
+            <div class="achievements-controls reveal">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search certificates...">
+                </div>
+                
+                <div class="filter-box">
+                    <select id="typeFilter">
+                        <option value="all">All Types</option>
+                        <option value="Certificate">Certificate</option>
+                        <option value="Award">Award</option>
+                        <option value="Participation">Participation</option>
+                    </select>
+                </div>
+
+                <div class="filter-box">
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="Tech & IT">Tech & IT</option>
+                        <option value="Leadership">Leadership</option>
+                        <option value="Event">Event</option>
+                        <option value="Academic">Academic</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="achievements-total reveal">
+                Showing <span id="totalCount">0</span> achievements
+            </div>
+
+            <!-- Grid Container -->
+            <div class="achievements-grid reveal" id="achievementsGrid">
+                
+                <!-- Item 1 -->
+                <div class="achv-card" data-title="Web3 University Tour" data-type="Certificate" data-category="Tech & IT">
+                    <div class="achv-img-wrapper">
+                        <img src="https://placehold.co/600x400/0B191E/00E5FF?text=Web3+Tour" alt="Web3 Certificate">
+                        <div class="achv-overlay-link"><i class="fas fa-external-link-alt"></i></div>
+                    </div>
+                    <div class="achv-content">
+                        <span class="achv-code">CERT-202X-W3UT</span>
+                        <h3 class="achv-title">Web3 University Tour Certificate</h3>
+                        <p class="achv-issuer"><i class="fas fa-building"></i> Coinvestasi</p>
+                        <div class="achv-tags">
+                            <span class="tag">Certificate</span>
+                            <span class="tag">Tech & IT</span>
+                        </div>
+                    </div>
+                    <div class="achv-footer">
+                        <span class="achv-date"><i class="far fa-calendar-alt"></i> Issued 202X</span>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="achv-card" data-title="Dialog Psikologi Nusantara" data-type="Participation" data-category="Event">
+                    <div class="achv-img-wrapper">
+                        <img src="https://placehold.co/600x400/0B191E/00E5FF?text=Psikologi+Nusantara" alt="Psikologi Certificate">
+                        <div class="achv-overlay-link"><i class="fas fa-external-link-alt"></i></div>
+                    </div>
+                    <div class="achv-content">
+                        <span class="achv-code">PART-202X-DPN</span>
+                        <h3 class="achv-title">Dialog Psikologi Nusantara</h3>
+                        <p class="achv-issuer"><i class="fas fa-building"></i> Event Organizer</p>
+                        <div class="achv-tags">
+                            <span class="tag">Participation</span>
+                            <span class="tag">Event</span>
+                        </div>
+                    </div>
+                    <div class="achv-footer">
+                        <span class="achv-date"><i class="far fa-calendar-alt"></i> Issued 202X</span>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="achv-card" data-title="Microsoft Elevate Training" data-type="Certificate" data-category="Tech & IT">
+                    <div class="achv-img-wrapper">
+                        <img src="https://placehold.co/600x400/0B191E/00E5FF?text=Microsoft+Elevate" alt="Microsoft Certificate">
+                        <div class="achv-overlay-link"><i class="fas fa-external-link-alt"></i></div>
+                    </div>
+                    <div class="achv-content">
+                        <span class="achv-code">MS-ELEV-202X</span>
+                        <h3 class="achv-title">Microsoft Elevate Training Center</h3>
+                        <p class="achv-issuer"><i class="fas fa-building"></i> Microsoft</p>
+                        <div class="achv-tags">
+                            <span class="tag">Certificate</span>
+                            <span class="tag">AI Skills</span>
+                        </div>
+                    </div>
+                    <div class="achv-footer">
+                        <span class="achv-date"><i class="far fa-calendar-alt"></i> Issued 202X</span>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="achv-card" data-title="Novo Club Batch 4" data-type="Certificate" data-category="Leadership">
+                    <div class="achv-img-wrapper">
+                        <img src="https://placehold.co/600x400/0B191E/00E5FF?text=Novo+Club" alt="Novo Club Certificate">
+                        <div class="achv-overlay-link"><i class="fas fa-external-link-alt"></i></div>
+                    </div>
+                    <div class="achv-content">
+                        <span class="achv-code">NOVO-B4-2026</span>
+                        <h3 class="achv-title">Novo Club Batch 4 Participant</h3>
+                        <p class="achv-issuer"><i class="fas fa-building"></i> Novo Club</p>
+                        <div class="achv-tags">
+                            <span class="tag">Certificate</span>
+                            <span class="tag">Leadership</span>
+                        </div>
+                    </div>
+                    <div class="achv-footer">
+                        <span class="achv-date"><i class="far fa-calendar-alt"></i> Issued 2026</span>
+                    </div>
+                </div>
+
+                <!-- Item 5 -->
+                <div class="achv-card" data-title="Coding Camp DBS Foundation" data-type="Participation" data-category="Tech & IT">
+                    <div class="achv-img-wrapper">
+                        <img src="https://placehold.co/600x400/0B191E/00E5FF?text=Coding+Camp" alt="Coding Camp">
+                        <div class="achv-overlay-link"><i class="fas fa-external-link-alt"></i></div>
+                    </div>
+                    <div class="achv-content">
+                        <span class="achv-code">CC-DBS-202X</span>
+                        <h3 class="achv-title">Coding Camp Scholarship</h3>
+                        <p class="achv-issuer"><i class="fas fa-building"></i> DBS Foundation</p>
+                        <div class="achv-tags">
+                            <span class="tag">Participation</span>
+                            <span class="tag">Tech & IT</span>
+                        </div>
+                    </div>
+                    <div class="achv-footer">
+                        <span class="achv-date"><i class="far fa-calendar-alt"></i> Issued 202X</span>
+                    </div>
+                </div>
+
+            </div>
+            
+            <!-- Empty State Message -->
+            <div id="noResultsMsg" class="empty-project-msg" style="display: none; padding: 80px 0;">
+                <i class="fas fa-search-minus" style="font-size: 4rem; color: var(--aksen-tosca); margin-bottom: 20px;"></i>
+                <p style="font-size: 1.2rem; color: var(--teks-putih);">Oops! No achievements found.</p>
+                <p style="font-size: 0.9rem; margin-top: 5px;">Try adjusting your search or filters.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Standar -->
+    <footer class="fat-footer">
+        <div class="footer-container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 M. Alfarel Portfolio • Achievements</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script Khusus -->
+    <script src="achievements.js"></script>
+</body>
+</html>

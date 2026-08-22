@@ -1,0 +1,443 @@
+/* =======================================================
+   MODERN ACHIEVEMENTS PAGE STYLES (ALFAREL'S THEME)
+   ======================================================= */
+
+.achievements-page {
+    position: relative;
+    padding: 130px 5% 80px 5%;
+    min-height: 100vh;
+    background-color: var(--bg-utama);
+    overflow: hidden;
+}
+
+/* Pola grid/titik persis seperti di halaman Home & Contact */
+.achievements-bg-pattern {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: radial-gradient(circle, rgba(0, 229, 255, 0.07) 1.8px, transparent 1.8px);
+    background-size: 45px 45px;
+    background-position: center top;
+    z-index: 0;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+.achievements-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+/* --- HEADER TEXT --- */
+.achievements-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.achievements-header .section-subtitle {
+    margin-bottom: 0;
+}
+
+.achievements-header .section-title {
+    font-family: 'Changa One', sans-serif;
+    font-size: 4.5rem;
+    color: var(--teks-putih);
+    margin: 0 0 15px 0;
+    text-transform: capitalize;
+}
+
+.achievements-header .section-title span {
+    color: var(--aksen-tosca);
+    text-shadow: var(--bayangan-teks);
+}
+
+.achievements-header .page-desc {
+    font-size: 1rem;
+    color: rgba(237, 246, 249, 0.7);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- CONTROLS (SEARCH & FILTER MODERN PILL SHAPE) --- */
+.achievements-controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    background: rgba(11, 25, 30, 0.5);
+    padding: 20px;
+    border-radius: 40px; /* Bentuk membulat seperti form contact */
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.search-box, .filter-box {
+    position: relative;
+}
+
+.search-box {
+    flex: 2;
+    min-width: 250px;
+}
+
+.filter-box {
+    flex: 1;
+    min-width: 180px;
+}
+
+.search-box input, .filter-box select {
+    width: 100%;
+    padding: 15px 25px;
+    border-radius: 40px; /* Pill shape persis referensimu */
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    background: rgba(11, 25, 30, 0.8);
+    color: var(--teks-putih);
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.search-box i {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(237, 246, 249, 0.5);
+    font-size: 1rem;
+}
+
+.search-box input {
+    padding-left: 50px; /* Memberi ruang untuk icon kaca pembesar */
+}
+
+.filter-box select {
+    cursor: pointer;
+    appearance: none;
+}
+
+.filter-box::after {
+    content: '\f0dc';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(237, 246, 249, 0.5);
+    pointer-events: none;
+}
+
+.search-box input:focus, .filter-box select:focus {
+    border-color: var(--aksen-tosca);
+    background: rgba(0, 229, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
+}
+
+.achievements-total {
+    text-align: right;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(237, 246, 249, 0.6);
+    font-size: 0.9rem;
+    margin-bottom: 25px;
+    padding-right: 15px;
+}
+
+.achievements-total span {
+    color: var(--aksen-tosca);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* --- MODERN GRID & CARDS --- */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.achv-card {
+    background: rgba(11, 25, 30, 0.7);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 24px; /* Sudut lebih melengkung membulat modern */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+}
+
+.achv-card:hover {
+    border-color: rgba(0, 229, 255, 0.5);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 229, 255, 0.2);
+}
+
+.achv-img-wrapper {
+    width: 100%;
+    height: 220px;
+    overflow: hidden; /* Penting untuk efek zoom image */
+    position: relative;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.achv-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.achv-card:hover .achv-img-wrapper img {
+    transform: scale(1.08); /* Efek zoom modern saat dihover */
+}
+
+/* Ikon overlay saat gambar dihover */
+.achv-overlay-link {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 229, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+    backdrop-filter: blur(3px);
+}
+
+.achv-overlay-link i {
+    font-size: 2rem;
+    color: #fff;
+    transform: scale(0.5);
+    transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.achv-img-wrapper:hover .achv-overlay-link {
+    opacity: 1; cursor: pointer;
+}
+.achv-img-wrapper:hover .achv-overlay-link i {
+    transform: scale(1);
+}
+
+.achv-content {
+    padding: 25px 25px 15px 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.achv-code {
+    font-size: 0.7rem;
+    color: var(--aksen-tosca);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.achv-title {
+    font-size: 1.25rem;
+    color: var(--teks-putih);
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.achv-issuer {
+    font-size: 0.85rem;
+    color: rgba(237, 246, 249, 0.6);
+    margin: 0 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.achv-issuer i {
+    color: rgba(0, 229, 255, 0.7);
+}
+
+.achv-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: auto; /* Mendorong tag ke bawah */
+}
+
+.tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: rgba(0, 229, 255, 0.05);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    color: rgba(237, 246, 249, 0.9);
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: rgba(0, 229, 255, 0.15);
+    border-color: rgba(0, 229, 255, 0.5);
+}
+
+.achv-footer {
+    padding: 15px 25px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.achv-date {
+    font-size: 0.75rem;
+    color: rgba(237, 246, 249, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* =======================================================
+   LIGHT MODE OVERRIDES (FIXED - NO MORE BLACK BOXES!)
+   ======================================================= */
+body.light-mode .achievements-page { 
+    background-color: #F4F7F7; 
+}
+
+body.light-mode .achievements-bg-pattern {
+    background-image: radial-gradient(circle, rgba(104, 143, 142, 0.15) 2px, transparent 1.5px);
+}
+
+body.light-mode .achievements-header .section-title { 
+    color: #1A2E2F; 
+}
+body.light-mode .achievements-header .section-title span { 
+    color: #669295; 
+    text-shadow: none; 
+}
+body.light-mode .achievements-header .page-desc, 
+body.light-mode .achievements-total { 
+    color: rgba(26, 46, 47, 0.7); 
+}
+body.light-mode .achievements-total span {
+    color: #669295;
+}
+
+/* Light Mode: Search & Filter Modern */
+body.light-mode .achievements-controls {
+    background: #E2ECEC;
+    border-color: rgba(255, 255, 255, 0.8);
+    box-shadow: inset 0 4px 10px rgba(26, 46, 47, 0.08), 0 10px 20px rgba(26, 46, 47, 0.05);
+}
+
+body.light-mode .search-box input, 
+body.light-mode .filter-box select { 
+    background: #FFFFFF; 
+    border: 1.5px solid #D0E2E6; 
+    color: #1A2E2F; 
+    box-shadow: 0 4px 10px rgba(26, 46, 47, 0.03);
+}
+
+body.light-mode .search-box input::placeholder {
+    color: rgba(26, 46, 47, 0.5);
+}
+
+body.light-mode .search-box i, 
+body.light-mode .filter-box::after { 
+    color: #9BB9BB; 
+}
+
+body.light-mode .search-box input:focus, 
+body.light-mode .filter-box select:focus { 
+    border-color: #669295; 
+    box-shadow: 0 0 0 4px rgba(102, 146, 149, 0.1); 
+}
+
+/* Light Mode: Cards (Ini yang bikin rapi banget) */
+body.light-mode .achv-card { 
+    background: #FFFFFF; /* Gak hitam lagi! */
+    border: 1px solid #D0E2E6; 
+    box-shadow: 0 8px 25px rgba(26, 46, 47, 0.06); 
+}
+
+body.light-mode .achv-card:hover { 
+    border-color: #669295; 
+    box-shadow: 0 15px 35px rgba(26, 46, 47, 0.12); 
+}
+
+body.light-mode .achv-img-wrapper {
+    border-bottom: 1px solid #E2ECEC;
+}
+
+body.light-mode .achv-overlay-link {
+    background: rgba(102, 146, 149, 0.8);
+}
+
+body.light-mode .achv-code { 
+    color: #688F8E; 
+}
+body.light-mode .achv-title { 
+    color: #1A2E2F; 
+}
+body.light-mode .achv-issuer { 
+    color: rgba(26, 46, 47, 0.7); 
+}
+body.light-mode .achv-issuer i {
+    color: #669295;
+}
+
+body.light-mode .tag { 
+    background: #F4F7F7; 
+    border-color: #D0E2E6; 
+    color: #1A2E2F; 
+}
+body.light-mode .tag:hover {
+    background: #E2ECEC;
+    border-color: #9BB9BB;
+}
+
+body.light-mode .achv-footer { 
+    border-top-color: #E2ECEC; 
+    background: #F8FAFA;
+}
+body.light-mode .achv-date { 
+    color: rgba(26, 46, 47, 0.6); 
+}
+
+
+/* =======================================================
+   RESPONSIVE DESIGN
+   ======================================================= */
+@media screen and (max-width: 768px) {
+    .achievements-page { padding: 100px 5vw 40px 5vw; }
+    
+    .achievements-header .section-title { font-size: clamp(2.5rem, 8vw, 3.5rem); }
+    
+    .achievements-controls { 
+        padding: 15px;
+        border-radius: 25px;
+        gap: 10px;
+    }
+    
+    .search-box { flex: 100%; }
+    .filter-box { flex: 1 1 calc(50% - 5px); min-width: auto; }
+    
+    .search-box input, .filter-box select {
+        padding: 12px 20px;
+        border-radius: 25px;
+        font-size: 0.85rem;
+    }
+    
+    .achievements-grid { 
+        grid-template-columns: 1fr; 
+        gap: 20px; 
+    }
+
+    .achv-card {
+        border-radius: 20px;
+    }
+}
